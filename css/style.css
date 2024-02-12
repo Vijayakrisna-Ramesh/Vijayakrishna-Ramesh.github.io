@@ -38,3 +38,33 @@ a {
     background-color: #ddd;
     color: black;
 }
+/* Existing styles... */
+
+/* Hero Section */
+.hero {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.hero h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.hero-image {
+    width: 100%; /* This ensures the image covers the full container width */
+    height: auto; /* This maintains the aspect ratio of the image */
+    position: relative;
+    z-index: 1;
+}
+
+/* Ensure the header with the hero class is not collapsed if the image is the only content */
+.hero:after {
+    content: "";
+    display: block;
+    clear: both;
+}
