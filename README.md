@@ -1,1 +1,1 @@
-This is a personl profile's page
+This is a personal profile's page
