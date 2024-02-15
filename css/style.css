@@ -16,6 +16,44 @@ h1, h2 {
     font-family: 'Sahitya', serif; /* 'Sahitya' is another Google font with Indian flair */
     color: #BF9270; /* A saffron-inspired color, gives a pop to headings */
 }
+body {
+    font-family: 'Laila', 'Sahitya', sans-serif;
+}
+
+.animated-section {
+    opacity: 0;
+    animation: fadeIn 2s ease-out forwards;
+}
+
+.tag {
+    display: inline-block;
+    margin: 5px;
+    padding: 5px 10px;
+    background-color: #f0f0f0;
+    color: #333;
+    border-radius: 5px;
+    animation: popIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    80% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
 
 a {
     color: #C95D63; /* A color inspired by traditional Indian textiles */
