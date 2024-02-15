@@ -16,9 +16,6 @@ h1, h2 {
     font-family: 'Sahitya', serif; /* 'Sahitya' is another Google font with Indian flair */
     color: #BF9270; /* A saffron-inspired color, gives a pop to headings */
 }
-body {
-    font-family: 'Laila', 'Sahitya', sans-serif;
-}
 
 .animated-section {
     opacity: 0;
@@ -32,25 +29,33 @@ body {
     background-color: #f0f0f0;
     color: #333;
     border-radius: 5px;
-    animation: popIn 1s ease-out forwards;
+    opacity: 0; /* Start with tags hidden */
+}
+
+/* Adjusted animations for sequential display */
+@keyframes tagAnimation {
+    0%, 100% { opacity: 0; transform: scale(0); }
+    10%, 90% { opacity: 1; transform: scale(1); }
+}
+
+/* Apply the animation to each tag with staggered delays */
+.tag:nth-child(1) {
+    animation: tagAnimation 4s ease-out forwards;
+    animation-delay: 0s; /* First tag starts immediately */
+}
+
+.tag:nth-child(2) {
+    animation: tagAnimation 4s ease-out forwards;
+    animation-delay: 3s; /* Second tag starts as the first begins to fade */
+}
+
+.tag:nth-child(3) {
+    animation: tagAnimation 4s ease-out forwards;
+    animation-delay: 6s; /* Third tag starts as the second begins to fade */
 }
 
 @keyframes fadeIn {
     to {
-        opacity: 1;
-    }
-}
-
-@keyframes popIn {
-    0% {
-        transform: scale(0);
-        opacity: 0;
-    }
-    80% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
         opacity: 1;
     }
 }
@@ -76,38 +81,3 @@ a:hover {
     color: #FFDAA5; /* Same as the header/footer text color for consistency */
     text-align: center;
     padding: 14px 20px;
-}
-
-.nav a:hover {
-    background-color: #BF9270; /* A lighter hover effect for the navigation links */
-    color: #FAF3E0; /* Text color on hover for better contrast */
-}
-
-/* Hero Section */
-.hero {
-    position: relative;
-    text-align: center;
-    padding: 50px 0; /* Adds more space to the hero section */
-}
-
-.hero h1 {
-    font-size: 2.5em; /* Increases the size of the hero heading */
-    color: #4A2F2F; /* Uses the header/footer background color for the text */
-    background-color: rgba(255, 218, 165, 0.7); /* A translucent overlay to make text stand out */
-    display: inline-block; /* Allows the background-color to wrap just around the text */
-    margin: 0; /* Resets the margin */
-    padding: 10px 20px; /* Adds padding around the text for spacing */
-}
-
-/* Responsive layout for smaller screens */
-@media (max-width: 768px) {
-    .nav a {
-        float: none;
-        display: block;
-        text-align: left;
-    }
-
-    .hero h1 {
-        font-size: 2em; /* Slightly smaller font for smaller screens */
-    }
-}
