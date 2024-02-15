@@ -17,9 +17,7 @@ h1, h2 {
     color: #000000; /* Black for headings */
 }
 
-.animated-section {
-    opacity: 0;
-    animation: fadeIn 2s ease-out forwards;
+
 }
 
 .tag {
