@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,9 +6,16 @@
     <title>AI Researcher Profile</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Laila&family=Sahitya&display=swap" rel="stylesheet">
+    <!-- React and ReactDOM from CDN for development -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <!-- Babel for JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body>
     <h1>Outsmarting the Adversary</h1>
+    <!-- React root element -->
+    <div id="react-root"></div>
     <main>
         <section id="about">
             <h2>About Me</h2>
@@ -44,9 +50,36 @@
                 <li><a href="https://medium.com/@johndoe/article-2">Ethics in AI Development</a></li>
             </ul>
         </section>
-    </main>
+   </main>
     <footer>
         <p>Contact me at: veejaykris.29@gmail.com</p>
     </footer>
+    <script type="text/babel">
+      const TagAnimation = () => {
+        const tags = ['Father', 'Vedantist', 'AI Expert']; // Tags to animate
+        const [currentTag, setCurrentTag] = React.useState(0); // Current tag index
+        const [isVisible, setIsVisible] = React.useState(true); // Tag visibility toggle
+
+        React.useEffect(() => {
+          const intervalId = setInterval(() => {
+            setIsVisible(false); // Hide tag before switching
+            setTimeout(() => {
+              setCurrentTag((prevTag) => (prevTag + 1) % tags.length); // Move to next tag
+              setIsVisible(true); // Show next tag
+            }, 500); // Halfway through the interval, switch the tag
+          }, 1000); // Change tag every second
+
+          return () => clearInterval(intervalId); // Cleanup interval on component unmount
+        }, []);
+
+        return (
+          <div style={{ transition: 'opacity 0.5s ease-in-out', opacity: isVisible ? 1 : 0, textAlign: 'center', marginTop: '20px' }}>
+            {tags[currentTag]}
+          </div>
+        );
+      };
+
+      ReactDOM.render(<TagAnimation />, document.getElementById('react-root'));
+    </script>
 </body>
 </html>
