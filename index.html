@@ -1,27 +1,55 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Researcher Profile</title>
-    <!-- Include Tailwind CSS -->
+    <!-- Include Tailwind CSS for utility classes -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Laila&family=Sahitya&display=swap" rel="stylesheet">
-    <!-- React and ReactDOM from CDN for development -->
-    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-    <!-- Babel for JSX -->
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body {
+            background-color: #fdf5e6; /* A classic light background color */
+            font-family: 'Laila', 'Sahitya', serif;
+        }
+        .profile-container {
+            padding: 1rem;
+            background-color: white;
+            border: 10px solid #6495ed; /* A classic web blue */
+            box-shadow: 0 0 10px #b0c4de; /* Soft shadow for depth */
+        }
+        .border-frame {
+            padding: 15px;
+            background: url('border.png'); /* Assuming you have a border image */
+            background-size: contain;
+            background-repeat: repeat;
+        }
+        .tag-badge {
+            background-color: #778899; /* Slate gray for a classic tag look */
+            color: white;
+            border: 1px solid #708090; /* Darker slate gray border */
+            padding: 5px 10px;
+            margin: 5px;
+            border-radius: 5px;
+        }
 </head>
-<body class="bg-gray-100 text-gray-900">
-    <h1 class="text-3xl font-semibold text-center mt-8">Outsmarting the Adversary</h1>
-    <!-- React root element -->
-    <div id="react-root" class="mt-4"></div>
-    <!-- Portrait Image -->
-    <div class="flex justify-center">
-        <img src="images/portrait.jpg" alt="Portrait of the Technologist" class="w-48 h-48 rounded-full mt-8">
-    </div>
+<body>
+    <div class="border-frame">
+        <div class="profile-container">
+            <h1 class="text-3xl font-semibold text-center mt-8">Outsmarting the Adversary</h1>
+            
+            <!-- Profile picture and static tags -->
+            <div class="flex flex-col items-center">
+                <!-- Portrait Image -->
+                <img src="images/portrait.jpg" alt="Portrait of the Technologist" class="w-48 h-48 rounded-full mt-8">
+                <!-- Static tags -->
+                <div class="text-center mt-4">
+                    <span class="tag-badge">Father</span>
+                    <span class="tag-badge">Vedantist</span>
+                    <span class="tag-badge">AI Expert</span>
+                    <span class="tag-badge">Product Manager</span>
+                </div>
+            </div>
     <main class="max-w-3xl mx-auto mt-8">
         <section id="about">
             <h2 class="text-2xl font-semibold">About Me</h2>
@@ -53,32 +81,7 @@
     <footer class="text-center mt-8">
         <p>Contact me at: <a href="mailto:veejaykris.29@gmail.com" class="text-blue-500 hover:underline">veejaykris.29@gmail.com</a></p>
     </footer>
-   <script type="text/babel">
-  const TagAnimation = () => {
-  const tags = ['Father', 'Vedantist', 'AI Expert', 'Product Manager']; // Tags to animate
-  const [currentTag, setCurrentTag] = React.useState(0); // Current tag index
-  const [opacity, setOpacity] = React.useState(1); // Opacity for fade effect
-
-  React.useEffect(() => {
-    const intervalId = setInterval(() => {
-      setOpacity(0); // Fade out the tag
-      setTimeout(() => {
-        setCurrentTag((prevTag) => (prevTag + 1) % tags.length); // Move to next tag
-        setOpacity(1); // Fade in the tag
-      }, 500); // Halfway through the interval, switch the tag
-    }, 2000); // Keep the tag visible for 1.5s, then transition for 0.5s
-
-    return () => clearInterval(intervalId); // Cleanup interval on component unmount
-  }, []);
-
-  return (
-    <div className={`text-center mt-4 font-semibold text-xl transition-opacity duration-500 ease-in-out`} style={{ opacity }}>
-      {tags[currentTag]}
+     </div>
     </div>
-  );
-};
-
-ReactDOM.render(<TagAnimation />, document.getElementById('react-root'));
-</script>
 </body>
 </html>
