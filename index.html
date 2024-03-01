@@ -1,87 +1,111 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Researcher Profile</title>
-    <!-- Include Tailwind CSS for utility classes -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Laila&family=Sahitya&display=swap" rel="stylesheet">
+    <!-- Custom styling for early 2000s look -->
     <style>
         body {
-            background-color: #fdf5e6; /* A classic light background color */
-            font-family: 'Laila', 'Sahitya', serif;
+            background-color: #d0e4fe; /* Light blue background */
+            font-family: 'Comic Sans MS', cursive, sans-serif; /* Classic Comic Sans font */
+            margin: 0;
+            padding: 0;
+            text-align: center;
         }
-        .profile-container {
-            padding: 1rem;
-            background-color: white;
-            border: 10px solid #6495ed; /* A classic web blue */
-            box-shadow: 0 0 10px #b0c4de; /* Soft shadow for depth */
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background: #ffffff;
+            border: 1px solid #0000ff;
+            box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
         }
-        .border-frame {
-            padding: 15px;
-            background: url('border.png'); /* Assuming you have a border image */
-            background-size: contain;
-            background-repeat: repeat;
+        h1 {
+            color: #ff00ff; /* Bright fuchsia */
+            text-shadow: 2px 2px #00ff00; /* Neon green shadow */
         }
-        .tag-badge {
-            background-color: #778899; /* Slate gray for a classic tag look */
-            color: white;
-            border: 1px solid #708090; /* Darker slate gray border */
-            padding: 5px 10px;
+        .profile-picture {
+            border: 5px double #ff1493; /* Deep pink border */
+            border-radius: 50%;
+            padding: 7px;
+            background: #ffffe0; /* Light yellow background */
+            margin-top: 20px;
+        }
+        .badge {
+            border: 1px solid #0000ff;
+            padding: 5px;
             margin: 5px;
-            border-radius: 5px;
+            display: inline-block;
+            background: #b0e0e6; /* Powder blue background */
+            box-shadow: 1px 1px #ff4500; /* Orange shadow for depth */
         }
+        .main-content {
+            background-color: #f0f8ff; /* Alice blue for content background */
+            margin: 15px;
+            padding: 15px;
+            border: 3px groove #ffa07a; /* Light salmon border */
+        }
+        a {
+            color: #ff4500; /* Vivid orange links */
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            color: #191970; /* Midnight blue color */
+            padding: 10px;
+            border-top: 3px dashed #ffa500; /* Orange dashed border */
+        }
+    </style>
 </head>
 <body>
-    <div class="border-frame">
-        <div class="profile-container">
-            <h1 class="text-3xl font-semibold text-center mt-8">Outsmarting the Adversary</h1>
-            
-            <!-- Profile picture and static tags -->
-            <div class="flex flex-col items-center">
-                <!-- Portrait Image -->
-                <img src="images/portrait.jpg" alt="Portrait of the Technologist" class="w-48 h-48 rounded-full mt-8">
-                <!-- Static tags -->
-                <div class="text-center mt-4">
-                    <span class="tag-badge">Father</span>
-                    <span class="tag-badge">Vedantist</span>
-                    <span class="tag-badge">AI Expert</span>
-                    <span class="tag-badge">Product Manager</span>
-                </div>
+    <div class="container">
+        <h1>Outsmarting the Adversary</h1>
+        
+        <!-- Profile picture and static tags -->
+        <div>
+            <img src="images/portrait.jpg" alt="Portrait of the Technologist" class="profile-picture">
+            <div>
+                <span class="badge">Father</span>
+                <span class="badge">Vedantist</span>
+                <span class="badge">AI Expert</span>
+                <span class="badge">Product Manager</span>
             </div>
-    <main class="max-w-3xl mx-auto mt-8">
-        <section id="about">
-            <h2 class="text-2xl font-semibold">About Me</h2>
-            <p class="mt-4">Specializing in the research of deceptive AI technologies, Detecting and Countering Adversarial Machine Learning...</p>
-        </section>
-        <section id="current-job" class="mt-8">
-            <h2 class="text-2xl font-semibold">Digital Product Manager</h2>
-            <p class="mt-4">Leading Telecom service provider in Toronto, focusing on building self-serve capabilities on web and app</p>
-        </section>
-        <section id="certifications" class="mt-8">
-            <h2 class="text-2xl font-semibold">Certifications</h2>
-            <ul class="list-disc list-inside mt-4">
-                <li>Certified AI Specialist</li>
-                <li>Advanced Data Science Certification</li>
-            </ul>
-        </section>
-        <section id="interests" class="mt-8">
-            <h2 class="text-2xl font-semibold">Interest Areas</h2>
-            <p class="mt-4">Deceptive AI, Ethical AI Practices, Machine Learning...</p>
-        </section>
-        <section id="articles" class="mt-8">
-            <h2 class="text-2xl font-semibold">Articles</h2>
-            <ul class="list-disc list-inside mt-4">
-                <li><a href="#" class="text-blue-500 hover:underline">Self Attention is all you need</a></li>
-                <li><a href="https://medium.com/@veejaykris.29/self-attention-explained-to-a-layman-5b6729c4363b" class="text-blue-500 hover:underline">Self Attention</a></li>
-            </ul>
-        </section>
-   </main>
-    <footer class="text-center mt-8">
-        <p>Contact me at: <a href="mailto:veejaykris.29@gmail.com" class="text-blue-500 hover:underline">veejaykris.29@gmail.com</a></p>
-    </footer>
-     </div>
-    </div>
-</body>
-</html>
+        </div>
+        
+        <!-- Main content -->
+        <div class="main-content">
+            <section id="about">
+                <h2>About Me</h2>
+                <p>Specializing in the research of deceptive AI technologies, Detecting and Countering Adversarial Machine Learning...</p>
+            </section>
+            <section id="current-job">
+                <h2>Digital Product Manager</h2>
+                <p>Leading Telecom service provider in Toronto, focusing on building self-serve capabilities on web and app</p>
+            </section>
+            <section id="certifications">
+                <h2>Certifications</h2>
+                <ul>
+                    <li>Certified AI Specialist</li>
+                    <li>Advanced Data Science Certification</li>
+                </ul>
+            </section>
+            <section id="interests">
+                <h2>Interest Areas</h2>
+                <p>Deceptive AI, Ethical AI Practices, Machine Learning...</p>
+            </section>
+            <section id="articles">
+                <h2>Articles</h2>
+                <ul>
+                    <li><a href="#">Self Attention is all you need</a></li>
+                    <li><a href="https://medium.com/@veejaykris.29/self-attention-explained-to-a-layman-5b6729c4363b">Self Attention</a></li>
+                </ul>
+            </section>
+        </div>
+
+        <footer>
+            <p>Contact me at: <a href="mailto:veejaykris.29@gmail.com">
