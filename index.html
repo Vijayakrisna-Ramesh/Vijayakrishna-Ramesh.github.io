@@ -1,10 +1,12 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Researcher Profile</title>
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Laila&family=Sahitya&display=swap" rel="stylesheet">
     <!-- React and ReactDOM from CDN for development -->
     <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
@@ -12,47 +14,44 @@
     <!-- Babel for JSX -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
-<body>
-    <h1>Outsmarting the Adversary</h1>
+<body class="bg-gray-100 text-gray-900">
+    <h1 class="text-3xl font-semibold text-center mt-8">Outsmarting the Adversary</h1>
     <!-- React root element -->
-    <div id="react-root"></div>
+    <div id="react-root" class="mt-4"></div>
     <!-- Portrait Image -->
-    <div class="image-container">
-        <img src="images/portrait.jpg" alt="Portrait of the Technologist" class="portrait">
+    <div class="flex justify-center">
+        <img src="images/portrait.jpg" alt="Portrait of the Technologist" class="w-48 h-48 rounded-full mt-8">
     </div>
-    <main>
+    <main class="max-w-3xl mx-auto mt-8">
         <section id="about">
-            <h2>About Me</h2>
-            <p>Specializing in the research of deceptive AI technologies, Detecting and Countering Adversarial Machine Learning...</p>
-            
+            <h2 class="text-2xl font-semibold">About Me</h2>
+            <p class="mt-4">Specializing in the research of deceptive AI technologies, Detecting and Countering Adversarial Machine Learning...</p>
         </section>
-        <!-- Multi-Tagging Section with Sequential Animations -->
-        
-        <section id="current-job">
-            <h2>Digital Product Manager</h2>
-            <p>Leading Telecom service provider in Toronto, focusing on building self-serve capabilities on web and app</p>
+        <section id="current-job" class="mt-8">
+            <h2 class="text-2xl font-semibold">Digital Product Manager</h2>
+            <p class="mt-4">Leading Telecom service provider in Toronto, focusing on building self-serve capabilities on web and app</p>
         </section>
-        <section id="certifications">
-            <h2>Certifications</h2>
-            <ul>
+        <section id="certifications" class="mt-8">
+            <h2 class="text-2xl font-semibold">Certifications</h2>
+            <ul class="list-disc list-inside mt-4">
                 <li>Certified AI Specialist</li>
                 <li>Advanced Data Science Certification</li>
             </ul>
         </section>
-        <section id="interests">
-            <h2>Interest Areas</h2>
-            <p>Deceptive AI, Ethical AI Practices, Machine Learning...</p>
+        <section id="interests" class="mt-8">
+            <h2 class="text-2xl font-semibold">Interest Areas</h2>
+            <p class="mt-4">Deceptive AI, Ethical AI Practices, Machine Learning...</p>
         </section>
-        <section id="articles">
-            <h2>Articles</h2>
-            <ul>
-                <li><a href="">Self Attention is all you need</a></li>
-                <li><a href="https://medium.com/@veejaykris.29/self-attention-explained-to-a-layman-5b6729c4363b">Self Attention</a></li>
+        <section id="articles" class="mt-8">
+            <h2 class="text-2xl font-semibold">Articles</h2>
+            <ul class="list-disc list-inside mt-4">
+                <li><a href="#" class="text-blue-500 hover:underline">Self Attention is all you need</a></li>
+                <li><a href="https://medium.com/@veejaykris.29/self-attention-explained-to-a-layman-5b6729c4363b" class="text-blue-500 hover:underline">Self Attention</a></li>
             </ul>
         </section>
    </main>
-    <footer>
-        <p>Contact me at: veejaykris.29@gmail.com</p>
+    <footer class="text-center mt-8">
+        <p>Contact me at: <a href="mailto:veejaykris.29@gmail.com" class="text-blue-500 hover:underline">veejaykris.29@gmail.com</a></p>
     </footer>
    <script type="text/babel">
   const TagAnimation = () => {
@@ -73,15 +72,12 @@
     }, []);
 
     return (
-      <div style={{ 
-          transition: 'opacity 0.5s ease-in-out', 
-          opacity: isVisible ? 1 : 0, 
-          textAlign: 'center', 
-          marginTop: '20px',
-          fontWeight: 'bold', // Make the text bolder
-          fontSize: '24px' // Increase font size
-      }}>
-        {tags[currentTag]}
+      <div className="transition-opacity duration-500 ease-in-out opacity-0">
+        {isVisible && (
+          <div className="text-center mt-4 font-semibold text-xl">
+            {tags[currentTag]}
+          </div>
+        )}
       </div>
     );
   };
