@@ -55,34 +55,30 @@
     </footer>
    <script type="text/babel">
   const TagAnimation = () => {
-    const tags = ['Father', 'Vedantist', 'AI Expert', 'Product Manager']; // Tags to animate
-    const [currentTag, setCurrentTag] = React.useState(0); // Current tag index
-    const [isVisible, setIsVisible] = React.useState(true); // Tag visibility toggle
+  const tags = ['Father', 'Vedantist', 'AI Expert', 'Product Manager']; // Tags to animate
+  const [currentTag, setCurrentTag] = React.useState(0); // Current tag index
+  const [opacity, setOpacity] = React.useState(1); // Opacity for fade effect
 
-    React.useEffect(() => {
-      const intervalId = setInterval(() => {
-        setIsVisible(false); // Hide tag before switching
-        setTimeout(() => {
-          setCurrentTag((prevTag) => (prevTag + 1) % tags.length); // Move to next tag
-          setIsVisible(true); // Show next tag
-        }, 500); // Halfway through the interval, switch the tag
-      }, 1000); // Change tag every second
+  React.useEffect(() => {
+    const intervalId = setInterval(() => {
+      setOpacity(0); // Fade out the tag
+      setTimeout(() => {
+        setCurrentTag((prevTag) => (prevTag + 1) % tags.length); // Move to next tag
+        setOpacity(1); // Fade in the tag
+      }, 500); // Halfway through the interval, switch the tag
+    }, 2000); // Keep the tag visible for 1.5s, then transition for 0.5s
 
-      return () => clearInterval(intervalId); // Cleanup interval on component unmount
-    }, []);
+    return () => clearInterval(intervalId); // Cleanup interval on component unmount
+  }, []);
 
-    return (
-      <div className="transition-opacity duration-500 ease-in-out opacity-0">
-        {isVisible && (
-          <div className="text-center mt-4 font-semibold text-xl">
-            {tags[currentTag]}
-          </div>
-        )}
-      </div>
-    );
-  };
+  return (
+    <div className={`text-center mt-4 font-semibold text-xl transition-opacity duration-500 ease-in-out`} style={{ opacity }}>
+      {tags[currentTag]}
+    </div>
+  );
+};
 
-  ReactDOM.render(<TagAnimation />, document.getElementById('react-root'));
+ReactDOM.render(<TagAnimation />, document.getElementById('react-root'));
 </script>
 </body>
 </html>
