@@ -21,25 +21,37 @@
             background: #ffffff;
             border: 1px solid #0000ff;
             box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
+            display: flex;
+            align-items: flex-start;
+        }
+        .left-column {
+            flex: 1;
+            padding-right: 20px; /* Spacing between columns */
+        }
+        .right-column {
+            flex: 2;
         }
         h1 {
             color: #ff00ff; /* Bright fuchsia */
             text-shadow: 2px 2px #00ff00; /* Neon green shadow */
         }
         .profile-picture {
+            width: 120px; /* Smaller profile picture */
+            height: 120px; /* Keep the aspect ratio */
             border: 5px double #ff1493; /* Deep pink border */
             border-radius: 50%;
-            padding: 7px;
+            padding: 3px;
             background: #ffffe0; /* Light yellow background */
             margin-top: 20px;
         }
         .badge {
             border: 1px solid #0000ff;
-            padding: 5px;
-            margin: 5px;
+            padding: 3px;
+            margin: 2px;
             display: inline-block;
             background: #b0e0e6; /* Powder blue background */
             box-shadow: 1px 1px #ff4500; /* Orange shadow for depth */
+            font-size: 0.8em; /* Smaller font size */
         }
         .main-content {
             background-color: #f0f8ff; /* Alice blue for content background */
@@ -59,15 +71,13 @@
             color: #191970; /* Midnight blue color */
             padding: 10px;
             border-top: 3px dashed #ffa500; /* Orange dashed border */
+            clear: both; /* Clear the float */
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Outsmarting the Adversary</h1>
-        
-        <!-- Profile picture and static tags -->
-        <div>
+        <div class="left-column">
             <img src="images/portrait.jpg" alt="Portrait of the Technologist" class="profile-picture">
             <div>
                 <span class="badge">Father</span>
@@ -77,35 +87,22 @@
             </div>
         </div>
         
-        <!-- Main content -->
-        <div class="main-content">
-            <section id="about">
-                <h2>About Me</h2>
-                <p>Specializing in the research of deceptive AI technologies, Detecting and Countering Adversarial Machine Learning...</p>
-            </section>
-            <section id="current-job">
-                <h2>Digital Product Manager</h2>
-                <p>Leading Telecom service provider in Toronto, focusing on building self-serve capabilities on web and app</p>
-            </section>
-            <section id="certifications">
-                <h2>Certifications</h2>
-                <ul>
-                    <li>Certified AI Specialist</li>
-                    <li>Advanced Data Science Certification</li>
-                </ul>
-            </section>
-            <section id="interests">
-                <h2>Interest Areas</h2>
-                <p>Deceptive AI, Ethical AI Practices, Machine Learning...</p>
-            </section>
-            <section id="articles">
-                <h2>Articles</h2>
-                <ul>
-                    <li><a href="#">Self Attention is all you need</a></li>
-                    <li><a href="https://medium.com/@veejaykris.29/self-attention-explained-to-a-layman-5b6729c4363b">Self Attention</a></li>
-                </ul>
-            </section>
+        <div class="right-column">
+            <h1>Outsmarting the Adversary</h1>
+            
+            <!-- Main content -->
+            <div class="main-content">
+                <section id="about">
+                    <h2>About Me</h2>
+                    <p>Specializing in the research of deceptive AI technologies, Detecting and Countering Adversarial Machine Learning...</p>
+                </section>
+                <!-- The rest of your sections -->
+            </div>
         </div>
+    </div>
 
-        <footer>
-            <p>Contact me at: <a href="mailto:veejaykris.29@gmail.com">
+    <footer>
+        <p>Contact me at: <a href="mailto:veejaykris.29@gmail.com">veejaykris.29@gmail.com</a></p>
+    </footer>
+</body>
+</html>
