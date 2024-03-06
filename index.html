@@ -5,35 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Researcher Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         body {
-            background: linear-gradient(to bottom, #e6e6ff, #ccccff);
-            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(to bottom, #f0f2f5, #dde1e7);
+            font-family: 'Open Sans', sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
-            align-items: flex-start;
+            align-items: center;
             min-height: 100vh;
         }
 
         .container {
             background-color: #ffffff;
-            border: 10px ridge #9999cc;
+            border: 1px solid #d3d3d3;
             padding: 20px;
-            max-width: 1000px;
+            max-width: 800px;
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            box-shadow: 0 0 20px rgba(102, 102, 153, 0.5);
-            margin-top: 50px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            margin-bottom: 20px;
         }
 
         h1 {
-            color: #6600cc;
-            text-shadow: 2px 2px #ccccff;
-            font-size: 3rem;
+            color: #333;
+            font-size: 2.2rem;
             margin-bottom: 10px;
         }
 
@@ -45,13 +46,13 @@
         }
 
         .profile-picture {
-            width: 200px;
-            height: 200px;
-            border: 5px dashed #9999cc;
+            width: 150px;
+            height: 150px;
+            border: 3px solid #d3d3d3;
             border-radius: 50%;
-            padding: 10px;
-            background-color: #e6e6ff;
-            box-shadow: 0 0 10px rgba(153, 153, 204, 0.5);
+            padding: 3px;
+            background-color: #f0f2f5;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .badge-container {
@@ -62,59 +63,43 @@
         }
 
         .badge {
-            background-color: #ccccff;
-            color: #330066;
+            background-color: #e7e9ed;
+            color: #333;
             padding: 5px 10px;
             margin: 5px;
-            border-radius: 20px;
-            font-weight: bold;
-            text-shadow: 1px 1px #e6e6ff;
-            box-shadow: 0 0 5px rgba(204, 204, 255, 0.5);
-            animation: tagAnimation 4s infinite;
-        }
-
-        @keyframes tagAnimation {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-            100% { transform: scale(1); }
+            border-radius: 15px;
+            font-weight: 600;
+            font-size: 0.9rem;
         }
 
         .content {
-            max-width: 800px;
+            max-width: 750px;
             margin-top: 20px;
             text-align: left;
+            color: #666;
         }
 
         .content h2 {
-            color: #6600cc;
-            text-shadow: 1px 1px #ccccff;
+            color: #333;
+            font-size: 1.5rem;
             margin-bottom: 10px;
         }
 
         .content p {
-            color: #330066;
-            line-height: 1.5;
+            line-height: 1.6;
             margin-bottom: 20px;
         }
 
-        .links {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-
         .links a {
-            color: #6600cc;
+            color: #007bff;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
             margin: 10px;
-            text-shadow: 1px 1px #ccccff;
-            transition: text-shadow 0.3s ease;
+            transition: opacity 0.3s ease;
         }
 
         .links a:hover {
-            text-shadow: 0 0 10px rgba(102, 0, 204, 0.5);
+            opacity: 0.7;
         }
 
         .projects {
@@ -125,37 +110,46 @@
         }
 
         .project {
-            background-color: #e6e6ff;
-            border-radius: 10px;
+            background-color: #f0f2f5;
+            border-radius: 8px;
             padding: 10px;
             margin: 10px;
-            max-width: 300px;
-            box-shadow: 0 0 5px rgba(153, 153, 204, 0.5);
+            width: calc(50% - 20px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
         }
 
         .project:hover {
-            transform: scale(1.05);
+            transform: scale(1.02);
         }
 
         .project img {
             width: 100%;
-            height: 150px;
-            object-fit: cover;
+            height: auto;
             border-radius: 5px;
+            margin-bottom: 8px;
         }
 
         .project h3 {
-            color: #330066;
-            text-shadow: 1px 1px #ccccff;
-            margin-top: 10px;
+            color: #333;
+            font-size: 1.2rem;
             margin-bottom: 5px;
         }
 
         .project p {
-            color: #330066;
-            line-height: 1.4;
-            margin-bottom: 0;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 15px;
+            }
+
+            .projects .project {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -179,8 +173,8 @@
             <h2>Interest Areas</h2>
             <p>Deceptive AI, Ethical AI Practices, Machine Learning...</p>
             <div class="links">
-                <a href="https://medium.com/@veejaykris.29/dummies-guide-to-google-gemini-pro-1-5-95c9bd322e9b" target="_blank">Dummies guide to Google Gemini</a>
-                <a href="https://medium.com/@veejaykris.29/self-attention-explained-to-a-layman-5b6729c4363b" target="_blank">Self Attention</a>
+                <a href="#" target="_blank">Dummies guide to Google Gemini</a>
+                <a href="#" target="_blank">Self Attention Explained</a>
             </div>
             <div class="projects">
                 <div class="project">
