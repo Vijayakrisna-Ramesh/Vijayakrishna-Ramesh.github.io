@@ -4,191 +4,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Researcher Profile</title>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>AI Deception Strategist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            background: linear-gradient(to bottom, #f0f2f5, #dde1e7);
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            background: #f0f4f8;
+            color: #333;
         }
 
         .container {
-            background-color: #ffffff;
-            border: 1px solid #d3d3d3;
+            max-width: 1200px;
+            margin: auto;
             padding: 20px;
-            max-width: 800px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-            margin-bottom: 20px;
+            overflow: hidden;
         }
 
-        h1 {
-            color: #333;
-            font-size: 2.2rem;
-            margin-bottom: 10px;
+        header {
+            background: #005792;
+            color: #fff;
+            padding: 40px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            transition: all 0.3s ease;
+        }
+
+        header h1:hover {
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2);
+            z-index: -1;
         }
 
         .profile-section {
             display: flex;
-            flex-direction: column;
             align-items: center;
-            margin-bottom: 20px;
+            justify-content: space-between;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-top: -60px;
+            border-radius: 10px;
         }
 
-        .profile-picture {
-            width: 150px;
-            height: 150px;
-            border: 3px solid #d3d3d3;
+        .profile-section img {
             border-radius: 50%;
-            padding: 3px;
-            background-color: #f0f2f5;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 150px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
         }
 
-        .badge-container {
+        .bio {
+            flex: 1;
+            padding-left: 20px;
+        }
+
+        .bio h2 {
+            margin-top: 0;
+        }
+
+        .tech-stack {
+            background: #e9eff1;
+            padding: 20px;
+            margin: 20px 0;
             display: flex;
-            justify-content: center;
-            margin: 10px 0;
             flex-wrap: wrap;
+            justify-content: center;
         }
 
-        .badge {
-            background-color: #e7e9ed;
-            color: #333;
-            padding: 5px 10px;
-            margin: 5px;
-            border-radius: 15px;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        .content {
-            max-width: 750px;
-            margin-top: 20px;
-            text-align: left;
-            color: #666;
-        }
-
-        .content h2 {
-            color: #333;
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-
-        .content p {
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .links a {
-            color: #007bff;
-            text-decoration: none;
-            font-weight: 600;
+        .tech {
+            background: #005792;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 20px;
             margin: 10px;
-            transition: opacity 0.3s ease;
+            font-weight: bold;
+            transition: background-color 0.3s;
         }
 
-        .links a:hover {
-            opacity: 0.7;
+        .tech:hover {
+            background: #013a63;
+            cursor: pointer;
         }
 
         .projects {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
         }
 
         .project {
-            background-color: #f0f2f5;
-            border-radius: 8px;
-            padding: 10px;
-            margin: 10px;
-            width: calc(50% - 20px);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .project:hover {
-            transform: scale(1.02);
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
         }
 
         .project img {
             width: 100%;
-            height: auto;
-            border-radius: 5px;
-            margin-bottom: 8px;
+            height: 200px;
+            object-fit: cover;
         }
 
-        .project h3 {
-            color: #333;
-            font-size: 1.2rem;
-            margin-bottom: 5px;
+        .project-body {
+            padding: 10px;
         }
 
-        .project p {
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
-
-        @media screen and (max-width: 768px) {
-            .container {
-                margin: 10px;
-                padding: 15px;
-            }
-
-            .projects .project {
-                width: 100%;
-            }
+        .footer {
+            background: #005792;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Deceptive AI Expert</h1>
+        <header>
+            <h1>Innovating at the Edge: Pioneering Deceptive AI Strategies</h1>
+        </header>
         <div class="profile-section">
-            <img src="images/portrait.jpg" alt="Portrait of the Technologist" class="profile-picture">
-            <div class="badge-container">
-                <span class="badge">Father</span>
-                <span class="badge">Vedantist</span>
-                <span class="badge">AI Expert</span>
-                <span class="badge">Product Manager</span>
+            <img src="images/profile.jpg" alt="Profile Picture">
+            <div class="bio">
+                <h2>Dr. Jane Doe</h2>
+                <p>Delving deep into the art of deception within AI, I develop strategies that redefine the boundaries of technology and ethics, crafting the future of secure AI applications.</p>
             </div>
         </div>
-        <div class="content">
-            <h2>About Me</h2>
-            <p>Specializing in the research of deceptive AI technologies, Detecting and Countering Adversarial Machine Learning...</p>
-            <h2>Certifications</h2>
-            <p>Certified AI Specialist<br>Advanced Data Science Certification</p>
-            <h2>Interest Areas</h2>
-            <p>Deceptive AI, Ethical AI Practices, Machine Learning...</p>
-            <div class="links">
-                <a href="#" target="_blank">Dummies guide to Google Gemini</a>
-                <a href="#" target="_blank">Self Attention Explained</a>
-            </div>
-            <div class="projects">
-                <div class="project">
-                    <img src="images/project1.jpg" alt="Project 1">
-                    <h3>Project 1</h3>
-                    <p>Description of Project 1...</p>
+        <div class="tech-stack">
+            <div class="tech">Machine Learning</div>
+            <div class="tech">Artificial Intelligence</div>
+            <div class="tech">Cybersecurity</div>
+            <div class="tech">Ethical Hacking</div>
+        </div>
+        <div class="projects">
+            <div class="project">
+                <img src="images/project1.jpg" alt="Project 1">
+                <div class="project-body">
+                    <h3>Project 1: AI Deception Tactics</h3>
+                    <p>An exploration into advanced deceptive models that challenge conventional AI security measures.</p>
                 </div>
-                <div class="project">
-                    <img src="images/project2.jpg" alt="Project 2">
-                    <h3>Project 2</h3>
-                    <p>Description of Project 2...</p>
+            </div>
+            <div class="project">
+                <img src="images/project2.jpg" alt="Project 2">
+                <div class="project-body">
+                    <h3>Project 2: Counter Deceptive AI</h3>
+                    <p>Developing countermeasures to identify and mitigate deceptive AI tactics, ensuring a safer digital ecosystem.</p>
                 </div>
             </div>
         </div>
+        <footer class="footer">
+            © 2024 Dr. Jane Doe | Innovating for a Secure AI Future
+        </footer>
     </div>
 </body>
 </html>
