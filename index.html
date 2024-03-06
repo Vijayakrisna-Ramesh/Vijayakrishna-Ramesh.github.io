@@ -13,8 +13,8 @@
             padding: 0;
             display: flex;
             justify-content: center;
-            align-items: center;
-            height: 100vh;
+            align-items: flex-start;
+            min-height: 100vh;
         }
 
         .container {
@@ -23,10 +23,11 @@
             padding: 20px;
             max-width: 1000px;
             display: flex;
-            flex-direction: row;
-            align-items: flex-start;
-            text-align: left;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
             box-shadow: 0 0 20px rgba(102, 102, 153, 0.5);
+            margin-top: 50px;
         }
 
         h1 {
@@ -37,11 +38,10 @@
         }
 
         .profile-section {
-            flex: 1;
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-right: 20px;
+            margin-bottom: 20px;
         }
 
         .profile-picture {
@@ -58,13 +58,14 @@
             display: flex;
             justify-content: center;
             margin: 10px 0;
+            flex-wrap: wrap;
         }
 
         .badge {
             background-color: #ccccff;
             color: #330066;
             padding: 5px 10px;
-            margin: 0 5px;
+            margin: 5px;
             border-radius: 20px;
             font-weight: bold;
             text-shadow: 1px 1px #e6e6ff;
@@ -79,9 +80,9 @@
         }
 
         .content {
-            flex: 3;
-            max-width: 600px;
+            max-width: 800px;
             margin-top: 20px;
+            text-align: left;
         }
 
         .content h2 {
@@ -98,7 +99,7 @@
 
         .links {
             display: flex;
-            justify-content: flex-start;
+            justify-content: center;
             margin-top: 20px;
             flex-wrap: wrap;
         }
@@ -107,7 +108,7 @@
             color: #6600cc;
             text-decoration: none;
             font-weight: bold;
-            margin-right: 20px;
+            margin: 10px;
             text-shadow: 1px 1px #ccccff;
             transition: text-shadow 0.3s ease;
         }
@@ -118,7 +119,7 @@
 
         .projects {
             display: flex;
-            justify-content: flex-start;
+            justify-content: center;
             flex-wrap: wrap;
             margin-top: 20px;
         }
@@ -127,8 +128,7 @@
             background-color: #e6e6ff;
             border-radius: 10px;
             padding: 10px;
-            margin-right: 20px;
-            margin-bottom: 20px;
+            margin: 10px;
             max-width: 300px;
             box-shadow: 0 0 5px rgba(153, 153, 204, 0.5);
             transition: transform 0.3s ease;
@@ -161,6 +161,7 @@
 </head>
 <body>
     <div class="container">
+        <h1>Adversary</h1>
         <div class="profile-section">
             <img src="images/portrait.jpg" alt="Portrait of the Technologist" class="profile-picture">
             <div class="badge-container">
@@ -171,7 +172,6 @@
             </div>
         </div>
         <div class="content">
-            <h1>Outsmarting the Adversary</h1>
             <h2>About Me</h2>
             <p>Specializing in the research of deceptive AI technologies, Detecting and Countering Adversarial Machine Learning...</p>
             <h2>Certifications</h2>
@@ -192,11 +192,6 @@
                     <img src="images/project2.jpg" alt="Project 2">
                     <h3>Project 2</h3>
                     <p>Description of Project 2...</p>
-                </div>
-                <div class="project">
-                    <img src="images/project3.jpg" alt="Project 3">
-                    <h3>Project 3</h3>
-                    <p>Description of Project 3...</p>
                 </div>
             </div>
         </div>
