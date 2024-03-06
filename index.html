@@ -7,7 +7,7 @@
     <title>AI Researcher Profile</title>
     <style>
         body {
-            background: radial-gradient(circle at center, #ffd9d9, #ff99cc, #cc99ff);
+            background: linear-gradient(to bottom, #e6e6ff, #ccccff);
             font-family: 'Comic Sans MS', cursive, sans-serif;
             margin: 0;
             padding: 0;
@@ -19,31 +19,39 @@
 
         .container {
             background-color: #ffffff;
-            border: 10px ridge #ff6699;
+            border: 10px ridge #9999cc;
             padding: 20px;
-            max-width: 800px;
+            max-width: 1000px;
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            box-shadow: 0 0 20px rgba(255, 102, 153, 0.5);
+            flex-direction: row;
+            align-items: flex-start;
+            text-align: left;
+            box-shadow: 0 0 20px rgba(102, 102, 153, 0.5);
         }
 
         h1 {
-            color: #ff00ff;
-            text-shadow: 2px 2px #ff66cc;
+            color: #6600cc;
+            text-shadow: 2px 2px #ccccff;
             font-size: 3rem;
             margin-bottom: 10px;
+        }
+
+        .profile-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-right: 20px;
         }
 
         .profile-picture {
             width: 200px;
             height: 200px;
-            border: 5px dashed #ff66cc;
+            border: 5px dashed #9999cc;
             border-radius: 50%;
             padding: 10px;
-            background-color: #ffe6ff;
-            box-shadow: 0 0 10px rgba(255, 102, 204, 0.5);
+            background-color: #e6e6ff;
+            box-shadow: 0 0 10px rgba(153, 153, 204, 0.5);
         }
 
         .badge-container {
@@ -53,14 +61,14 @@
         }
 
         .badge {
-            background-color: #ffccff;
-            color: #660066;
+            background-color: #ccccff;
+            color: #330066;
             padding: 5px 10px;
             margin: 0 5px;
             border-radius: 20px;
             font-weight: bold;
-            text-shadow: 1px 1px #ff99cc;
-            box-shadow: 0 0 5px rgba(255, 153, 204, 0.5);
+            text-shadow: 1px 1px #e6e6ff;
+            box-shadow: 0 0 5px rgba(204, 204, 255, 0.5);
             animation: tagAnimation 4s infinite;
         }
 
@@ -71,54 +79,58 @@
         }
 
         .content {
+            flex: 3;
             max-width: 600px;
             margin-top: 20px;
-            text-align: left;
         }
 
         .content h2 {
-            color: #cc00cc;
-            text-shadow: 1px 1px #ff99ff;
+            color: #6600cc;
+            text-shadow: 1px 1px #ccccff;
             margin-bottom: 10px;
         }
 
         .content p {
-            color: #660066;
+            color: #330066;
             line-height: 1.5;
             margin-bottom: 20px;
         }
 
         .links {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             margin-top: 20px;
+            flex-wrap: wrap;
         }
 
         .links a {
-            color: #ff3399;
+            color: #6600cc;
             text-decoration: none;
             font-weight: bold;
-            margin: 0 10px;
-            text-shadow: 1px 1px #ff99cc;
+            margin-right: 20px;
+            text-shadow: 1px 1px #ccccff;
             transition: text-shadow 0.3s ease;
         }
 
         .links a:hover {
-            text-shadow: 0 0 10px rgba(255, 51, 153, 0.5);
-             .projects {
+            text-shadow: 0 0 10px rgba(102, 0, 204, 0.5);
+        }
+
+        .projects {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             flex-wrap: wrap;
             margin-top: 20px;
         }
 
         .project {
-            background-color: #ffccff;
+            background-color: #e6e6ff;
             border-radius: 10px;
             padding: 10px;
-            margin: 10px;
+            margin-right: 20px;
+            margin-bottom: 20px;
             max-width: 300px;
-            box-shadow: 0 0 5px rgba(255, 153, 204, 0.5);
+            box-shadow: 0 0 5px rgba(153, 153, 204, 0.5);
             transition: transform 0.3s ease;
         }
 
@@ -134,14 +146,14 @@
         }
 
         .project h3 {
-            color: #660066;
-            text-shadow: 1px 1px #ff99ff;
+            color: #330066;
+            text-shadow: 1px 1px #ccccff;
             margin-top: 10px;
             margin-bottom: 5px;
         }
 
         .project p {
-            color: #660066;
+            color: #330066;
             line-height: 1.4;
             margin-bottom: 0;
         }
@@ -149,51 +161,44 @@
 </head>
 <body>
     <div class="container">
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Outsmarting the Adversary</h1>
-        <img src="images/portrait.jpg" alt="Portrait of the Technologist" class="profile-picture">
-        <div class="badge-container">
-            <span class="badge">Father</span>
-            <span class="badge">Vedantist</span>
-            <span class="badge">AI Expert</span>
-            <span class="badge">Product Manager</span>
+        <div class="profile-section">
+            <img src="images/portrait.jpg" alt="Portrait of the Technologist" class="profile-picture">
+            <div class="badge-container">
+                <span class="badge">Father</span>
+                <span class="badge">Vedantist</span>
+                <span class="badge">AI Expert</span>
+                <span class="badge">Product Manager</span>
+            </div>
         </div>
         <div class="content">
+            <h1>Outsmarting the Adversary</h1>
             <h2>About Me</h2>
             <p>Specializing in the research of deceptive AI technologies, Detecting and Countering Adversarial Machine Learning...</p>
             <h2>Certifications</h2>
             <p>Certified AI Specialist<br>Advanced Data Science Certification</p>
             <h2>Interest Areas</h2>
             <p>Deceptive AI, Ethical AI Practices, Machine Learning...</p>
-        </div>
-        <div class="links">
-            <a href="https://medium.com/@veejaykris.29/dummies-guide-to-google-gemini-pro-1-5-95c9bd322e9b" target="_blank">Dummies guide to Google Gemini</a>
-            <a href="https://medium.com/@veejaykris.29/self-attention-explained-to-a-layman-5b6729c4363b" target="_blank">Self Attention</a>
-
+            <div class="links">
+                <a href="https://medium.com/@veejaykris.29/dummies-guide-to-google-gemini-pro-1-5-95c9bd322e9b" target="_blank">Dummies guide to Google Gemini</a>
+                <a href="https://medium.com/@veejaykris.29/self-attention-explained-to-a-layman-5b6729c4363b" target="_blank">Self Attention</a>
+            </div>
             <div class="projects">
-            <div class="project">
-                <img src="images/project1.jpg" alt="Project 1">
-                <h3>Project 1</h3>
-                <p>Description of Project 1...</p>
+                <div class="project">
+                    <img src="images/project1.jpg" alt="Project 1">
+                    <h3>Project 1</h3>
+                    <p>Description of Project 1...</p>
+                </div>
+                <div class="project">
+                    <img src="images/project2.jpg" alt="Project 2">
+                    <h3>Project 2</h3>
+                    <p>Description of Project 2...</p>
+                </div>
+                <div class="project">
+                    <img src="images/project3.jpg" alt="Project 3">
+                    <h3>Project 3</h3>
+                    <p>Description of Project 3...</p>
+                </div>
             </div>
-            <div class="project">
-                <img src="images/project2.jpg" alt="Project 2">
-                <h3>Project 2</h3>
-                <p>Description of Project 2...</p>
-            </div>
-            <div class="project">
-                <img src="images/project3.jpg" alt="Project 3">
-                <h3>Project 3</h3>
-                <p>Description of Project 3...</p>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
         </div>
     </div>
 </body>
