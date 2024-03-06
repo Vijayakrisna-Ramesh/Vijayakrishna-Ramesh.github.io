@@ -5,19 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Researcher Profile</title>
-    <!-- Custom styling for early 2000s look -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
     <style>
         body {
-            background-color: #d0e4fe; /* Light blue background */
-            font-family: 'Comic Sans MS', cursive, sans-serif; /* Classic Comic Sans font */
+            background-image: linear-gradient(to right, #d0e4fe, #f0f8ff);
+            font-family: 'Comic Sans MS', cursive, sans-serif;
             margin: 0;
             padding: 0;
             text-align: center;
         }
         .container {
-            display: flex;
-            flex-wrap: wrap;
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 20px auto;
             padding: 20px;
             background: #ffffff;
@@ -25,38 +23,31 @@
             box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
         }
         h1 {
-            color: #ff00ff; /* Bright fuchsia */
-            text-shadow: 2px 2px #00ff00; /* Neon green shadow */
-            width: 100%;
-        }
-        .profile-section {
-            flex: 1;
-            min-width: 200px; /* Adjusted the min-width for smaller screens */
+            color: #ff00ff;
+            text-shadow: 2px 2px #00ff00;
         }
         .profile-picture {
-            width: 150px; /* Reduced size */
-            height: 150px; /* Reduced size */
-            border: 5px double #ff1493; /* Deep pink border */
+            width: 200px;
+            height: 200px;
+            border: 5px double #ff1493;
             border-radius: 50%;
             padding: 7px;
-            background: #ffffe0; /* Light yellow background */
+            background: #ffffe0;
         }
         .badge {
             border: 1px solid #0000ff;
-            padding: 3px; /* Reduced padding */
-            margin: 2px; /* Reduced margin */
+            padding: 5px;
+            margin: 5px;
             display: inline-block;
-            background: #b0e0e6; /* Powder blue background */
-            box-shadow: 1px 1px #ff4500; /* Orange shadow for depth */
-            font-size: 0.8em; /* Reduced font size */
+            background: #b0e0e6;
+            box-shadow: 1px 1px #ff4500;
+            font-size: 1em;
         }
         .main-content {
-            flex: 3;
-            min-width: 300px;
-            background-color: #f0f8ff; /* Alice blue for content background */
+            background-color: #f0f8ff;
             margin: 15px;
             padding: 15px;
-            border: 3px groove #ffa07a; /* Light salmon border */
+            border: 3px groove #ffa07a;
             text-align: left;
         }
         .certifications {
@@ -64,7 +55,7 @@
             margin: 8px 0;
         }
         a {
-            color: #ff4500; /* Vivid orange links */
+            color: #ff4500;
             text-decoration: none;
             font-weight: bold;
         }
@@ -72,21 +63,23 @@
             text-decoration: underline;
         }
         footer {
-            color: #191970; /* Midnight blue color */
+            color: #191970;
             padding: 10px;
-            border-top: 3px dashed #ffa500; /* Orange dashed border */
+            border-top: 3px dashed #ffa500;
             width: 100%;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Outsmarting the Adversary</h1>
+        <h1 class="text-4xl font-bold mb-8">Outsmarting the Adversary</h1>
         
         <!-- Profile picture and static tags -->
-        <div class="profile-section">
-            <img src="images/portrait.jpg" alt="Portrait of the Technologist" class="profile-picture">
-            <div>
+        <div class="flex justify-center mb-8">
+            <div class="mr-8">
+                <img src="images/portrait.jpg" alt="Portrait of the Technologist" class="profile-picture">
+            </div>
+            <div class="flex flex-wrap">
                 <span class="badge">Father</span>
                 <span class="badge">Vedantist</span>
                 <span class="badge">AI Expert</span>
@@ -96,33 +89,89 @@
         
         <!-- Main content -->
         <div class="main-content">
-            <section id="about">
-                    <h2>About Me</h2>
-                    <p>Specializing in the research of deceptive AI technologies, Detecting and Countering Adversarial Machine Learning...</p>
-                </section>
-            <section id="certifications">
-                <h2 class="text-2xl font-semibold">Certifications</h2>
+            <section id="about" class="mb-8">
+                <h2 class="text-2xl font-semibold mb-4">About Me</h2>
+                <p>Specializing in the research of deceptive AI technologies, Detecting and Countering Adversarial Machine Learning...</p>
+            </section>
+            <section id="certifications" class="mb-8">
+                <h2 class="text-2xl font-semibold mb-4">Certifications</h2>
                 <span class="certifications">Certified AI Specialist</span>
                 <span class="certifications">Advanced Data Science Certification</span>
             </section>
-            <section id="interests" class="mt-8">
-            <h2 class="text-2xl font-semibold">Interest Areas</h2>
-            <p class="mt-4">Deceptive AI, Ethical AI Practices, Machine Learning...</p>
-        </section>
-        <section id="articles" class="mt-8">
-            <h2 class="text-2xl font-semibold">Articles</h2>
-            <ul class="list-disc list-inside mt-4">
-                <li><a href="https://medium.com/@veejaykris.29/dummies-guide-to-google-gemini-pro-1-5-95c9bd322e9b">Dummies guide to Google Gemini</a></li>
-                <li><a href="https://medium.com/@veejaykris.29/self-attention-explained-to-a-layman-5b6729c4363b" class="text-blue-500 hover:underline">Self Attention</a></li>
-            </ul>
+            <section id="interests" class="mb-8">
+                <h2 class="text-2xl font-semibold mb-4">Interest Areas</h2>
+                <p>Deceptive AI, Ethical AI Practices, Machine Learning...</p>
             </section>
-               </div>
-            </div>
+            <section id="articles" class="mb-8">
+                <h2 class="text-2xl font-semibold mb-4">Articles</h2>
+                <ul class="list-disc list-inside">
+                    <li><a href="https://medium.com/@veejaykris.29/dummies-guide-to-google-gemini-pro-1-5-95c9bd322e9b" target="_blank">Dummies guide to Google Gemini</a></li>
+                    <li><a href="https://medium.com/@veejaykris.29/self-attention-explained-to-a-layman-5b6729c4363b" target="_blank">Self Attention</a></li>
+                </ul>
+            </section>
         </div>
+    </div>
 
-        <footer>
+    <footer class="bg-gray-200 py-4">
+        <div class="container">
             <p>Contact me at: <a href="mailto:veejaykris.29@gmail.com">veejaykris.29@gmail.com</a></p>
-        </footer>
+        </div>
+    </footer>
+
+    <!-- Additional pages -->
+    <div class="container">
+        <section id="projects" class="my-8">
+            <h2 class="text-2xl font-semibold mb-4">Featured Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="images/project1.jpg" alt="Project 1" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">Project 1</h3>
+                        <p class="text-gray-600">Description of Project 1...</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="images/project2.jpg" alt="Project 2" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">Project 2</h3>
+                        <p class="text-gray-600">Description of Project 2...</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="images/project3.jpg" alt="Project 3" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">Project 3</h3>
+                        <p class="text-gray-600">Description of Project 3...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="my-8">
+            <h2 class="text-2xl font-semibold mb-4">Testimonials</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <p class="text-gray-600 mb-4">"Exceptional work on our AI project! Highly recommended."</p>
+                    <div class="flex items-center">
+                        <img src="images/avatar1.jpg" alt="Avatar" class="w-10 h-10 rounded-full mr-4">
+                        <div>
+                            <h4 class="text-lg font-semibold">John Doe</h4>
+                            <p class="text-gray-600">CEO, Company X</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <p class="text-gray-600 mb-4">"Veejaykris is a true expert in the field of AI. Their insights have been invaluable."</p>
+                    <div class="flex items-center">
+                        <img src="images/avatar2.jpg" alt="Avatar" class="w-10 h-10 rounded-full mr-4">
+                        <div>
+                            <h4 class="text-lg font-semibold">Jane Smith</h4>
+                            <p class="text-gray-600">CTO, Company Y</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 </body>
 </html>
