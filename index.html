@@ -2,193 +2,272 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Researcher Profile</title>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            background: linear-gradient(to bottom, #f0f2f5, #dde1e7);
-            font-family: 'Open Sans', sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vijaya Ramesh - Product Manager in AI</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
 
-        .container {
-            background-color: #ffffff;
-            border: 1px solid #d3d3d3;
-            padding: 20px;
-            max-width: 800px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
+    /* Header Styles */
+    header {
+      background: linear-gradient(to right, #add8e6, #87ceeb);
+      color: #333;
+      padding: 3rem 2rem;
+      text-align: center;
+      animation: fadeInDown 1s ease;
+    }
 
-        h1 {
-            color: #333;
-            font-size: 2.2rem;
-            margin-bottom: 10px;
-        }
+    header h1 {
+      font-size: 3.5rem;
+      margin-bottom: 0.5rem;
+    }
 
-        .profile-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 20px;
-        }
+    header p {
+      font-size: 1.8rem;
+      margin-top: 0.5rem;
+    }
 
-        .profile-picture {
-            width: 150px;
-            height: 150px;
-            border: 3px solid #d3d3d3;
-            border-radius: 50%;
-            padding: 3px;
-            background-color: #f0f2f5;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
+    /* Profile Picture Styles */
+    .profile-picture {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background-image: url('images/portrait.jpg');
+      background-size: cover;
+      background-position: center;
+      margin-top: -75px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      animation: fadeInUp 1s ease;
+      position: sticky;
+      top: 20px;
+      z-index: 1;
+    }
 
-        .badge-container {
-            display: flex;
-            justify-content: center;
-            margin: 10px 0;
-            flex-wrap: wrap;
-        }
+    /* Main Content Styles */
+    main {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      animation: fadeInUp 1s ease;
+    }
 
-        .badge {
-            background-color: #e7e9ed;
-            color: #333;
-            padding: 5px 10px;
-            margin: 5px;
-            border-radius: 15px;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
+    section {
+      margin-bottom: 3rem;
+    }
 
-        .content {
-            max-width: 750px;
-            margin-top: 20px;
-            text-align: left;
-            color: #666;
-        }
+    section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
 
-        .content h2 {
-            color: #333;
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
+    /* Project Showcase Styles */
+    .project {
+      display: flex;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
 
-        .content p {
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
+    .project-image {
+      width: 300px;
+      height: 200px;
+      background-color: #f0f0f0;
+      margin-right: 2rem;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
 
-        .links a {
-            color: #007bff;
-            text-decoration: none;
-            font-weight: 600;
-            margin: 10px;
-            transition: opacity 0.3s ease;
-        }
+    .project-description h3 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
 
-        .links a:hover {
-            opacity: 0.7;
-        }
+    .project-description p {
+      font-size: 1.1rem;
+      color: #666;
+    }
 
-        .projects {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
+    /* Medium Articles Carousel Styles */
+    .medium-articles {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: -1rem;
+    }
 
-        .project {
-            background-color: #f0f2f5;
-            border-radius: 8px;
-            padding: 10px;
-            margin: 10px;
-            width: calc(50% - 20px);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
+    .medium-article {
+      background-color: #f0f0f0;
+      padding: 1.5rem;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      flex: 0 0 300px;
+      margin: 1rem;
+    }
 
-        .project:hover {
-            transform: scale(1.02);
-        }
+    .medium-article:hover {
+      transform: translateY(-5px);
+    }
 
-        .project img {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-            margin-bottom: 8px;
-        }
+    .medium-article h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
 
-        .project h3 {
-            color: #333;
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-        }
+    .medium-article p {
+      font-size: 1rem;
+      color: #666;
+    }
 
-        .project p {
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
+    /* Links Styles */
+    .links {
+      display: flex;
+      justify-content: center;
+      margin-top: 2rem;
+    }
 
-        @media screen and (max-width: 768px) {
-            .container {
-                margin: 10px;
-                padding: 15px;
-            }
+    .links a {
+      color: #add8e6;
+      font-size: 1.2rem;
+      margin: 0 1rem;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
 
-            .projects .project {
-                width: 100%;
-            }
-        }
-    </style>
+    .links a:hover {
+      color: #87ceeb;
+    }
+
+    .links i {
+      margin-right: 0.5rem;
+    }
+
+    /* Footer Styles */
+    footer {
+      background: linear-gradient(to right, #add8e6, #87ceeb);
+      color: #333;
+      padding: 1rem;
+      text-align: center;
+      animation: fadeInUp 1s ease;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .project {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .project-image {
+        margin-right: 0;
+        margin-bottom: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Deceptive AI Expert</h1>
-        <div class="profile-section">
-            <img src="images/portrait.jpg" alt="Portrait of the Technologist" class="profile-picture">
-            <div class="badge-container">
-                <span class="badge">Father</span>
-                <span class="badge">Vedantist</span>
-                <span class="badge">AI Expert</span>
-                <span class="badge">Product Manager</span>
-            </div>
+  <header>
+    <h1>Vijaya Ramesh</h1>
+    <p>Product Manager in AI</p>
+  </header>
+
+  <div class="profile-picture"></div>
+
+  <main>
+    <section>
+      <h2>About Me</h2>
+      <p>I am a highly experienced product manager with a strong background in artificial intelligence. I have a proven track record of delivering successful AI-powered products that have had a significant impact on the industry. My passion for innovation and problem-solving drives me to constantly explore new technologies and find creative solutions to complex challenges.</p>
+    </section>
+
+    <section>
+      <h2>Project Showcase</h2>
+      <div class="project">
+        <div class="project-image"></div>
+        <div class="project-description">
+          <h3>AI-Powered Product Launch</h3>
+          <p>Developed and launched a groundbreaking AI-powered product that revolutionized the industry, resulting in a 30% increase in revenue.</p>
         </div>
-        <div class="content">
-            <h2>About Me</h2>
-            <p>Specializing in the research of deceptive AI technologies, Detecting and Countering Adversarial Machine Learning...</p>
-            <h2>Certifications</h2>
-            <p>Certified AI Specialist<br>Advanced Data Science Certification</p>
-            <h2>Interest Areas</h2>
-            <p>Deceptive AI, Ethical AI Practices, Machine Learning...</p>
-            <div class="links">
-                <a href="#" target="_blank">Dummies guide to Google Gemini</a>
-                <a href="#" target="_blank">Self Attention Explained</a>
-            </div>
-            <div class="projects">
-                <div class="project">
-                    <img src="images/project1.jpg" alt="Project 1">
-                    <h3>Project 1</h3>
-                    <p>Description of Project 1...</p>
-                </div>
-                <div class="project">
-                    <img src="images/project2.jpg" alt="Project 2">
-                    <h3>Project 2</h3>
-                    <p>Description of Project 2...</p>
-                </div>
-            </div>
+      </div>
+      <div class="project">
+        <div class="project-image"></div>
+        <div class="project-description">
+          <h3>Machine Learning Optimization</h3>
+          <p>Implemented machine learning algorithms to automate and optimize various business processes, resulting in a 20% increase in efficiency.</p>
         </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Medium Articles</h2>
+      <div class="medium-articles">
+        <div class="medium-article">
+          <h3>Revolutionizing Product Management with AI</h3>
+          <p>Explore the latest trends and best practices in leveraging AI to enhance product management processes.</p>
+        </div>
+        <div class="medium-article">
+          <h3>Unlocking the Power of Data-Driven Decision Making</h3>
+          <p>Learn how to harness the power of data analysis and predictive modeling to drive informed business decisions.</p>
+        </div>
+        <div class="medium-article">
+          <h3>Building High-Performing AI Teams</h3>
+          <p>Discover strategies for assembling and leading cross-functional teams to deliver successful AI-powered solutions.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="links">
+      <a href="https://medium.com/@vijayaramesh" target="_blank"><i class="fab fa-medium"></i> Medium</a>
+      <a href="https://www.linkedin.com/in/vijayaramesh" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a href="https://github.com/vijayaramesh" target="_blank"><i class="fab fa-github"></i> GitHub</a>
     </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Vijaya Ramesh. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('.medium-articles').slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+        ]
+      });
+    });
+  </script>
 </body>
 </html>
