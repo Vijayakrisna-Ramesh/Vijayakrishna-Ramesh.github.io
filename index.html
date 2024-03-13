@@ -18,12 +18,12 @@
       font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f0f0f0;
+      background-color: #fffaf0;
     }
 
     /* Header Styles */
     header {
-      background: linear-gradient(to right, #add8e6, #87ceeb);
+      background: linear-gradient(to right, #ffa500, #ffd700);
       color: #333;
       padding: 3rem 2rem;
       text-align: center;
@@ -42,18 +42,21 @@
 
     /* Profile Picture Styles */
     .profile-picture {
-      width: 150px;
-      height: 150px;
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
       background-image: url('images/portrait.jpg');
       background-size: cover;
       background-position: center;
-      margin-top: -75px;
+      margin-top: -60px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       animation: fadeInUp 1s ease;
-      position: sticky;
-      top: 20px;
-      z-index: 1;
+    }
+
+    .profile-tags {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 0.5rem;
     }
 
     /* Main Content Styles */
@@ -140,7 +143,7 @@
     }
 
     .links a {
-      color: #add8e6;
+      color: #ffa500;
       font-size: 1.2rem;
       margin: 0 1rem;
       text-decoration: none;
@@ -148,7 +151,7 @@
     }
 
     .links a:hover {
-      color: #87ceeb;
+      color: #ffd700;
     }
 
     .links i {
@@ -157,7 +160,7 @@
 
     /* Footer Styles */
     footer {
-      background: linear-gradient(to right, #add8e6, #87ceeb);
+      background: linear-gradient(to right, #ffa500, #ffd700);
       color: #333;
       padding: 1rem;
       text-align: center;
@@ -188,6 +191,7 @@
   </header>
 
   <div class="profile-picture"></div>
+  <div class="profile-tags">AI Expert, Vedantist, Father, Product Manager</div>
 
   <main>
     <section>
