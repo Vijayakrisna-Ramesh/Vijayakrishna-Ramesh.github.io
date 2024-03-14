@@ -48,15 +48,16 @@
       background-image: url('images/portrait.jpg');
       background-size: cover;
       background-position: center;
-      margin-top: -60px;
+      margin: -60px auto 0;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      animation: fadeInUp 1s ease;
+      animation: bounceIn 1s ease;
     }
 
     .profile-tags {
       font-size: 0.9rem;
       color: #666;
       margin-top: 0.5rem;
+      animation: pulse 2s infinite;
     }
 
     /* Main Content Styles */
@@ -91,6 +92,7 @@
       background-color: #f0f0f0;
       margin-right: 2rem;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      animation: zoomIn 1s ease;
     }
 
     .project-description h3 {
@@ -119,6 +121,7 @@
       transition: transform 0.3s ease;
       flex: 0 0 300px;
       margin: 1rem;
+      animation: flipInX 1s ease;
     }
 
     .medium-article:hover {
@@ -148,6 +151,7 @@
       margin: 0 1rem;
       text-decoration: none;
       transition: color 0.3s ease;
+      animation: bounceIn 1s ease;
     }
 
     .links a:hover {
