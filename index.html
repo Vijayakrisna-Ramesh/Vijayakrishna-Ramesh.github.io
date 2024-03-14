@@ -7,8 +7,6 @@
   <title>Vijaya Ramesh - Product Manager in AI</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -33,6 +31,15 @@
     header h1 {
       font-size: 2.5rem;
       margin-bottom: 0.5rem;
+      background-image: url('https://picsum.photos/id/1/120/120');
+      background-size: cover;
+      background-position: center;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      display: inline-block;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      animation: bounceIn 1s ease;
     }
 
     header p {
@@ -40,17 +47,33 @@
       margin-top: 0.5rem;
     }
 
-    /* Profile Picture Styles */
-    .profile-picture {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      background-image: url('https://picsum.photos/id/1/120/120');
-      background-size: cover;
-      background-position: center;
-      margin: -60px auto 0;
+    /* Main Content Styles */
+    main {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 2rem;
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: #fff;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      animation: bounceIn 1s ease;
+      animation: fadeInUp 1s ease;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Profile Styles */
+    .profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .profile-tags {
@@ -96,28 +119,10 @@
       }
     }
 
-    /* Main Content Styles */
-    main {
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background-color: #fff;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      animation: fadeInUp 1s ease;
-    }
-
-    section {
-      margin-bottom: 3rem;
-    }
-
-    section h2 {
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
-    }
-
     /* Project Showcase Styles */
     .project {
       display: flex;
+      flex-direction: column;
       align-items: center;
       margin-bottom: 2rem;
     }
@@ -128,7 +133,6 @@
       background-image: url('https://picsum.photos/id/2/300/200');
       background-size: cover;
       background-position: center;
-      margin-right: 2rem;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       animation: zoomIn 1s ease;
     }
@@ -143,12 +147,11 @@
       color: #666;
     }
 
-    /* Medium Articles Carousel Styles */
+    /* Medium Articles Styles */
     .medium-articles {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin: -1rem;
+      flex-direction: column;
+      align-items: center;
     }
 
     .medium-article {
@@ -157,8 +160,8 @@
       border-radius: 5px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease;
-      flex: 0 0 300px;
-      margin: 1rem;
+      width: 80%;
+      margin-bottom: 2rem;
       animation: flipInX 1s ease;
     }
 
@@ -214,28 +217,26 @@
     }
 
     @media (max-width: 768px) {
-      .project {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .project-image {
-        margin-right: 0;
-        margin-bottom: 1rem;
+      main {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Vijaya Ramesh</h1>
-    <p>Product Manager in AI</p>
+    <h1></h1>
+    <p>Vijaya Ramesh - Product Manager in AI</p>
   </header>
 
-  <div class="profile-picture"></div>
-  <div class="profile-tags"></div>
-
   <main>
+    <div class="profile">
+      <div class="profile-picture">
+        <img src="https://picsum.photos/id/1/120/120" alt="Profile Picture">
+      </div>
+      <div class="profile-tags"></div>
+    </div>
+
     <section>
       <h2>About Me</h2>
       <p>I am a highly experienced product manager with a strong background in artificial intelligence. I have a proven track record of delivering successful AI-powered products that have had a significant impact on the industry. My passion for innovation and problem-solving drives me to constantly explore new technologies and find creative solutions to complex challenges.</p>
@@ -289,31 +290,8 @@
   </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
   <script>
     $(document).ready(function() {
-      $('.medium-articles').slick({
-        infinite: true,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        responsive: [
-          {
-            breakpoint: 768,
-            settings: {
-              slidesToShow: 2,
-              slidesToScroll: 1
-            }
-          },
-          {
-            breakpoint: 480,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1
-            }
-          }
-        ]
-      });
-
       var tags = ["AI Expert", "Vedantist", "Father", "Product Manager"];
       var tagIndex = 0;
       var $profileTags = $(".profile-tags");
