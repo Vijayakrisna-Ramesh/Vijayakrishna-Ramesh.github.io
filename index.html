@@ -24,8 +24,27 @@
       background: linear-gradient(to right, #ffa500, #ffd700);
       color: #333;
       padding: 2rem 2rem;
-      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       animation: fadeInDown 1s ease;
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+    }
+
+    .header-content .profile-picture {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-image: url('images/portrait.jpg');
+      background-size: cover;
+      background-position: center;
+      margin-right: 1.5rem;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      animation: bounceIn 1s ease;
     }
 
     header h1 {
@@ -58,76 +77,16 @@
       margin-bottom: 1rem;
     }
 
-    /* Profile Styles */
-    .profile {
-      display: flex;
-      align-items: center;
-      margin-bottom: 2rem;
-    }
-
-    .profile-picture {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      background-image: url('images/portrait.jpg');
-      background-size: cover;
-      background-position: center;
-      margin-right: 1.5rem;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      animation: bounceIn 1s ease;
-    }
-
-    .profile-info {
-      flex-grow: 1;
-    }
-
-    .profile-tags {
-      font-size: 1rem;
-      font-weight: bold;
+    /* About Me Styles */
+    .about-me p {
+      font-size: 1.1rem;
       color: #666;
-      margin-top: 0.5rem;
-      animation: tagAnimation 4s infinite;
-    }
-
-    @keyframes tagAnimation {
-      0% {
-        content: "AI Expert";
-        opacity: 0;
-      }
-      25% {
-        content: "AI Expert";
-        opacity: 1;
-      }
-      30% {
-        content: "Vedantist";
-        opacity: 0;
-      }
-      55% {
-        content: "Vedantist";
-        opacity: 1;
-      }
-      60% {
-        content: "Father";
-        opacity: 0;
-      }
-      85% {
-        content: "Father";
-        opacity: 1;
-      }
-      90% {
-        content: "Product Manager";
-        opacity: 0;
-      }
-      100% {
-        content: "Product Manager";
-        opacity: 1;
-      }
     }
 
     /* Skills Styles */
     .skills {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       grid-gap: 1.5rem;
     }
 
@@ -268,6 +227,16 @@
         padding: 1.5rem 1rem;
       }
 
+      .header-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .header-content .profile-picture {
+        margin-right: 0;
+        margin-bottom: 1rem;
+      }
+
       header h1 {
         font-size: 2rem;
       }
@@ -280,18 +249,8 @@
         padding: 1.5rem;
       }
 
-      .profile {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .profile-picture {
-        margin-right: 0;
-        margin-bottom: 1rem;
-      }
-
       .skills {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
       }
 
       .projects {
@@ -306,18 +265,19 @@
 </head>
 <body>
   <header>
-    <h1>Vijaya Ramesh</h1>
-    <p>Product Manager in AI</p>
+    <div class="header-content">
+      <div class="profile-picture"></div>
+      <div>
+        <h1>Vijaya Ramesh</h1>
+        <p>Product Manager in AI</p>
+      </div>
+    </div>
   </header>
 
   <main>
-    <section class="profile">
-      <div class="profile-picture"></div>
-      <div class="profile-info">
-        <h2>About Me</h2>
-        <p>I am a highly experienced product manager with a strong background in artificial intelligence. I have a proven track record of delivering successful AI-powered products that have had a significant impact on the industry. My passion for innovation and problem-solving drives me to constantly explore new technologies and find creative solutions to complex challenges.</p>
-        <div class="profile-tags"></div>
-      </div>
+    <section class="about-me">
+      <h2>About Me</h2>
+      <p>I am a highly experienced product manager with a strong background in artificial intelligence. I have a proven track record of delivering successful AI-powered products that have had a significant impact on the industry. My passion for innovation and problem-solving drives me to constantly explore new technologies and find creative solutions to complex challenges.</p>
     </section>
 
     <section>
@@ -363,16 +323,36 @@
             <i class="fas fa-star"></i>
           </div>
         </div>
+        <div class="skill">
+          <div class="skill-name">Digital Marketing</div>
+          <div class="skill-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+        </div>
+        <div class="skill">
+          <div class="skill-name">User Experience Design</div>
+          <div class="skill-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section>
+        <section>
       <h2>Project Showcase</h2>
       <div class="projects">
         <div class="project">
           <div class="project-image"></div>
           <h3>AI-Powered Product Launch</h3>
-          <pDeveloped and launched a groundbreaking AI-powered product that revolutionized the industry, resulting in a 30% increase in revenue.</p>
+          <p>Developed and launched a groundbreaking AI-powered product that revolutionized the industry, resulting in a 30% increase in revenue.</p>
         </div>
         <div class="project">
           <div class="project-image"></div>
@@ -412,4 +392,3 @@
   </footer>
 </body>
 </html>
-            
