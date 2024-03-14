@@ -45,7 +45,7 @@
       width: 120px;
       height: 120px;
       border-radius: 50%;
-      background-image: url('images/portrait.jpg');
+      background-image: url('https://picsum.photos/id/1/120/120');
       background-size: cover;
       background-position: center;
       margin: -60px auto 0;
@@ -54,21 +54,45 @@
     }
 
     .profile-tags {
-      font-size: 0.9rem;
+      font-size: 1.2rem;
+      font-weight: bold;
       color: #666;
       margin-top: 0.5rem;
-      animation: tagAnimation 2s infinite;
+      animation: tagAnimation 4s infinite;
     }
 
     @keyframes tagAnimation {
       0% {
+        content: "AI Expert";
         opacity: 0;
       }
-      50% {
+      25% {
+        content: "AI Expert";
         opacity: 1;
       }
-      100% {
+      30% {
+        content: "Vedantist";
         opacity: 0;
+      }
+      55% {
+        content: "Vedantist";
+        opacity: 1;
+      }
+      60% {
+        content: "Father";
+        opacity: 0;
+      }
+      85% {
+        content: "Father";
+        opacity: 1;
+      }
+      90% {
+        content: "Product Manager";
+        opacity: 0;
+      }
+      100% {
+        content: "Product Manager";
+        opacity: 1;
       }
     }
 
@@ -101,7 +125,7 @@
     .project-image {
       width: 300px;
       height: 200px;
-      background-image: url('images/ai-project.jpg');
+      background-image: url('https://picsum.photos/id/2/300/200');
       background-size: cover;
       background-position: center;
       margin-right: 2rem;
@@ -209,7 +233,7 @@
   </header>
 
   <div class="profile-picture"></div>
-  <div class="profile-tags">AI Expert, Vedantist, Father, Product Manager</div>
+  <div class="profile-tags"></div>
 
   <main>
     <section>
@@ -289,6 +313,17 @@
           }
         ]
       });
+
+      var tags = ["AI Expert", "Vedantist", "Father", "Product Manager"];
+      var tagIndex = 0;
+      var $profileTags = $(".profile-tags");
+
+      function animateTags() {
+        $profileTags.text(tags[tagIndex]);
+        tagIndex = (tagIndex + 1) % tags.length;
+      }
+
+      setInterval(animateTags, 4000);
     });
   </script>
 </body>
