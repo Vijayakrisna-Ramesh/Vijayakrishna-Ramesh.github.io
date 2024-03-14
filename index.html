@@ -70,12 +70,6 @@
     }
 
     /* Profile Styles */
-    .profile {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
     .profile-tags {
       font-size: 1.2rem;
       font-weight: bold;
@@ -117,6 +111,41 @@
         content: "Product Manager";
         opacity: 1;
       }
+    }
+
+    /* About Me Styles */
+    .about-me {
+      padding-right: 2rem;
+    }
+
+    /* Skills Styles */
+    .skills {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .skill {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+      width: 80%;
+    }
+
+    .skill-name {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-right: 1rem;
+    }
+
+    .skill-rating {
+      display: flex;
+    }
+
+    .skill-rating i {
+      color: #ffa500;
+      font-size: 1.2rem;
+      margin-right: 0.2rem;
     }
 
     /* Project Showcase Styles */
@@ -220,6 +249,10 @@
       main {
         grid-template-columns: 1fr;
       }
+
+      .about-me {
+        padding-right: 0;
+      }
     }
   </style>
 </head>
@@ -231,15 +264,56 @@
 
   <main>
     <div class="profile">
-      <div class="profile-picture">
-        <img src="images/portrait.jpg" alt="Profile Picture">
-      </div>
       <div class="profile-tags"></div>
     </div>
 
-    <section>
+    <section class="about-me">
       <h2>About Me</h2>
       <p>I am a highly experienced product manager with a strong background in artificial intelligence. I have a proven track record of delivering successful AI-powered products that have had a significant impact on the industry. My passion for innovation and problem-solving drives me to constantly explore new technologies and find creative solutions to complex challenges.</p>
+    </section>
+
+    <section class="skills">
+      <h2>Skills</h2>
+      <div class="skill">
+        <div class="skill-name">Product Management</div>
+        <div class="skill-rating">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">Artificial Intelligence</div>
+        <div class="skill-rating">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="far fa-star"></i>
+        </div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">Data Analysis</div>
+        <div class="skill-rating">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="far fa-star"></i>
+        </div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">Project Management</div>
+        <div class="skill-rating">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+      </div>
     </section>
 
     <section>
@@ -276,33 +350,4 @@
           <p>Discover strategies for assembling and leading cross-functional teams to deliver successful AI-powered solutions.</p>
         </div>
       </div>
-    </section>
-
-    <div class="links">
-      <a href="https://medium.com/@vijayaramesh" target="_blank"><i class="fab fa-medium"></i> Medium</a>
-      <a href="https://www.linkedin.com/in/vijayaramesh" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-      <a href="https://github.com/vijayaramesh" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-    </div>
-  </main>
-
-  <footer>
-    <p>&copy; 2023 Vijaya Ramesh. All rights reserved.</p>
-  </footer>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script>
-    $(document).ready(function() {
-      var tags = ["AI Expert", "Vedantist", "Father", "Product Manager"];
-      var tagIndex = 0;
-      var $profileTags = $(".profile-tags");
-
-      function animateTags() {
-        $profileTags.text(tags[tagIndex]);
-        tagIndex = (tagIndex + 1) % tags.length;
-      }
-
-      setInterval(animateTags, 4000);
-    });
-  </script>
-</body>
-</html>
+    
