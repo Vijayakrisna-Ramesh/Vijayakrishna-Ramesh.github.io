@@ -5,189 +5,92 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vijaya Ramesh - Product Manager in AI</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    body, html {
-      font-family: 'Poppins', sans-serif;
+    body {
+      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f5f5f5;
-      color: #333;
-      scroll-behavior: smooth;
-    }
-    nav {
-      position: fixed;
-      width: 100%;
-      z-index: 1000;
-      background: #fff;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      padding: 1rem 0;
-    }
-    .nav-links {
-      list-style: none;
-      padding: 0;
-      margin: 0;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: #666;
+      background-color: #fffbf0;
     }
-    .nav-links li {
-      margin: 0 15px;
+
+    .profile, .courses, .portfolio, .links {
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
     }
-    .nav-links a {
-      text-decoration: none;
-      color: #333;
-      font-weight: 600;
+
+    .profile img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-image: url('images/portrait.jpg');
+      background-size: cover;
     }
-    header, section {
-      padding: 4rem 0;
+
+    .profile p {
+      margin: 5px 0;
       text-align: center;
     }
-    .header-content {
-      animation: fadeInDown 1s ease;
-    }
-    .profile-picture {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      background-size: cover;
-      background-position: center;
-      margin: 0 auto 2rem;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      animation: bounceIn 1s ease;
-    }
-    section h2 {
-      font-size: 2.2rem;
-      margin-bottom: 1.5rem;
-      color: #333;
-    }
-    .skills, .projects, .articles {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      justify-content: center;
-      padding: 0 2rem;
-    }
-    .skill, .project, .article {
-      background-color: #f0f8ff;
-      padding: 1rem;
-      border-radius: 10px;
-      transition: transform 0.3s ease;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-    .project-image, .article-image {
+
+    .courses img, .portfolio img, .links img {
       width: 100%;
-      height: 180px;
-      background-size: cover;
-      background-position: center;
-      border-radius: 5px;
-      margin-bottom: 1rem;
+      height: auto;
     }
-    .contact-links {
+
+    .courses ul, .portfolio ul, .links ul {
       list-style: none;
       padding: 0;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
     }
-    .contact-link a {
-      color: #007bff;
-      font-size: 2rem;
-    }
-    footer {
-      background-color: #333;
-      color: #fff;
+
+    .courses li, .portfolio li, .links li {
+      margin: 10px 0;
       text-align: center;
-      padding: 2rem 0;
-    }
-    footer p {
-      font-size: 1rem;
     }
   </style>
 </head>
 <body>
-  <nav>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#articles">Articles</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-  <header id="about">
-    <div class="header-content">
-      <div class="profile-picture" style="background-image: url('images/portrait.jpg');"></div>
-      <h1>Vijaya Ramesh</h1>
-      <p>Product Manager in AI</p>
-    </div>
-  </header>
-  <main>
-    <section id="skills">
-      <h2>My Skills</h2>
-      <div class="skills">
-        <div class="skill">
-          <i class="fas fa-robot skill-icon"></i>
-          <p>Machine Learning</p>
-        </div>
-        <div class="skill">
-          <i class="fas fa-chart-line skill-icon"></i>
-          <p>Data Analysis</p>
-        </div>
-        <div class="skill">
-          <i class="fas fa-project-diagram skill-icon"></i>
-          <p>Project Management</p>
-        </div>
-        <div class="skill">
-          <i class="fas fa-laptop-code skill-icon"></i>
-          <p>Product Development</p>
-        </div>
-      </div>
-    </section>
-    <section id="projects">
+  <div class="profile">
+      <img src="images/portrait.jpg" alt="Profile Picture">
+      <p>👩‍💻 Hey! My name is Vijaya Ramesh, passionate about web development as a product manager, with a keen interest in JavaScript. Believing in making the internet a better place. Living in the heart of AI innovation.</p>
+  </div>
+  <div class="courses">
+      <h2>Courses Completed</h2>
+      <ul>
+          <li>💻 Generative AI with Large Langauge Models (Coursera)</li>
+          <li>💻 NLP with Classification and Vector Spaces (Coursera)</li>
+          <li>💻 API Designer (API Academy)</li>
+          <li>💻 Build Generative Adversarial Networks (Coursera)</li>
+          <li>💻 Introduction to ML in Produciton (Coursera)</li>
+      </ul>
+  </div>
+  <div class="portfolio">
       <h2>Portfolio Projects</h2>
-      <div class="projects">
-        <div class="project">
-          <div class="project-image" style="background-image: url('https://picsum.photos/seed/picsum/200/300');"></div>
-          <h3>AI-Powered Product Launch</h3>
-          <p>Developed an AI-powered product that increased revenue by 30%.</p>
-        </div>
-        <div class="project">
-          <div class="project-image" style="background-image: url('https://picsum.photos/seed/picsum/201/301');"></div>
-          <h3>Machine Learning Optimization</h3>
-          <p>Optimized business processes using machine learning, boosting efficiency by 20%.</p>
-        </div>
-      </div>
-    </section>
-    <section id="articles">
-      <h2>Articles and Publications</h2>
-      <div class="articles">
-        <div class="article">
-          <div class="article-image" style="background-image: url('https://picsum.photos/seed/picsum/202/302');"></div>
-          <h3>Revolutionizing Product Management with AI</h3>
-          <p>A look into how AI is changing the landscape of product management.</p>
-        </div>
-        <div class="article">
-          <div class="article-image" style="background-image: url('https://picsum.photos/seed/picsum/203/303');"></div>
-          <h3>Unlocking the Power of Data-Driven Decision Making</h3>
-          <p>Exploring the benefits of data analysis in strategic decision making.</p>
-        </div>
-      </div>
-    </section>
-    <section id="contact">
-      <h2>Contact Me</h2>
-      <div class="contact-links">
-        <a href="https://www.linkedin.com/in/vijayaramesh" class="contact-link"><i class="fab fa-linkedin"></i></a>
-        <a href="mailto:vijaya@example.com" class="contact-link"><i class="fas fa-envelope"></i></a>
-      </div>
-    </section>
-  </main>
-  <footer>
-    <p>&copy; 2024 Vijaya Ramesh. All rights reserved.</p>
-  </footer>
+      <ul>
+          <li>💻 Automating EDD using RNN based ML </li>
+          <li>💻 Performance Optimization of a web application using graphQL (Russian localization)</li>
+          <li>💻 Product Manager Portfolio List - Node.js web app</li>
+          <li>💻 CTA basics, how to Praesent &amp; Partners</li>
+          <li>💻 Basic JS programming - RGB game clone</li>
+          <li>💻 Frontend todo list</li>
+          <li>💻 Landing page sample - CSS, HTML</li>
+      </ul>
+  </div>
+  <div class="links">
+      <h2>Links & Education</h2>
+      <ul>
+          <li>📖 Education: Indian Insititue of technology, Masters of Business Administration</li>
+          <li>📖 Education: Bachelors of Engineering</li>
+          <li>📖 Multi-lingual</li>
+          <li>📖 Tech blogger</li>
+      </ul>
+  </div>
 </body>
 </html>
