@@ -6,44 +6,79 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vijaya Ramesh - Product Manager in AI</title>
   <style>
-    /* Your existing CSS code */
+    .profile {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .profile img {
+      width: 7em;
+      height: auto;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .tags {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 2rem;
+    }
+
+    .articles li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .articles li::before {
+      content: "📄";
+      margin-right: 0.5rem;
+    }
   </style>
 </head>
 <body>
   <div class="profile">
-      <img src="images/portrait.jpg" alt="Profile Picture">
-      <p>👩‍💻 Hey! My name is Vijaya Ramesh, passionate about web development as a product manager, with a keen interest in JavaScript. Believing in making the internet a better place. Living in the heart of AI innovation.</p>
+    <img src="images/portrait.jpg" alt="Profile Picture">
+  </div>
+  <div class="tags">
+    <p>ML expert, Product Manager, Vedantist, Father</p>
+  </div>
+  <div class="profile">
+    <p>👩‍💻 Hey! My name is Vijaya Ramesh, passionate about web development as a product manager, with a keen interest in JavaScript. Believing in making the internet a better place. Living in the heart of AI innovation.</p>
   </div>
   <div class="courses">
-      <h2>Courses Completed</h2>
-      <ul>
-          <li>💻 Generative AI with Large Language Models (Coursera)</li>
-          <li>💻 NLP with Classification and Vector Spaces (Coursera)</li>
-          <li>💻 API Designer (API Academy)</li>
-          <li>💻 Build Generative Adversarial Networks (Coursera)</li>
-          <li>💻 Introduction to ML in Production (Coursera)</li>
-      </ul>
+    <h2>Courses Completed</h2>
+    <ul>
+      <li>💻 Generative AI with Large Language Models (Coursera)</li>
+      <li>💻 NLP with Classification and Vector Spaces (Coursera)</li>
+      <li>💻 API Designer (API Academy)</li>
+      <li>💻 Build Generative Adversarial Networks (Coursera)</li>
+      <li>💻 Introduction to ML in Production (Coursera)</li>
+    </ul>
   </div>
   <div class="portfolio">
-      <h2>Portfolio Projects</h2>
-      <ul>
-          <li>💻 Automating EDD using RNN based ML</li>
-          <li>💻 Performance Optimization of a web application using GraphQL</li>
-          <li>💻 Product Manager Portfolio List - Node.js web app</li>
-          <li>💻 CTA basics, how to Praesent & Partners</li>
-          <li>💻 Basic JS programming - RGB game clone</li>
-          <li>💻 Frontend todo list</li>
-          <li>💻 Landing page sample - CSS, HTML</li>
-      </ul>
+    <h2>Portfolio Projects</h2>
+    <ul>
+      <li>💻 Automating EDD using RNN based ML</li>
+      <li>💻 Performance Optimization of a web application using GraphQL</li>
+      <li>💻 Product Manager Portfolio List - Node.js web app</li>
+      <li>💻 CTA basics, how to Praesent & Partners</li>
+      <li>💻 Basic JS programming - RGB game clone</li>
+      <li>💻 Frontend todo list</li>
+      <li>💻 Landing page sample - CSS, HTML</li>
+    </ul>
   </div>
   <div class="links">
-      <h2>Links & Education</h2>
-      <ul>
-          <li>📖 Education: Indian Institute of Technology, Masters of Business Administration</li>
-          <li>📖 Education: Bachelors of Engineering</li>
-          <li>📖 Multi-lingual</li>
-          <li>📖 Tech blogger</li>
-      </ul>
+    <h2>Links & Education</h2>
+    <ul>
+      <li>📖 Education: Indian Institute of Technology, Masters of Business Administration</li>
+      <li>📖 Education: Bachelors of Engineering</li>
+      <li>📖 Multi-lingual</li>
+      <li>📖 Tech blogger</li>
+    </ul>
   </div>
   <div class="articles">
     <h2>ML Related Articles</h2>
