@@ -9,51 +9,59 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Arial:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     /* Global Styles */
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f5f0e1;
-      color: #333;
+      background-color: #f5f5f5;
     }
 
     .container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 20px;
+      padding: 2rem;
     }
 
     /* Header Styles */
     header {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
+      padding: 2rem 0;
       background-color: #fff;
-      padding: 2rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      animation: fadeInDown 1s ease;
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+    }
+
+    .profile-picture {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-image: url('images/portrait.jpg');
+      background-size: cover;
+      background-position: center;
+      margin-right: 1.5rem;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      animation: bounceIn 1s ease;
     }
 
     header h1 {
-      margin: 0;
-      font-size: 2em;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
     }
 
     header p {
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       font-weight: bold;
       margin-top: 0.5rem;
-    }
-
-    .menu {
-      display: none;
-    }
-
-    .menu a {
-      margin-left: 10px;
-      color: #333;
-      text-decoration: none;
     }
 
     /* Main Content Styles */
@@ -63,13 +71,14 @@
       margin: 2rem auto;
       padding: 2rem;
       background-color: #fff;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       border-radius: 10px;
+      animation: fadeInUp 1s ease;
     }
 
     .left-content {
       flex: 1;
-      background-color: #f5f0e1;
+      background-color: #f0f8ff;
       padding: 2rem;
       border-radius: 10px;
       margin-right: 2rem;
@@ -84,12 +93,13 @@
     }
 
     section h2 {
-      font-size: 2em;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
     }
 
     /* About Me Styles */
     .about-me p {
-      font-size: 1em;
+      font-size: 1.1rem;
       color: #666;
     }
 
@@ -104,14 +114,22 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      background-color: #f5f0e1;
+      background-color: #f0f8ff;
       padding: 1rem;
       border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .skill-icon {
+      width: 40px;
+      height: 40px;
+      background-size: cover;
+      background-position: center;
+      margin-bottom: 0.5rem;
     }
 
     .skill-name {
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: bold;
       text-align: center;
     }
@@ -124,19 +142,30 @@
     }
 
     .project {
-      background-color: #f5f0e1;
+      background-color: #f0f8ff;
       padding: 1.2rem;
       border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease;
+      animation: flipInX 1s ease;
     }
 
     .project:hover {
       transform: translateY(-5px);
     }
 
+    .project-image {
+      width: 100%;
+      height: 200px;
+      background-image: url('https://picsum.photos/id/2/600/400');
+      background-size: cover;
+      background-position: center;
+      border-radius: 5px;
+      margin-bottom: 1rem;
+    }
+
     .project h3 {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       margin-bottom: 0.5rem;
     }
 
@@ -153,11 +182,12 @@
     }
 
     .medium-article {
-      background-color: #f5f0e1;
+      background-color: #f0f8ff;
       padding: 1.2rem;
       border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease;
+      animation: flipInX 1s ease;
     }
 
     .medium-article:hover {
@@ -165,7 +195,7 @@
     }
 
     .medium-article h3 {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       margin-bottom: 0.5rem;
     }
 
@@ -175,33 +205,86 @@
     }
 
     /* Links Styles */
+    .links {
+      display: flex;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+
     .links a {
-      color: #333;
+      color: #7be7c4;
+      font-size: 1.1rem;
+      margin: 0 0.8rem;
       text-decoration: none;
       transition: color 0.3s ease;
+      animation: bounceIn 1s ease;
     }
 
     .links a:hover {
-      color: #666;
+      color: #5ed3b9;
+    }
+
+    .links i {
+      margin-right: 0.4rem;
     }
 
     /* Footer Styles */
     footer {
-      background-color: #fff;
+      background-color: #f0f8ff;
       color: #333;
       padding: 1rem;
       text-align: center;
+      animation: fadeInUp 1s ease;
     }
 
     footer p {
       margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        padding: 1.5rem 1rem;
+      }
+
+      .header-content {
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom: 1rem;
+      }
+
+      .profile-picture {
+        margin-right: 1rem;
+      }
+
+      main {
+        flex-direction: column;
+        padding: 1.5rem;
+      }
+
+      .left-content {
+        margin-right: 0;
+        margin-bottom: 2rem;
+      }
+
+      .skills {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      .medium-articles {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
   <header>
     <div class="header-content">
-      <img src="images/portrait.jpg" alt="Profile Picture" class="profile-picture">
+      <div class="profile-picture"></div>
       <div>
         <h1>Vijaya Ramesh</h1>
         <p>Product Manager in AI</p>
@@ -220,35 +303,35 @@
         <h2>My Skills</h2>
         <div class="skills">
           <div class="skill">
-            <div class="skill-icon" style="background-image: url('https://picsum.photos/id/1005/50/50');"></div>
+            <div class="skill-icon" style="background-image: url('https://picsum.photos/id/1005/40/40');"></div>
             <div class="skill-name">Product Strategy</div>
           </div>
           <div class="skill">
-            <div class="skill-icon" style="background-image: url('https://picsum.photos/id/1015/50/50');"></div>
+            <div class="skill-icon" style="background-image: url('https://picsum.photos/id/1015/40/40');"></div>
             <div class="skill-name">Product Design</div>
           </div>
           <div class="skill">
-            <div class="skill-icon" style="background-image: url('https://picsum.photos/id/1025/50/50');"></div>
+            <div class="skill-icon" style="background-image: url('https://picsum.photos/id/1025/40/40');"></div>
             <div class="skill-name">Market & User Research</div>
           </div>
           <div class="skill">
-            <div class="skill-icon" style="background-image: url('https://picsum.photos/id/1035/50/50');"></div>
+            <div class="skill-icon" style="background-image: url('https://picsum.photos/id/1035/40/40');"></div>
             <div class="skill-name">Analytics & Programming</div>
           </div>
           <div class="skill">
-            <div class="skill-icon" style="background-image: url('https://picsum.photos/id/1045/50/50');"></div>
+            <div class="skill-icon" style="background-image: url('https://picsum.photos/id/1045/40/40');"></div>
             <div class="skill-name">Architecture</div>
           </div>
           <div class="skill">
-            <div class="skill-icon" style="background-image: url('https://picsum.photos/id/1055/50/50');"></div>
+            <div class="skill-icon" style="background-image: url('https://picsum.photos/id/1055/40/40');"></div>
             <div class="skill-name">Agile Methodologies</div>
           </div>
           <div class="skill">
-            <div class="skill-icon" style="background-image: url('https://picsum.photos/id/1065/50/50');"></div>
+            <div class="skill-icon" style="background-image: url('https://picsum.photos/id/1065/40/40');"></div>
             <div class="skill-name">Stakeholder Management</div>
           </div>
           <div class="skill">
-            <div class="skill-icon" style="background-image: url('https://picsum.photos/id/1075/50/50');"></div>
+            <div class="skill-icon" style="background-image: url('https://picsum.photos/id/1075/40/40');"></div>
             <div class="skill-name">Product Roadmapping</div>
           </div>
         </div>
@@ -262,44 +345,79 @@
           <div class="project">
             <div class="project-image"></div>
             <h3>AI-Powered Product Launch</h3>
-            <p>Developed and launched a groundbreaking AI-powered product that revolutionized the industry, resulting in a 30% increase in revenue.</p>
-          </div>
-          <div class="project">
-            <div class="project-image"></div>
-            <h3>Machine Learning Optimization</h3>
-            <p>Implemented machine learning algorithms to automate and optimize various business processes, resulting in a 20% increase in efficiency.</p>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <h2>Medium Articles</h2>
-        <div class="medium-articles">
-          <div class="medium-article">
-            <h3>Revolutionizing Product Management with AI</h3>
-            <p>Explore the latest trends and best practices in leveraging AI to enhance product management processes.</p>
-          </div>
-          <div class="medium-article">
-            <h3>Unlocking the Power of Data-Driven Decision Making</h3>
-            <p>Learn how to harness the power of data analysis and predictive modeling to drive informed business decisions.</p>
-          </div>
-          <div class="medium-article">
-            <h3>Building High-Performing AI Teams</h3>
-            <p>Discover strategies for assembling and leading cross-functional teams to deliver successful AI-powered solutions.</p>
-          </div>
-        </div>
-      </section>
-
-      <div class="links">
-        <a href="https://medium.com/@vijayaramesh" target="_blank"><i class="fab fa-medium"></i> Medium</a>
-        <a href="https://www.linkedin.com/in/vijayaramesh" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-        <a href="https://github.com/vijayaramesh" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-      </div>
+            <div class="project">
+  <div class="project-image"></div>
+  <h3>AI-Powered Product Launch</h3>
+  <p>Developed and launched a groundbreaking AI-powered product that revolutionized the industry, resulting in a 30% increase in revenue.</p>
+  <div class="project-details">
+    <div class="project-detail">
+      <i class="fas fa-chart-line"></i>
+      <span>30% Increase in Revenue</span>
     </div>
-  </main>
+    <div class="project-detail">
+      <i class="fas fa-rocket"></i>
+      <span>Revolutionized the Industry</span>
+    </div>
+  </div>
+</div>
+<div class="project">
+  <div class="project-image"></div>
+  <h3>Machine Learning Optimization</h3>
+  <p>Implemented machine learning algorithms to automate and optimize various business processes, resulting in a 20% increase in efficiency.</p>
+  <div class="project-details">
+    <div class="project-detail">
+      <i class="fas fa-cog"></i>
+      <span>20% Increase in Efficiency</span>
+    </div>
+    <div class="project-detail">
+      <i class="fas fa-chart-bar"></i>
+      <span>Automated Business Processes</span>
+    </div>
+  </div>
+</div>
+</section>
 
-  <footer>
-    <p>&copy; 2023 Vijaya Ramesh. All rights reserved.</p>
-  </footer>
+<section>
+<h2>Medium Articles</h2>
+<div class="medium-articles">
+  <div class="medium-article">
+    <div class="medium-article-image" style="background-image: url('https://picsum.photos/id/3/300/200');"></div>
+    <h3>Revolutionizing Product Management with AI</h3>
+    <p>Explore the latest trends and best practices in leveraging AI to enhance product management processes.</p>
+    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+  </div>
+  <div class="medium-article">
+    <div class="medium-article-image" style="background-image: url('https://picsum.photos/id/4/300/200');"></div>
+    <h3>Unlocking the Power of Data-Driven Decision Making</h3>
+    <p>Learn how to harness the power of data analysis and predictive modeling to drive informed business decisions.</p>
+    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+  </div>
+  <div class="medium-article">
+    <div class="medium-article-image" style="background-image: url('https://picsum.photos/id/5/300/200');"></div>
+    <h3>Building High-Performing AI Teams</h3>
+    <p>Discover strategies for assembling and leading cross-functional teams to deliver successful AI-powered solutions.</p>
+    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+  </div>
+</div>
+</section>
+
+<div class="links">
+<a href="https://medium.com/@vijayaramesh" target="_blank"><i class="fab fa-medium"></i> Medium</a>
+<a href="https://www.linkedin.com/in/vijayaramesh" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+<a href="https://github.com/vijayaramesh" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+</div>
+</div>
+</main>
+
+<footer>
+<div class="container">
+  <p>&copy; 2023 Vijaya Ramesh. All rights reserved.</p>
+  <div class="footer-links">
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms of Service</a>
+    <a href="#">Contact</a>
+  </div>
+</div>
+</footer>
 </body>
 </html>
