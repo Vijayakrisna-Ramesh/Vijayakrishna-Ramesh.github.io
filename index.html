@@ -15,69 +15,67 @@
       align-items: center;
       justify-content: center;
       height: 100vh;
-      color: #666;
       background-color: #fffbf0;
     }
 
-    .profile, .courses, .portfolio, .links {
+    .profile, .courses, .portfolio, .links, .articles {
       width: 80%;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start;
       margin-bottom: 20px;
+      color: #0000ff;
     }
 
-    .profile img {
+    .profile img, .courses img, .portfolio img, .links img {
       width: 100px;
       height: 100px;
       border-radius: 50%;
-      background-image: url('images/portrait.jpg');
-      background-size: cover;
-    }
-
-    .profile p {
       margin: 5px 0;
-      text-align: center;
     }
 
-    .courses img, .portfolio img, .links img {
-      width: 100%;
-      height: auto;
-    }
-
-    .courses ul, .portfolio ul, .links ul {
+    .profile p, .courses ul, .portfolio ul, .links ul, .articles ul {
+      text-align: left;
       list-style: none;
       padding: 0;
     }
 
-    .courses li, .portfolio li, .links li {
+    .courses li, .portfolio li, .links li, .articles li {
       margin: 10px 0;
-      text-align: center;
+    }
+
+    a {
+      color: #0000ff; /* Keeping links blue */
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
   <div class="profile">
-      <img src="images/portrait.jpg" alt="Profile Picture">
+      <img src="images/portrait.jpg" alt="Profile Picture" onerror="this.onerror=null; this.src='https://via.placeholder.com/100'">
       <p>👩‍💻 Hey! My name is Vijaya Ramesh, passionate about web development as a product manager, with a keen interest in JavaScript. Believing in making the internet a better place. Living in the heart of AI innovation.</p>
   </div>
   <div class="courses">
       <h2>Courses Completed</h2>
       <ul>
-          <li>💻 Generative AI with Large Langauge Models (Coursera)</li>
+          <li>💻 Generative AI with Large Language Models (Coursera)</li>
           <li>💻 NLP with Classification and Vector Spaces (Coursera)</li>
           <li>💻 API Designer (API Academy)</li>
           <li>💻 Build Generative Adversarial Networks (Coursera)</li>
-          <li>💻 Introduction to ML in Produciton (Coursera)</li>
+          <li>💻 Introduction to ML in Production (Coursera)</li>
       </ul>
   </div>
   <div class="portfolio">
       <h2>Portfolio Projects</h2>
       <ul>
-          <li>💻 Automating EDD using RNN based ML </li>
-          <li>💻 Performance Optimization of a web application using graphQL (Russian localization)</li>
+          <li>💻 Automating EDD using RNN based ML</li>
+          <li>💻 Performance Optimization of a web application using GraphQL</li>
           <li>💻 Product Manager Portfolio List - Node.js web app</li>
-          <li>💻 CTA basics, how to Praesent &amp; Partners</li>
+          <li>💻 CTA basics, how to Praesent & Partners</li>
           <li>💻 Basic JS programming - RGB game clone</li>
           <li>💻 Frontend todo list</li>
           <li>💻 Landing page sample - CSS, HTML</li>
@@ -86,11 +84,21 @@
   <div class="links">
       <h2>Links & Education</h2>
       <ul>
-          <li>📖 Education: Indian Insititue of technology, Masters of Business Administration</li>
+          <li>📖 Education: Indian Institute of Technology, Masters of Business Administration</li>
           <li>📖 Education: Bachelors of Engineering</li>
           <li>📖 Multi-lingual</li>
           <li>📖 Tech blogger</li>
       </ul>
+  </div>
+  <div class="articles">
+    <h2>ML Related Articles</h2>
+    <ul>
+      <li><a href="https://example.com/article1" target="_blank">Understanding Neural Networks: From Basics to Applications</a></li>
+      <li><a href="https://example.com/article2" target="_blank">The Future of Machine Learning in Web Development</a></li>
+      <li><a href="https://example.com/article3" target="_blank">Exploring Deep Learning: How Deep Can We Go?</a></li>
+      <li><a href="https://example.com/article4" target="_blank">AI and Ethics: Navigating the Complexities</a></li>
+      <li><a href="https://example.com/article5" target="_blank">Machine Learning for Product Managers: What You Need to Know</a></li>
+    </ul>
   </div>
 </body>
 </html>
