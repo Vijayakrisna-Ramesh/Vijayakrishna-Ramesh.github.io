@@ -22,8 +22,16 @@
 
     .tags {
       text-align: center;
-      font-size: 0.9rem;
+      font-size: 1rem;
+      font-weight: bold;
       color: #666;
+      margin-bottom: 2rem;
+    }
+
+    .about {
+      text-align: center;
+      font-size: 1.1rem;
+      color: #444;
       margin-bottom: 2rem;
     }
 
@@ -37,17 +45,40 @@
       content: "📄";
       margin-right: 0.5rem;
     }
+
+    .contact {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 2rem;
+      font-size: 1.2rem;
+    }
+
+    .contact a {
+      color: #333;
+      text-decoration: none;
+      margin: 0 1rem;
+    }
+
+    .contact a:hover {
+      color: #666;
+    }
+
+    .contact i {
+      margin-right: 0.5rem;
+    }
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
   <div class="profile">
     <img src="images/portrait.jpg" alt="Profile Picture">
   </div>
   <div class="tags">
-    <p>ML expert, Product Manager, Vedantist, Father</p>
+    <p><b>ML expert, Product Manager, Vedantist, Father</b></p>
   </div>
-  <div class="profile">
-    <p>👩‍💻 Hey! My name is Vijaya Ramesh, passionate about web development as a product manager, with a keen interest in JavaScript. Believing in making the internet a better place. Living in the heart of AI innovation.</p>
+  <div class="about">
+    <p>As a passionate product manager, I'm deeply fascinated by the transformative power of AI and its potential to revolutionize industries. My mission is to bridge the gap between cutting-edge AI technologies and real-world applications, creating innovative solutions that drive progress and make a meaningful impact. With a keen eye for user needs and a strong technical foundation, I'm dedicated to shaping the future of AI-powered products that enhance human capabilities and push the boundaries of what's possible.</p>
   </div>
   <div class="courses">
     <h2>Courses Completed</h2>
@@ -89,6 +120,11 @@
       <li><a href="https://example.com/article4" target="_blank">AI and Ethics: Navigating the Complexities</a></li>
       <li><a href="https://example.com/article5" target="_blank">Machine Learning for Product Managers: What You Need to Know</a></li>
     </ul>
+  </div>
+  <div class="contact">
+    <a href="https://www.linkedin.com/in/vijayaramesh" target="_blank"><i class="fab fa-linkedin"></i>LinkedIn</a>
+    <a href="https://github.com/vijayaramesh" target="_blank"><i class="fab fa-github"></i>GitHub</a>
+    <a href="https://twitter.com/vijayaramesh" target="_blank"><i class="fab fa-twitter"></i>Twitter</a>
   </div>
 </body>
 </html>
