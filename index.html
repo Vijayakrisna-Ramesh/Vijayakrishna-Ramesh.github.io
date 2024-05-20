@@ -2,34 +2,286 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Tiles</title>
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vijaya Ramesh - AI Product Manager | Machine Learning Expert</title>
+  <meta name="description" content="Vijaya Ramesh, an experienced AI Product Manager and Machine Learning Expert, specializes in bridging the gap between AI technologies and market needs. Discover projects, insights, and contact info.">
+  <meta name="keywords" content="Vijaya Ramesh, AI Product Manager, Machine Learning Expert, AI Projects, Product Management, AI in Industry, AI Portfolio">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #f4f4f9;
+      color: #333;
+      line-height: 1.6;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .profile {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .profile img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 5px solid #555;
+      object-fit: cover;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .tags {
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #555;
+      margin-bottom: 2rem;
+    }
+
+    .about, .courses, .portfolio, .links, .articles {
+      background-color: #fff;
+      border: 2px solid #333;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      font-size: 1.75rem;
+      color: #555;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #555;
+      padding-bottom: 0.5rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 0.75rem;
+      font-size: 1rem;
+      color: #666;
+    }
+
+    .articles a {
+      color: #555;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .articles a:hover {
+      text-decoration: underline;
+    }
+
+    .project-card {
+      display: flex;
+      align-items: center;
+      margin-bottom: 3rem;
+      padding: 2rem;
+      background-color: #fff;
+      border: 2px solid #ddd;
+      border-radius: 12px;
+    }
+
+    .project-image {
+      width: 20%;
+      max-width: 200px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      margin-right: 2rem;
+    }
+
+    .project-description {
+      flex: 1;
+    }
+
+    .project-description h3 {
+      font-size: 1.75rem;
+      color: #333;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-description p {
+      font-size: 1rem;
+      color: #666;
+      margin: 0;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .grid-container.single-column {
+      grid-template-columns: 1fr;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: #333;
+      color: #fff;
+      border-top: 5px solid #555;
+      margin-top: 3rem;
+    }
+
+    .contact {
+      text-align: center;
+      font-size: 1.2rem;
+      margin-top: 2rem;
+    }
+
+    .contact a {
+      color: #555;
+      text-decoration: none;
+      margin: 0 1rem;
+    }
+
+    .contact a:hover {
+      color: #333;
+    }
+
+    .contact i {
+      margin-right: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .grid-container {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card {
+        flex-direction: column;
+      }
+
+      .project-image {
+        width: 100%;
+        margin-bottom: 1rem;
+        margin-right: 0;
+      }
+
+      .project-description {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="tile">
-        <div class="tile-header" onclick="toggleContent('content1')">
-            <img src="images/image1.png" alt="Automating EDD using RNN based ML">
-            <h2>Automating EDD using RNN based ML</h2>
-            <p>Utilized Recurrent Neural Networks to automate Estimated Delivery Date predictions, improving accuracy and efficiency.</p>
-        </div>
-        <div class="tile-content" id="content1">
-            <p>Static content pertaining to Automating EDD using RNN based ML project...</p>
-        </div>
+  <div class="container">
+    <div class="profile">
+      <img src="images/portrait.jpg" alt="Vijaya Ramesh AI Product Manager">
     </div>
-    
-    <div class="tile">
-        <div class="tile-header" onclick="toggleContent('content2')">
-            <img src="images/image2.png" alt="Performance Optimization of a Web Application using GraphQL">
-            <h2>Performance Optimization of a Web Application using GraphQL</h2>
-            <p>Enhanced web application performance by implementing GraphQL for more efficient data querying and reduced load times.</p>
-        </div>
-        <div class="tile-content" id="content2">
-            <p>Static content pertaining to Performance Optimization of a Web Application using GraphQL project...</p>
-        </div>
+    <div class="tags">
+      <p><b>ML Expert, AI Product Management, Vedantist, Father</b></p>
     </div>
-
-    <script src="scripts/script.js"></script>
+    <div class="about">
+      <p>As a passionate AI Product Manager, I'm deeply fascinated by the transformative power of artificial intelligence and its potential to revolutionize industries. My mission is to bridge the gap between cutting-edge AI technologies and real-world applications, creating innovative solutions that drive progress and make a meaningful impact. With a keen eye for user needs and a strong technical foundation in machine learning, I'm dedicated to shaping the future of AI-powered products. Balancing product roadmaps and family life, I embody the multitasking skills essential for modern product managers.</p>
+    </div>
+    <div class="grid-container">
+      <div class="courses">
+        <h2>Courses Completed</h2>
+        <ul>
+          <li>💻 Generative AI with Large Language Models (Coursera)</li>
+          <li>💻 NLP with Classification and Vector Spaces (Coursera)</li>
+          <li>💻 API Designer (API Academy)</li>
+          <li>💻 Build Generative Adversarial Networks (Coursera)</li>
+          <li>💻 Introduction to ML in Production (Coursera)</li>
+        </ul>
+      </div>
+      <div class="links">
+        <h2>Links & Education</h2>
+        <ul>
+          <li>📖 Education: Indian Institute of Technology, Masters of Business Administration</li>
+          <li>📖 Education: Bachelors of Engineering</li>
+          <li>📖 Multi-lingual</li>
+          <li>📖 Tech blogger</li>
+        </ul>
+      </div>
+    </div>
+    <div class="portfolio">
+      <h2>Portfolio Projects</h2>
+      <div class="project-card">
+        <img src="/mnt/data/A_futuristic_AI_system_with_neural_networks_and_da.png" alt="Automating EDD using RNN based ML" class="project-image">
+        <div class="project-description">
+          <h3>Automating EDD using RNN based ML</h3>
+          <p>Utilized Recurrent Neural Networks to automate Estimated Delivery Date predictions, improving accuracy and efficiency.</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="/mnt/data/A_sleek_and_modern_web_application_interface_with_.png" alt="Performance Optimization of a web application using GraphQL" class="project-image">
+        <div class="project-description">
+          <h3>Performance Optimization of a Web Application using GraphQL</h3>
+          <p>Enhanced web application performance by implementing GraphQL for more efficient data querying and reduced load times.</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="/mnt/data/A_professional_Node.js_web_application_dashboard_w.png" alt="Product Manager Portfolio List - Node.js web app" class="project-image">
+        <div class="project-description">
+          <h3>Product Manager Portfolio List - Node.js Web App</h3>
+          <p>Developed a portfolio list application using Node.js, showcasing various projects and providing easy navigation.</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="/mnt/data/A_professional_presentation_with_call-to-action_bu.png" alt="CTA basics, how to Present & Partners" class="project-image">
+        <div class="project-description">
+          <h3>CTA Basics, How to Present & Partners</h3>
+          <p>Created an engaging presentation highlighting the basics of Call to Action and how to present effectively to partners.</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="/mnt/data/A_colorful_and_fun_RGB_game_interface_with_coding_.png" alt="Basic JS programming - RGB game clone" class="project-image">
+        <div class="project-description">
+          <h3>Basic JS Programming - RGB Game Clone</h3>
+          <p>Cloned a popular RGB game using basic JavaScript programming to enhance coding skills and understanding of game mechanics.</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="/mnt/data/A_modern_and_clean_to-do_list_application_with_che.png" alt="Frontend todo list" class="project-image">
+        <div class="project-description">
+          <h3>Frontend Todo List</h3>
+          <p>Developed a clean and modern to-do list application with intuitive user interface and smooth functionality.</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="/mnt/data/A_visually_appealing_landing_page_design_with_CSS_.png" alt="Landing page sample - CSS, HTML" class="project-image">
+        <div class="project-description">
+          <h3>Landing Page Sample - CSS, HTML</h3>
+          <p>Designed a visually appealing landing page using CSS and HTML, focusing on responsive design and user experience.</p>
+        </div>
+      </div>
+    </div>
+    <div class="articles">
+      <h2>ML Related Articles</h2>
+      <ul>
+        <li><a href="https://example.com/article1" target="_blank">Understanding Neural Networks: From Basics to Applications</a></li>
+        <li><a href="https://example.com/article2" target="_blank">The Future of Machine Learning in Web Development</a></li>
+        <li><a href="https://example.com/article3" target="_blank">Exploring Deep Learning: How Deep Can We Go?</a></li>
+        <li><a href="https://example.com/article4" target="_blank">AI and Ethics: Navigating the Complexities</a></li>
+        <li><a href="https://example.com/article5" target="_blank">Machine Learning for Product Managers: What You Need to Know</a></li>
+      </ul>
+    </div>
+    <div class="contact">
+      <a href="https://www.linkedin.com/in/vijayakrishnar/" target="_blank"><i class="fab fa-linkedin"></i>LinkedIn</a>
+      <a href="https://github.com/vijayaramesh44555" target="_blank"><i class="fab fa-github"></i>GitHub</a>
+      <a href="https://twitter.com/VjK1124637" target="_blank"><i class="fab fa-twitter"></i>Twitter</a>
+    </div>
+  </div>
+  <div class="footer">
+    <p>© 2024 Vijaya Ramesh. All rights reserved.</p>
+  </div>
 </body>
 </html>
