@@ -16,13 +16,12 @@
       background-color: #f4f4f9;
       color: #333;
       line-height: 1.6;
-      padding-top: 3rem;
+      padding: 2rem;
     }
 
     .container {
-      max-width: 800px;
+      max-width: 1200px;
       margin: auto;
-      padding: 0 15px;
     }
 
     .profile {
@@ -47,17 +46,13 @@
       margin-bottom: 2rem;
     }
 
-    .about {
-      margin-bottom: 2rem;
-      padding: 1.5rem;
+    .about, .courses, .portfolio, .links, .articles {
       background-color: #fff;
       border: 2px solid #333;
       border-radius: 12px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-
-    .about p {
-      margin: 0 0 1rem 0;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
     }
 
     h2 {
@@ -89,10 +84,37 @@
       text-decoration: underline;
     }
 
+    .project-image {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      margin-bottom: 1rem;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .grid-container.single-column {
+      grid-template-columns: 1fr;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: #333;
+      color: #fff;
+      border-top: 5px solid #555;
+      margin-top: 3rem;
+    }
+
     .contact {
       text-align: center;
-      margin-top: 2rem;
       font-size: 1.2rem;
+      margin-top: 2rem;
     }
 
     .contact a {
@@ -109,30 +131,10 @@
       margin-right: 0.5rem;
     }
 
-    .project-image {
-      width: 100%;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      margin-bottom: 1rem;
-    }
-
-    .card {
-      background-color: #fff;
-      border: 2px solid #333;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      margin-bottom: 2rem;
-      padding: 1.5rem;
-    }
-
-    .footer {
-      text-align: center;
-      padding: 2rem;
-      background-color: #333;
-      color: #fff;
-      border-top: 5px solid #555;
-      margin-top: 3rem;
+    @media (max-width: 768px) {
+      .grid-container {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -147,55 +149,59 @@
     <div class="about">
       <p>As a passionate AI Product Manager, I'm deeply fascinated by the transformative power of artificial intelligence and its potential to revolutionize industries. My mission is to bridge the gap between cutting-edge AI technologies and real-world applications, creating innovative solutions that drive progress and make a meaningful impact. With a keen eye for user needs and a strong technical foundation in machine learning, I'm dedicated to shaping the future of AI-powered products. Balancing product roadmaps and family life, I embody the multitasking skills essential for modern product managers.</p>
     </div>
-    <div class="courses">
-      <h2>Courses Completed</h2>
-      <ul>
-        <li>💻 Generative AI with Large Language Models (Coursera)</li>
-        <li>💻 NLP with Classification and Vector Spaces (Coursera)</li>
-        <li>💻 API Designer (API Academy)</li>
-        <li>💻 Build Generative Adversarial Networks (Coursera)</li>
-        <li>💻 Introduction to ML in Production (Coursera)</li>
-      </ul>
+    <div class="grid-container">
+      <div class="courses">
+        <h2>Courses Completed</h2>
+        <ul>
+          <li>💻 Generative AI with Large Language Models (Coursera)</li>
+          <li>💻 NLP with Classification and Vector Spaces (Coursera)</li>
+          <li>💻 API Designer (API Academy)</li>
+          <li>💻 Build Generative Adversarial Networks (Coursera)</li>
+          <li>💻 Introduction to ML in Production (Coursera)</li>
+        </ul>
+      </div>
+      <div class="links">
+        <h2>Links & Education</h2>
+        <ul>
+          <li>📖 Education: Indian Institute of Technology, Masters of Business Administration</li>
+          <li>📖 Education: Bachelors of Engineering</li>
+          <li>📖 Multi-lingual</li>
+          <li>📖 Tech blogger</li>
+        </ul>
+      </div>
     </div>
     <div class="portfolio">
       <h2>Portfolio Projects</h2>
-      <div class="card">
-        <img src="/mnt/data/A_futuristic_AI_system_with_neural_networks_and_da.png" alt="Automating EDD using RNN based ML" class="project-image">
-        <p>💻 Automating EDD using RNN based ML</p>
+      <div class="grid-container single-column">
+        <div class="card">
+          <img src="/mnt/data/A_futuristic_AI_system_with_neural_networks_and_da.png" alt="Automating EDD using RNN based ML" class="project-image">
+          <p>💻 Automating EDD using RNN based ML</p>
+        </div>
+        <div class="card">
+          <img src="/mnt/data/A_sleek_and_modern_web_application_interface_with_.png" alt="Performance Optimization of a web application using GraphQL" class="project-image">
+          <p>💻 Performance Optimization of a web application using GraphQL</p>
+        </div>
+        <div class="card">
+          <img src="/mnt/data/A_professional_Node.js_web_application_dashboard_w.png" alt="Product Manager Portfolio List - Node.js web app" class="project-image">
+          <p>💻 Product Manager Portfolio List - Node.js web app</p>
+        </div>
+        <div class="card">
+          <img src="/mnt/data/A_professional_presentation_with_call-to-action_bu.png" alt="CTA basics, how to Present & Partners" class="project-image">
+          <p>💻 CTA basics, how to Present & Partners</p>
+        </div>
+        <div class="card">
+          <img src="/mnt/data/A_colorful_and_fun_RGB_game_interface_with_coding_.png" alt="Basic JS programming - RGB game clone" class="project-image">
+          <p>💻 Basic JS programming - RGB game clone</p>
+        </div>
+        <div class="card">
+          <img src="/mnt/data/A_modern_and_clean_to-do_list_application_with_che.png" alt="Frontend todo list" class="project-image">
+          <p>💻 Frontend todo list</p>
+        </div>
+        <div class="card">
+          <img src="/mnt/data/A_visually_appealing_landing_page_design_with_CSS_.png" alt="Landing page sample - CSS, HTML" class="project-image">
+          <p>💻 Landing page sample - CSS, HTML</p>
+        </div>
       </div>
-      <div class="card">
-        <img src="/mnt/data/A_sleek_and_modern_web_application_interface_with_.png" alt="Performance Optimization of a web application using GraphQL" class="project-image">
-        <p>💻 Performance Optimization of a web application using GraphQL</p>
-      </div>
-      <div class="card">
-        <img src="/mnt/data/A_professional_Node.js_web_application_dashboard_w.png" alt="Product Manager Portfolio List - Node.js web app" class="project-image">
-        <p>💻 Product Manager Portfolio List - Node.js web app</p>
-      </div>
-      <div class="card">
-        <img src="/mnt/data/A_professional_presentation_with_call-to-action_bu.png" alt="CTA basics, how to Present & Partners" class="project-image">
-        <p>💻 CTA basics, how to Present & Partners</p>
-      </div>
-      <div class="card">
-        <img src="/mnt/data/A_colorful_and_fun_RGB_game_interface_with_coding_.png" alt="Basic JS programming - RGB game clone" class="project-image">
-        <p>💻 Basic JS programming - RGB game clone</p>
-      </div>
-      <div class="card">
-        <img src="/mnt/data/A_modern_and_clean_to-do_list_application_with_che.png" alt="Frontend todo list" class="project-image">
-        <p>💻 Frontend todo list</p>
-      </div>
-      <div class="card">
-        <img src="/mnt/data/A_visually_appealing_landing_page_design_with_CSS_.png" alt="Landing page sample - CSS, HTML" class="project-image">
-        <p>💻 Landing page sample - CSS, HTML</p>
-      </div>
-    </div>
-    <div class="links">
-      <h2>Links & Education</h2>
-      <ul>
-        <li>📖 Education: Indian Institute of Technology, Masters of Business Administration</li>
-        <li>📖 Education: Bachelors of Engineering</li>
-        <li>📖 Multi-lingual</li>
-        <li>📖 Tech blogger</li>
-      </ul>
     </div>
     <div class="articles">
       <h2>ML Related Articles</h2>
