@@ -1,287 +1,129 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vijaya Ramesh - AI Product Manager | Machine Learning Expert</title>
-  <meta name="description" content="Vijaya Ramesh, an experienced AI Product Manager and Machine Learning Expert, specializes in bridging the gap between AI technologies and market needs. Discover projects, insights, and contact info.">
-  <meta name="keywords" content="Vijaya Ramesh, AI Product Manager, Machine Learning Expert, AI Projects, Product Management, AI in Industry, AI Portfolio">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    body {
-      font-family: 'Georgia', serif;
-      background-color: #f4f4f9;
-      color: #333;
-      line-height: 1.6;
-      padding: 2rem;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .profile {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    .profile img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      border: 5px solid #555;
-      object-fit: cover;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-
-    .tags {
-      text-align: center;
-      font-size: 1.2rem;
-      font-weight: bold;
-      color: #555;
-      margin-bottom: 2rem;
-    }
-
-    .about, .courses, .portfolio, .links, .articles {
-      background-color: #fff;
-      border: 2px solid #333;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-    }
-
-    h2 {
-      font-size: 1.75rem;
-      color: #555;
-      margin-bottom: 1rem;
-      border-bottom: 2px solid #555;
-      padding-bottom: 0.5rem;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    li {
-      margin-bottom: 0.75rem;
-      font-size: 1rem;
-      color: #666;
-    }
-
-    .articles a {
-      color: #555;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .articles a:hover {
-      text-decoration: underline;
-    }
-
-    .project-card {
-      display: flex;
-      align-items: center;
-      margin-bottom: 3rem;
-      padding: 2rem;
-      background-color: #fff;
-      border: 2px solid #ddd;
-      border-radius: 12px;
-    }
-
-    .project-image {
-      width: 20%;
-      max-width: 200px;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      margin-right: 2rem;
-    }
-
-    .project-description {
-      flex: 1;
-    }
-
-    .project-description h3 {
-      font-size: 1.75rem;
-      color: #333;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-    }
-
-    .project-description p {
-      font-size: 1rem;
-      color: #666;
-      margin: 0;
-    }
-
-    .grid-container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-    }
-
-    .grid-container.single-column {
-      grid-template-columns: 1fr;
-    }
-
-    .footer {
-      text-align: center;
-      padding: 2rem;
-      background-color: #333;
-      color: #fff;
-      border-top: 5px solid #555;
-      margin-top: 3rem;
-    }
-
-    .contact {
-      text-align: center;
-      font-size: 1.2rem;
-      margin-top: 2rem;
-    }
-
-    .contact a {
-      color: #555;
-      text-decoration: none;
-      margin: 0 1rem;
-    }
-
-    .contact a:hover {
-      color: #333;
-    }
-
-    .contact i {
-      margin-right: 0.5rem;
-    }
-
-    @media (max-width: 768px) {
-      .grid-container {
-        grid-template-columns: 1fr;
-      }
-
-      .project-card {
-        flex-direction: column;
-      }
-
-      .project-image {
-        width: 100%;
-        margin-bottom: 1rem;
-        margin-right: 0;
-      }
-
-      .project-description {
-        width: 100%;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vijaya Ramesh - Product Manager & AI Enthusiast</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: #f0f0f0;
+        }
+        .profile-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .article {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
 </head>
-<body>
-  <div class="container">
-    <div class="profile">
-      <img src="images/portrait.jpg" alt="Vijaya Ramesh AI Product Manager">
-    </div>
-    <div class="tags">
-      <p><b>ML Expert, AI Product Management, Vedantist, Father</b></p>
-    </div>
-    <div class="about">
-      <p>As a passionate AI Product Manager, I'm deeply fascinated by the transformative power of artificial intelligence and its potential to revolutionize industries. My mission is to bridge the gap between cutting-edge AI technologies and real-world applications, creating innovative solutions that drive progress and make a meaningful impact. With a keen eye for user needs and a strong technical foundation in machine learning, I'm dedicated to shaping the future of AI-powered products. Balancing product roadmaps and family life, I embody the multitasking skills essential for modern product managers.</p>
-    </div>
-    <div class="grid-container">
-      <div class="courses">
-        <h2>Courses Completed</h2>
-        <ul>
-          <li>💻 Generative AI with Large Language Models (Coursera)</li>
-          <li>💻 NLP with Classification and Vector Spaces (Coursera)</li>
-          <li>💻 API Designer (API Academy)</li>
-          <li>💻 Build Generative Adversarial Networks (Coursera)</li>
-          <li>💻 Introduction to ML in Production (Coursera)</li>
-        </ul>
-      </div>
-      <div class="links">
-        <h2>Links & Education</h2>
-        <ul>
-          <li>📖 Education: Indian Institute of Technology, Masters of Business Administration</li>
-          <li>📖 Education: Bachelors of Engineering</li>
-          <li>📖 Multi-lingual</li>
-          <li>📖 Tech blogger</li>
-        </ul>
-      </div>
-    </div>
-    <div class="portfolio">
-      <h2>Portfolio Projects</h2>
-      <div class="project-card">
-        <img src="images/edd.jpeg" alt="Automating EDD using RNN based ML" class="project-image">
-        <div class="project-description">
-          <h3>Automating EDD using RNN based ML</h3>
-          <p>Utilized Recurrent Neural Networks to automate Estimated Delivery Date predictions, improving accuracy and efficiency.</p>
+<body class="bg-gray-100">
+    <div class="profile-container p-8 mt-8 rounded-lg">
+        <div class="flex items-center mb-6">
+            <div class="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                </svg>
+            </div>
+            <span class="text-gray-600">Greater Toronto Area, Canada</span>
         </div>
-      </div>
-      <div class="project-card">
-        <img src="images/graphql.jpeg" alt="Performance Optimization of a web application using GraphQL" class="project-image">
-        <div class="project-description">
-          <h3>Performance Optimization of a Web Application using GraphQL</h3>
-          <p>Enhanced web application performance by implementing GraphQL for more efficient data querying and reduced load times.</p>
+
+        <h1 class="text-4xl font-bold mb-2 gradient-text">Vijaya Ramesh</h1>
+        <h2 class="text-2xl text-gray-600 mb-6">Technical Product Manager & AI Enthusiast</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+                <h3 class="text-xl font-semibold mb-4 gradient-text">Overview</h3>
+                <p class="text-gray-700 mb-4">
+                    Greetings, fellow homo sapiens! I'm Vijaya, a product manager by day and an AI enthusiast by... well, also day. My circadian rhythm is still trying to figure out when I sleep. I specialize in digital solutions and high-performance products, much like how a well-trained neural network specializes in finding cats in images (though I promise I'm more versatile).
+                </p>
+                <p class="text-gray-700 mb-4">
+                    With a background in management and engineering, I've mastered the art of translating between human and machine languages. I can explain complex AI concepts in simple terms, or if you prefer, I can make simple concepts sound incredibly complex. It's a superpower I acquired after years of writing academic papers.
+                </p>
+                <p class="text-gray-700 mb-4">
+                    When I'm not diving deep into product discovery or persona identification, you might find me attempting to teach machine learning algorithms the concept of humor. So far, they've only learned to tell dad jokes, but I remain optimistic.
+                </p>
+            </div>
+
+            <div>
+                <h3 class="text-xl font-semibold mb-4 gradient-text">Education</h3>
+                <ul class="list-disc list-inside text-gray-700">
+                    <li>IIT Bombay - Shailesh J. Mehta School of Management
+                        <br>
+                        <span class="text-sm text-gray-600">Management Information Systems, 2004 - 2006</span>
+                    </li>
+                    <li>Bangalore University
+                        <br>
+                        <span class="text-sm text-gray-600">Bachelor of Engineering</span>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
-      <div class="project-card">
-        <img src="/mnt/data/A_professional_Node.js_web_application_dashboard_w.png" alt="Product Manager Portfolio List - Node.js web app" class="project-image">
-        <div class="project-description">
-          <h3>Product Manager Portfolio List - Node.js Web App</h3>
-          <p>Developed a portfolio list application using Node.js, showcasing various projects and providing easy navigation.</p>
+
+        <div class="mt-8">
+            <h3 class="text-xl font-semibold mb-4 gradient-text">Key Skills</h3>
+            <div class="flex flex-wrap gap-2">
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded">AI/ML</span>
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded">Product Management</span>
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded">Neural Networks</span>
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded">Data Science</span>
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded">Technical Writing</span>
+            </div>
         </div>
-      </div>
-      <div class="project-card">
-        <img src="/mnt/data/A_professional_presentation_with_call-to-action_bu.png" alt="CTA basics, how to Present & Partners" class="project-image">
-        <div class="project-description">
-          <h3>CTA Basics, How to Present & Partners</h3>
-          <p>Created an engaging presentation highlighting the basics of Call to Action and how to present effectively to partners.</p>
+
+        <div class="mt-8">
+            <h3 class="text-xl font-semibold mb-4 gradient-text">Recent Articles</h3>
+            <ul class="space-y-4">
+                <li class="article">
+                    <h4 class="font-semibold">Decoding Activation Functions: Unveiling Sigmoid, ReLU, and Softmax in Neural Networks</h4>
+                    <p class="text-gray-600">Published on Jun 19, 2024 · 3 min read</p>
+                    <p class="text-gray-700">An exploration of key activation functions in neural networks.</p>
+                </li>
+                <li class="article">
+                    <h4 class="font-semibold">Intuition behind Logistic Regression Models</h4>
+                    <p class="text-gray-600">Published on May 29, 2024 · 5 min read</p>
+                    <p class="text-gray-700">A straightforward explanation of the mathematical intuition behind logistic regression.</p>
+                </li>
+                <li class="article">
+                    <h4 class="font-semibold">3 stage training of a Latent VDM</h4>
+                    <p class="text-gray-600">Published on May 18, 2024 · 4 min read</p>
+                    <p class="text-gray-700">Simplifying technical concepts from a Stability AI research paper.</p>
+                </li>
+            </ul>
         </div>
-      </div>
-      <div class="project-card">
-        <img src="/mnt/data/A_colorful_and_fun_RGB_game_interface_with_coding_.png" alt="Basic JS programming - RGB game clone" class="project-image">
-        <div class="project-description">
-          <h3>Basic JS Programming - RGB Game Clone</h3>
-          <p>Cloned a popular RGB game using basic JavaScript programming to enhance coding skills and understanding of game mechanics.</p>
+
+        <div class="mt-8">
+            <h3 class="text-xl font-semibold mb-4 gradient-text">Connect with me</h3>
+            <div class="flex space-x-4">
+                <a href="https://x.com/VjK1124637" target="_blank" class="text-blue-500 hover:text-blue-700">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>
+                </a>
+                <a href="https://medium.com/@veejaykris.29" target="_blank" class="text-gray-500 hover:text-gray-700">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"></path></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/vijayakrishnar" target="_blank" class="text-blue-700 hover:text-blue-900">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+                </a>
+            </div>
         </div>
-      </div>
-      <div class="project-card">
-        <img src="/mnt/data/A_modern_and_clean_to-do_list_application_with_che.png" alt="Frontend todo list" class="project-image">
-        <div class="project-description">
-          <h3>Frontend Todo List</h3>
-          <p>Developed a clean and modern to-do list application with intuitive user interface and smooth functionality.</p>
-        </div>
-      </div>
-      <div class="project-card">
-        <img src="/mnt/data/A_visually_appealing_landing_page_design_with_CSS_.png" alt="Landing page sample - CSS, HTML" class="project-image">
-        <div class="project-description">
-          <h3>Landing Page Sample - CSS, HTML</h3>
-          <p>Designed a visually appealing landing page using CSS and HTML, focusing on responsive design and user experience.</p>
-        </div>
-      </div>
     </div>
-    <div class="articles">
-      <h2>ML Related Articles</h2>
-      <ul>
-        <li><a href="https://example.com/article1" target="_blank">Understanding Neural Networks: From Basics to Applications</a></li>
-        <li><a href="https://example.com/article2" target="_blank">The Future of Machine Learning in Web Development</a></li>
-        <li><a href="https://example.com/article3" target="_blank">Exploring Deep Learning: How Deep Can We Go?</a></li>
-        <li><a href="https://example.com/article4" target="_blank">AI and Ethics: Navigating the Complexities</a></li>
-        <li><a href="https://example.com/article5" target="_blank">Machine Learning for Product Managers: What You Need to Know</a></li>
-      </ul>
-    </div>
-    <div class="contact">
-      <a href="https://www.linkedin.com/in/vijayakrishnar/" target="_blank"><i class="fab fa-linkedin"></i>LinkedIn</a>
-      <a href="https://github.com/vijayaramesh44555" target="_blank"><i class="fab fa-github"></i>GitHub</a>
-      <a href="https://twitter.com/VjK1124637" target="_blank"><i class="fab fa-twitter"></i>Twitter</a>
-    </div>
-  </div>
-  <div class="footer">
-    <p>© 2024 Vijaya Ramesh. All rights reserved.</p>
-  </div>
+
+    <script>
+        gsap.from(".profile-container", {duration: 1, y: 50, opacity: 0, ease: "power3.out"});
+        gsap.to(".article", {duration: 0.5, y: 0, opacity: 1, stagger: 0.2, ease: "power3.out", delay: 0.5});
+    </script>
 </body>
 </html>
