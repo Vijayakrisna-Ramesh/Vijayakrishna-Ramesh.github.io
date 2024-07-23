@@ -1,136 +1,338 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vijaya Ramesh - Product Manager & AI Enthusiast</title>
+    <title>Vijaya Ramesh - AI Product Visionary</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        :root {
+            --primary: #4f46e5;
+            --secondary: #818cf8;
+            --background: #f3f4f6;
+            --text: #111827;
+            --accent: #c7d2fe;
+            --neural-line: #000000; /* Intense black color for neural network */
+        }
+
         body {
-            font-family: 'Courier New', monospace;
-            background-color: #f0f0f0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--background) 0%, #e0e7ff 100%);
+            color: var(--text);
+            overflow-x: hidden;
         }
-        .profile-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+        h1, h2, h3 {
+            color: var(--primary);
         }
-        .article {
-            opacity: 0;
-            transform: translateY(20px);
+
+        .neural-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.8;
         }
-        .gradient-text {
-            background: linear-gradient(to right, #ff7e5f, #feb47b);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
         }
-        .text-dark {
-            color: #333;
+
+        .skill-item, .article-card, .connect-button {
+            transition: all 0.3s ease;
+            background: white;
+            color: var(--text);
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .skill-item:hover, .article-card:hover, .connect-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(79, 70, 229, 0.2);
+        }
+
+        .math-equations {
+            position: fixed;
+            font-size: 1.2rem;
+            color: rgba(0, 0, 0, 0.8); /* Black color for equations */
+            z-index: 1;
+            pointer-events: none;
+            transition: all 0.5s ease;
+        }
+
+        .satire-ticker {
+            background: rgba(255, 255, 255, 0.8);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            font-weight: 600;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            animation: ticker 30s linear infinite;
+        }
+
+        @keyframes ticker {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
         }
     </style>
 </head>
-<body class="bg-gray-100">
-    <div class="profile-container p-8 mt-8 rounded-lg">
-        <div class="flex items-center mb-6">
-            <div class="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
-                </svg>
-            </div>
-            <span class="text-gray-600">Greater Toronto Area, Canada</span>
+<body class="min-h-screen flex flex-col">
+    <div id="neural-network" class="neural-bg"></div>
+
+    <header class="p-6 z-10 w-full">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-4xl font-bold">VR</div>
         </div>
+    </header>
 
-        <h1 class="text-4xl font-bold mb-2 gradient-text">Vijaya Ramesh</h1>
-        <h2 class="text-2xl text-gray-600 mb-6">Technical Product Manager & AI Enthusiast</h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div>
-                <h3 class="text-xl font-semibold mb-4 gradient-text">Overview</h3>
-                <p class="text-dark mb-4">
-                    Greetings, fellow homo sapiens! I'm Vijaya, a product manager by day and AI enthusiast by... well, also day. My sleep schedule is like a well-trained neural network—constantly learning. I specialize in digital solutions and high-performance products, much like how AI specializes in finding cats in images, except I'm more versatile.
+    <main class="flex-grow container mx-auto px-4 py-8">
+        <section id="about" class="mb-16">
+            <div class="glass-panel p-8">
+                <h2 class="text-5xl font-bold mb-6">Vijaya Ramesh</h2>
+                <h3 class="text-2xl mb-4" style="color: var(--secondary);">Technical Product Manager & AI Enthusiast</h3>
+                <p class="mb-4">
+                    Greetings, fellow homo sapiens! I'm Vijaya, a product manager by day and AI enthusiast by... well, also day. My sleep schedule is like a well-trained neural network—constantly learning.
                 </p>
-                <p class="text-dark mb-4">
+                <p class="mb-4">
                     With a background in management and engineering, I've mastered translating between human and machine languages. I can explain complex AI concepts simply or make simple concepts sound complex. It's a superpower I acquired from years of academic writing.
                 </p>
-                <p class="text-dark mb-4">
+                <p>
                     When I'm not diving into product discovery, you might find me teaching machine learning algorithms humor. So far, they've mastered dad jokes, but I'm optimistic.
                 </p>
             </div>
+        </section>
 
-            <div>
-                <h3 class="text-xl font-semibold mb-4 gradient-text">Education</h3>
-                <ul class="list-disc list-inside text-dark">
-                    <li>IIT Bombay - Shailesh J. Mehta School of Management
-                        <br>
-                        <span class="text-sm text-gray-600">Management Information Systems, 2004 - 2006</span>
-                    </li>
-                    <li>Bangalore University
-                        <br>
-                        <span class="text-sm text-gray-600">Bachelor of Engineering</span>
-                    </li>
-                </ul>
-                <h3 class="text-xl font-semibold mb-4 mt-6 gradient-text">Key Skills</h3>
-                <div class="flex flex-wrap gap-2">
-                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded">AI/ML</span>
-                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded">Product Management</span>
-                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded">Neural Networks</span>
-                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded">Data Science</span>
-                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded">Technical Writing</span>
-                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded">LLM</span>
-                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded">Open Source LM</span>
-                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded">User Experience</span>
-                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded">Generative AI</span>
-                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded">NodeJS</span>
-                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded">SQL</span>
-                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded">NoSQL</span>
+        <section id="skills" class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 text-center">Expertise Matrix</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="skill-item p-4 text-center">
+                    <span class="text-xl font-semibold">AI/ML</span>
+                </div>
+                <div class="skill-item p-4 text-center">
+                    <span class="text-xl font-semibold">Product Management</span>
+                </div>
+                <div class="skill-item p-4 text-center">
+                    <span class="text-xl font-semibold">Neural Networks</span>
+                </div>
+                <div class="skill-item p-4 text-center">
+                    <span class="text-xl font-semibold">Data Science</span>
+                </div>
+                <div class="skill-item p-4 text-center">
+                    <span class="text-xl font-semibold">Design Thinking</span>
+                </div>
+                <div class="skill-item p-4 text-center">
+                    <span class="text-xl font-semibold">User Experience</span>
+                </div>
+                <div class="skill-item p-4 text-center">
+                    <span class="text-xl font-semibold">Prompt Engineering</span>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="mt-8">
-            <h3 class="text-xl font-semibold mb-4 gradient-text">Recent Articles</h3>
-            <ul class="space-y-4">
-                <li class="article">
-                    <h4 class="font-semibold">Decoding Activation Functions: Unveiling Sigmoid, ReLU, and Softmax in Neural Networks</h4>
-                    <p class="text-gray-600">Published on Jun 19, 2024 · 3 min read</p>
-                    <p class="text-dark">An exploration of key activation functions in neural networks.</p>
-                </li>
-                <li class="article">
-                    <h4 class="font-semibold">Intuition behind Logistic Regression Models</h4>
-                    <p class="text-gray-600">Published on May 29, 2024 · 5 min read</p>
-                    <p class="text-dark">A straightforward explanation of the mathematical intuition behind logistic regression.</p>
-                </li>
-                <li class="article">
-                    <h4 class="font-semibold">3 stage training of a Latent VDM</h4>
-                    <p class="text-gray-600">Published on May 18, 2024 · 4 min read</p>
-                    <p class="text-dark">Simplifying technical concepts from a Stability AI research paper.</p>
-                </li>
-            </ul>
-        </div>
+        <section id="articles" class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 text-center">Neural Nuggets</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="article-card p-6">
+                    <h3 class="text-xl font-bold mb-2">Decoding Activation Functions</h3>
+                    <p class="text-sm mb-2" style="color: var(--secondary);">Published on Jun 19, 2024 · 3 min read</p>
+                    <p>Unveiling Sigmoid, ReLU, and Softmax in Neural Networks</p>
+                </div>
+                <div class="article-card p-6">
+                    <h3 class="text-xl font-bold mb-2">Intuition behind Logistic Regression</h3>
+                    <p class="text-sm mb-2" style="color: var(--secondary);">Published on May 29, 2024 · 5 min read</p>
+                    <p>A straightforward explanation of the mathematical intuition behind logistic regression.</p>
+                </div>
+            </div>
+        </section>
 
-        <div class="mt-8">
-            <h3 class="text-xl font-semibold mb-4 gradient-text">Connect with me</h3>
-            <div class="flex space-x-4">
-                <a href="https://twitter.com/your_twitter" target="_blank" class="text-blue-500 hover:text-blue-700">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>
+        <section id="connect" class="text-center">
+            <h2 class="text-3xl font-bold mb-6">Initiate Neural Handshake</h2>
+            <div class="flex justify-center space-x-4">
+                <a href="https://twitter.com/your_twitter" target="_blank" class="connect-button font-bold py-2 px-4 rounded">
+                    Twitter
                 </a>
-                <a href="https://medium.com/@veejaykris.29" target="_blank" class="text-gray-500 hover:text-gray-700">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"></path></svg>
+                <a href="https://medium.com/@veejaykris.29" target="_blank" class="connect-button font-bold py-2 px-4 rounded">
+                    Medium
                 </a>
-                <a href="https://www.linkedin.com/in/vijayakrishnar" target="_blank" class="text-blue-700 hover:text-blue-900">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555"></path></svg>
+                <a href="https://www.linkedin.com/in/vijayakrishnar" target="_blank" class="connect-button font-bold py-2 px-4 rounded">
+                    LinkedIn
                 </a>
             </div>
-        </div>
-    </div>
+        </section>
+    </main>
+
+    <footer class="text-center py-4" style="color: var(--secondary);">
+        <p>&copy; 2024 Vijaya Ramesh. All rights reserved. Powered by AI enthusiasm.</p>
+    </footer>
+
+    <div class="math-equations" id="math-equation1">P(A|B) = P(B|A) * P(A) / P(B)</div>
+    <div class="math-equations" id="math-equation2">tanh(x) = (e^x - e^-x) / (e^x + e^-x)</div>
+    <div class="math-equations" id="math-equation3">∫ f(x) dx = F(x) + C</div>
+    <div class="satire-ticker">Today's Joke: Neural Network is like the brain of an average individual but with the confidence of an emperor without clothes.</div>
 
     <script>
-        gsap.from(".profile-container", {duration: 1, y: 50, opacity: 0, ease: "power3.out"});
-        gsap.to(".article", {duration: 0.5, y: 0, opacity: 1, stagger: 0.2, ease: "power3.out", delay: 0.5});
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.getElementById('neural-network').appendChild(renderer.domElement);
+
+        // Create particles
+        const particlesGeometry = new THREE.BufferGeometry();
+        const particleCount = 1000;
+        const posArray = new Float32Array(particleCount * 3);
+
+        for (let i = 0; i < particleCount * 3; i++) {
+            posArray[i] = (Math.random() - 0.5) * 20;
+        }
+
+        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+
+        const particlesMaterial = new THREE.PointsMaterial({
+            size: 0.02,
+            color: 0xffffff,
+            blending: THREE.AdditiveBlending,
+            transparent: true,
+            opacity: 0.8,
+        });
+
+        const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+        scene.add(particlesMesh);
+
+        // Create lines
+        const linesMaterial = new THREE.LineBasicMaterial({
+            color: 0x000000, // Intense black color
+            transparent: true,
+            opacity: 0.6,
+        });
+
+        const linesGeometry = new THREE.BufferGeometry();
+        const maxConnections = 20;
+        const connectionsArray = new Float32Array(particleCount * maxConnections * 3);
+
+        linesGeometry.setAttribute('position', new THREE.BufferAttribute(connectionsArray, 3));
+        const linesMesh = new THREE.LineSegments(linesGeometry, linesMaterial);
+        scene.add(linesMesh);
+
+        camera.position.z = 5;
+
+        function connectParticles() {
+            const positions = particlesMesh.geometry.attributes.position.array;
+            const connections = linesMesh.geometry.attributes.position.array;
+            let connectionIndex = 0;
+
+            for (let i = 0; i < particleCount; i++) {
+                const ix = i * 3;
+                const iy = i * 3 + 1;
+                const iz = i * 3 + 2;
+
+                for (let j = i + 1; j < particleCount; j++) {
+                    const jx = j * 3;
+                    const jy = j * 3 + 1;
+                    const jz = j * 3 + 2;
+
+                    const dx = positions[ix] - positions[jx];
+                    const dy = positions[iy] - positions[jy];
+                    const dz = positions[iz] - positions[jz];
+                    const distance = Math.sqrt(dx * dx + dy * dy + dz * dz);
+
+                    if (distance < 1) {
+                        connections[connectionIndex++] = positions[ix];
+                        connections[connectionIndex++] = positions[iy];
+                        connections[connectionIndex++] = positions[iz];
+                        connections[connectionIndex++] = positions[jx];
+                        connections[connectionIndex++] = positions[jy];
+                        connections[connectionIndex++] = positions[jz];
+
+                        if (connectionIndex >= connections.length) break;
+                    }
+                }
+                if (connectionIndex >= connections.length) break;
+            }
+
+            linesMesh.geometry.attributes.position.needsUpdate = true;
+        }
+
+        function explodeParticles() {
+            for (let i = 0; i < particlesMesh.geometry.attributes.position.array.length; i += 3) {
+                particlesMesh.geometry.attributes.position.array[i] = (Math.random() - 0.5) * 20;
+                particlesMesh.geometry.attributes.position.array[i + 1] = (Math.random() - 0.5) * 20;
+                particlesMesh.geometry.attributes.position.array[i + 2] = (Math.random() - 0.5) * 20;
+            }
+            particlesMesh.geometry.attributes.position.needsUpdate = true;
+        }
+
+        function resetParticles() {
+            for (let i = 0; i < particlesMesh.geometry.attributes.position.array.length; i += 3) {
+                particlesMesh.geometry.attributes.position.array[i] = (Math.random() - 0.5) * 10;
+                particlesMesh.geometry.attributes.position.array[i + 1] = (Math.random() - 0.5) * 10;
+                particlesMesh.geometry.attributes.position.array[i + 2] = (Math.random() - 0.5) * 10;
+            }
+            particlesMesh.geometry.attributes.position.needsUpdate = true;
+        }
+
+        function moveMathEquations() {
+            const equations = document.getElementsByClassName('math-equations');
+            for (let equation of equations) {
+                gsap.fromTo(equation, 
+                    { x: Math.random() * window.innerWidth, y: Math.random() * window.innerHeight },
+                    { x: Math.random() * window.innerWidth, y: Math.random() * window.innerHeight, duration: 10, ease: "sine.inOut", repeat: -1, yoyo: true }
+                );
+            }
+        }
+
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+
+            const time = Date.now() * 0.001;
+            particlesMesh.rotation.y = time * 0.3;
+            particlesMesh.rotation.x = time * 0.1;
+
+            for (let i = 0; i < particlesMesh.geometry.attributes.position.array.length; i += 3) {
+                particlesMesh.geometry.attributes.position.array[i] += Math.sin(time + i) * 0.01;
+                particlesMesh.geometry.attributes.position.array[i + 1] += Math.cos(time + i) * 0.01;
+                particlesMesh.geometry.attributes.position.array[i + 2] += Math.sin(time + i) * 0.01;
+            }
+
+            connectParticles();
+
+            renderer.render(scene, camera);
+        }
+
+        animate();
+
+        // Cycle between explosion and reset every 20 seconds
+        setInterval(() => {
+            explodeParticles();
+            setTimeout(resetParticles, 5000); // Reset particles after 5 seconds
+        }, 20000);
+
+        // Move math equations
+        moveMathEquations();
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        gsap.from("header", { duration: 1, y: -50, opacity: 0, ease: "power3.out" });
+        gsap.from(".glass-panel", { duration: 1, y: 50, opacity: 0, ease: "power3.out", stagger: 0.2 });
+        gsap.from(".skill-item", { duration: 0.5, scale: 0.5, opacity: 0, ease: "back.out(1.7)", stagger: 0.1, scrollTrigger: { trigger: "#skills", start: "top 80%" }});
+        gsap.from(".article-card", { duration: 0.5, y: 50, opacity: 0, ease: "power3.out", stagger: 0.2, scrollTrigger: { trigger: "#articles", start: "top 80%" }});
     </script>
 </body>
 </html>
