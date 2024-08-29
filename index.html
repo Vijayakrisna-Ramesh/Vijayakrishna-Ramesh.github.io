@@ -5,344 +5,239 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vijaya Ramesh - AI Product Visionary</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
-        :root {
-            --primary: #4f46e5;
-            --secondary: #818cf8;
-            --background: #f3f4f6;
-            --text: #111827;
-            --accent: #c7d2fe;
-            --neural-line: #000000; /* Intense black color for neural network */
-        }
-
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, var(--background) 0%, #e0e7ff 100%);
-            color: var(--text);
-            overflow-x: hidden;
+            background-color: #000;
+            color: #fff;
         }
 
-        h1, h2, h3 {
-            color: var(--primary);
+        .section {
+            padding: 5rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .neural-bg {
-            position: fixed;
+        .skills-chart {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .glow {
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+        }
+
+        #fractal-tree {
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -1;
-            opacity: 0.8;
+            z-index: 0;
         }
 
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(12px);
-            border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-        }
-
-        .skill-item, .article-card, .connect-button {
-            transition: all 0.3s ease;
-            background: white;
-            color: var(--text);
-            border-radius: 12px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-        }
-
-        .skill-item:hover, .article-card:hover, .connect-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 8px rgba(79, 70, 229, 0.2);
-        }
-
-        .math-equations {
-            position: fixed;
-            font-size: 1.2rem;
-            color: rgba(0, 0, 0, 0.8); /* Black color for equations */
+        .hero-content {
+            position: relative;
             z-index: 1;
-            pointer-events: none;
-            transition: all 0.5s ease;
-        }
-
-        .satire-ticker {
-            background: rgba(255, 255, 255, 0.8);
-            color: var(--primary);
-            padding: 0.5rem 1rem;
-            font-weight: 600;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            text-align: center;
-            animation: ticker 30s linear infinite;
-        }
-
-        @keyframes ticker {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 2rem;
+            border-radius: 10px;
         }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
-    <div id="neural-network" class="neural-bg"></div>
-
-    <header class="p-6 z-10 w-full">
-        <div class="container mx-auto flex justify-between items-center">
-            <div class="text-4xl font-bold">VR</div>
+    <header class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div id="fractal-tree"></div>
+        <div class="hero-content text-center">
+            <h1 class="text-5xl font-bold mb-4 glow">Vijaya Ramesh</h1>
+            <p class="text-2xl mb-6">AI Product Visionary</p>
+            <p class="max-w-2xl mx-auto text-lg">
+                Bridging the gap between human intuition and machine intelligence.
+                Let's shape the future of AI-driven products together.
+            </p>
         </div>
     </header>
 
-    <main class="flex-grow container mx-auto px-4 py-8">
-        <section id="about" class="mb-16">
-            <div class="glass-panel p-8">
-                <h2 class="text-5xl font-bold mb-6">Vijaya Ramesh</h2>
-                <h3 class="text-2xl mb-4" style="color: var(--secondary);">Technical Product Manager & AI Enthusiast</h3>
-                <p class="mb-4">
-                    Greetings, fellow homo sapiens! I'm Vijaya, a product manager by day and AI enthusiast by... well, also day. My sleep schedule is like a well-trained neural network—constantly learning.
-                </p>
-                <p class="mb-4">
-                    With a background in management and engineering, I've mastered translating between human and machine languages. I can explain complex AI concepts simply or make simple concepts sound complex. It's a superpower I acquired from years of academic writing.
-                </p>
-                <p>
-                    When I'm not diving into product discovery, you might find me teaching machine learning algorithms humor. So far, they've mastered dad jokes, but I'm optimistic.
-                </p>
+    <main>
+        <section id="about" class="section text-center px-4">
+            <h2 class="text-3xl font-bold mb-4 glow">About Me</h2>
+            <p class="max-w-2xl mx-auto">
+                As a Product Manager with a deep passion for AI, I leverage my background in management and engineering
+                to create innovative solutions. My goal is to make AI accessible and beneficial for everyone.
+            </p>
+        </section>
+
+        <section id="skills" class="section px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center glow">Skills Overview</h2>
+            <div class="skills-chart">
+                <canvas id="skillsChart"></canvas>
             </div>
         </section>
 
-        <section id="skills" class="mb-16">
-            <h2 class="text-3xl font-bold mb-6 text-center">Expertise Matrix</h2>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                <div class="skill-item p-4 text-center">
-                    <span class="text-xl font-semibold">AI/ML</span>
+        <section id="projects" class="section px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center glow">Notable Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-2">AI-Driven Product Optimization</h3>
+                    <p>Leveraged machine learning to enhance product features and user experience.</p>
                 </div>
-                <div class="skill-item p-4 text-center">
-                    <span class="text-xl font-semibold">Product Management</span>
-                </div>
-                <div class="skill-item p-4 text-center">
-                    <span class="text-xl font-semibold">Neural Networks</span>
-                </div>
-                <div class="skill-item p-4 text-center">
-                    <span class="text-xl font-semibold">Data Science</span>
-                </div>
-                <div class="skill-item p-4 text-center">
-                    <span class="text-xl font-semibold">Design Thinking</span>
-                </div>
-                <div class="skill-item p-4 text-center">
-                    <span class="text-xl font-semibold">User Experience</span>
-                </div>
-                <div class="skill-item p-4 text-center">
-                    <span class="text-xl font-semibold">Prompt Engineering</span>
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-2">Neural Network Visualization Tool</h3>
+                    <p>Developed an interactive tool for visualizing complex neural network architectures.</p>
                 </div>
             </div>
         </section>
 
-        <section id="articles" class="mb-16">
-            <h2 class="text-3xl font-bold mb-6 text-center">Neural Nuggets</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="article-card p-6">
-                    <h3 class="text-xl font-bold mb-2">Decoding Activation Functions</h3>
-                    <p class="text-sm mb-2" style="color: var(--secondary);">Published on Jun 19, 2024 · 3 min read</p>
-                    <p>Unveiling Sigmoid, ReLU, and Softmax in Neural Networks</p>
-                </div>
-                 <div class="article-card p-6">
-                    <h3 class="text-xl font-bold mb-2">Decoding Activation Functions</h3>
-                    <p class="text-sm mb-2" style="color: var(--secondary);">Published on Feb 18, 2024 · 3 min read</p>
-                    <p>Dummies guide to Google Gemini Pro 1.5</p>
-                </div>
-                <div class="article-card p-6">
-                    <h3 class="text-xl font-bold mb-2">Decoding Activation Functions</h3>
-                    <p class="text-sm mb-2" style="color: var(--secondary);">Published on Feb 18, 2024 · 3 min read</p>
-                    <p>3 stage training of a Latent VDM</p>
-                </div>
-                <div class="article-card p-6">
-                    <h3 class="text-xl font-bold mb-2">Intuition behind Logistic Regression</h3>
-                    <p class="text-sm mb-2" style="color: var(--secondary);">Published on May 29, 2024 · 5 min read</p>
-                    <p>A straightforward explanation of the mathematical intuition behind logistic regression.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="connect" class="text-center">
-            <h2 class="text-3xl font-bold mb-6">Initiate Neural Handshake</h2>
+        <section id="contact" class="section px-4 text-center">
+            <h2 class="text-3xl font-bold mb-8 glow">Get in Touch</h2>
             <div class="flex justify-center space-x-4">
-                <a href="https://twitter.com/your_twitter" target="_blank" class="connect-button font-bold py-2 px-4 rounded">
-                    Twitter
-                </a>
-                <a href="https://medium.com/@veejaykris.29" target="_blank" class="connect-button font-bold py-2 px-4 rounded">
-                    Medium
-                </a>
-                <a href="https://www.linkedin.com/in/vijayakrishnar" target="_blank" class="connect-button font-bold py-2 px-4 rounded">
-                    LinkedIn
-                </a>
+                <a href="#" class="bg-white text-black px-4 py-2 rounded hover:bg-opacity-80 transition">LinkedIn</a>
+                <a href="#" class="bg-white text-black px-4 py-2 rounded hover:bg-opacity-80 transition">Twitter</a>
+                <a href="#" class="bg-white text-black px-4 py-2 rounded hover:bg-opacity-80 transition">Email</a>
             </div>
         </section>
     </main>
 
-    <footer class="text-center py-4" style="color: var(--secondary);">
-        <p>&copy; 2024 Vijaya Ramesh. All rights reserved. Powered by AI enthusiasm.</p>
+    <footer class="mt-auto py-6 text-center text-sm opacity-70">
+        <p>&copy; 2024 Vijaya Ramesh. All rights reserved.</p>
     </footer>
 
-    <div class="math-equations" id="math-equation1">P(A|B) = P(B|A) * P(A) / P(B)</div>
-    <div class="math-equations" id="math-equation2">tanh(x) = (e^x - e^-x) / (e^x + e^-x)</div>
-    <div class="math-equations" id="math-equation3">∫ f(x) dx = F(x) + C</div>
-    <div class="satire-ticker">Today's Joke: Neural Network is like the brain of an average individual but with the confidence of an emperor without clothes.</div>
-
     <script>
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ alpha: true });
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        document.getElementById('neural-network').appendChild(renderer.domElement);
+        // Fractal Tree Animation
+        new p5(function(p) {
+            let angle;
+            let maxDepth = 10;
+            let lengthFactor = 0.7;
+            let minBranchLength = 5;
 
-        // Create particles
-        const particlesGeometry = new THREE.BufferGeometry();
-        const particleCount = 1000;
-        const posArray = new Float32Array(particleCount * 3);
+            p.setup = function() {
+                let canvas = p.createCanvas(p.windowWidth, p.windowHeight);
+                canvas.parent('fractal-tree');
+                p.colorMode(p.HSB);
+                p.strokeWeight(2);
+                p.frameRate(30);
+            };
 
-        for (let i = 0; i < particleCount * 3; i++) {
-            posArray[i] = (Math.random() - 0.5) * 20;
-        }
+            p.draw = function() {
+                p.clear();
+                angle = p.noise(p.frameCount * 0.01) * p.PI / 2;
+                p.translate(p.width / 2, p.height);
+                branch(p.height * 0.3, 0);
+            };
 
-        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+            function branch(len, depth) {
+                if (len < minBranchLength || depth > maxDepth) return;
 
-        const particlesMaterial = new THREE.PointsMaterial({
-            size: 0.02,
-            color: 0xffffff,
-            blending: THREE.AdditiveBlending,
-            transparent: true,
-            opacity: 0.8,
+                p.stroke(depth * 25 % 360, 80, 100, 0.6);
+                p.line(0, 0, 0, -len);
+                p.translate(0, -len);
+
+                p.push();
+                p.rotate(angle);
+                branch(len * lengthFactor, depth + 1);
+                p.pop();
+
+                p.push();
+                p.rotate(-angle);
+                branch(len * lengthFactor, depth + 1);
+                p.pop();
+            }
+
+            p.windowResized = function() {
+                p.resizeCanvas(p.windowWidth, p.windowHeight);
+            };
         });
 
-        const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
-        scene.add(particlesMesh);
-
-        // Create lines
-        const linesMaterial = new THREE.LineBasicMaterial({
-            color: 0x000000, // Intense black color
-            transparent: true,
-            opacity: 0.6,
-        });
-
-        const linesGeometry = new THREE.BufferGeometry();
-        const maxConnections = 20;
-        const connectionsArray = new Float32Array(particleCount * maxConnections * 3);
-
-        linesGeometry.setAttribute('position', new THREE.BufferAttribute(connectionsArray, 3));
-        const linesMesh = new THREE.LineSegments(linesGeometry, linesMaterial);
-        scene.add(linesMesh);
-
-        camera.position.z = 5;
-
-        function connectParticles() {
-            const positions = particlesMesh.geometry.attributes.position.array;
-            const connections = linesMesh.geometry.attributes.position.array;
-            let connectionIndex = 0;
-
-            for (let i = 0; i < particleCount; i++) {
-                const ix = i * 3;
-                const iy = i * 3 + 1;
-                const iz = i * 3 + 2;
-
-                for (let j = i + 1; j < particleCount; j++) {
-                    const jx = j * 3;
-                    const jy = j * 3 + 1;
-                    const jz = j * 3 + 2;
-
-                    const dx = positions[ix] - positions[jx];
-                    const dy = positions[iy] - positions[jy];
-                    const dz = positions[iz] - positions[jz];
-                    const distance = Math.sqrt(dx * dx + dy * dy + dz * dz);
-
-                    if (distance < 1) {
-                        connections[connectionIndex++] = positions[ix];
-                        connections[connectionIndex++] = positions[iy];
-                        connections[connectionIndex++] = positions[iz];
-                        connections[connectionIndex++] = positions[jx];
-                        connections[connectionIndex++] = positions[jy];
-                        connections[connectionIndex++] = positions[jz];
-
-                        if (connectionIndex >= connections.length) break;
+        // Skills Chart
+        const ctx = document.getElementById('skillsChart').getContext('2d');
+        const skillsChart = new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: ['AI/ML', 'Product Management', 'Data Science', 'UX Design', 'Project Management', 'Communication'],
+                datasets: [{
+                    label: 'Skills',
+                    data: [95, 90, 85, 80, 88, 92],
+                    backgroundColor: 'rgba(0, 255, 255, 0.2)',
+                    borderColor: 'rgba(0, 255, 255, 1)',
+                    borderWidth: 3,
+                    pointBackgroundColor: 'rgba(0, 255, 255, 1)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgba(0, 255, 255, 1)'
+                }]
+            },
+            options: {
+                scales: {
+                    r: {
+                        angleLines: {
+                            color: 'rgba(255, 255, 255, 0.3)'
+                        },
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.3)'
+                        },
+                        pointLabels: {
+                            color: 'rgba(255, 255, 255, 0.9)',
+                            font: {
+                                size: 14,
+                                weight: 'bold'
+                            }
+                        },
+                        ticks: {
+                            color: 'rgba(255, 255, 255, 0.7)',
+                            backdropColor: 'transparent'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                elements: {
+                    line: {
+                        tension: 0.4
                     }
                 }
-                if (connectionIndex >= connections.length) break;
             }
-
-            linesMesh.geometry.attributes.position.needsUpdate = true;
-        }
-
-        function explodeParticles() {
-            for (let i = 0; i < particlesMesh.geometry.attributes.position.array.length; i += 3) {
-                particlesMesh.geometry.attributes.position.array[i] = (Math.random() - 0.5) * 20;
-                particlesMesh.geometry.attributes.position.array[i + 1] = (Math.random() - 0.5) * 20;
-                particlesMesh.geometry.attributes.position.array[i + 2] = (Math.random() - 0.5) * 20;
-            }
-            particlesMesh.geometry.attributes.position.needsUpdate = true;
-        }
-
-        function resetParticles() {
-            for (let i = 0; i < particlesMesh.geometry.attributes.position.array.length; i += 3) {
-                particlesMesh.geometry.attributes.position.array[i] = (Math.random() - 0.5) * 10;
-                particlesMesh.geometry.attributes.position.array[i + 1] = (Math.random() - 0.5) * 10;
-                particlesMesh.geometry.attributes.position.array[i + 2] = (Math.random() - 0.5) * 10;
-            }
-            particlesMesh.geometry.attributes.position.needsUpdate = true;
-        }
-
-        function moveMathEquations() {
-            const equations = document.getElementsByClassName('math-equations');
-            for (let equation of equations) {
-                gsap.fromTo(equation, 
-                    { x: Math.random() * window.innerWidth, y: Math.random() * window.innerHeight },
-                    { x: Math.random() * window.innerWidth, y: Math.random() * window.innerHeight, duration: 10, ease: "sine.inOut", repeat: -1, yoyo: true }
-                );
-            }
-        }
-
-        // Animation loop
-        function animate() {
-            requestAnimationFrame(animate);
-
-            const time = Date.now() * 0.001;
-            particlesMesh.rotation.y = time * 0.3;
-            particlesMesh.rotation.x = time * 0.1;
-
-            for (let i = 0; i < particlesMesh.geometry.attributes.position.array.length; i += 3) {
-                particlesMesh.geometry.attributes.position.array[i] += Math.sin(time + i) * 0.01;
-                particlesMesh.geometry.attributes.position.array[i + 1] += Math.cos(time + i) * 0.01;
-                particlesMesh.geometry.attributes.position.array[i + 2] += Math.sin(time + i) * 0.01;
-            }
-
-            connectParticles();
-
-            renderer.render(scene, camera);
-        }
-
-        animate();
-
-        // Cycle between explosion and reset every 20 seconds
-        setInterval(() => {
-            explodeParticles();
-            setTimeout(resetParticles, 5000); // Reset particles after 5 seconds
-        }, 20000);
-
-        // Move math equations
-        moveMathEquations();
-
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
         });
 
-        gsap.from("header", { duration: 1, y: -50, opacity: 0, ease: "power3.out" });
-        gsap.from(".glass-panel", { duration: 1, y: 50, opacity: 0, ease: "power3.out", stagger: 0.2 });
-        gsap.from(".skill-item", { duration: 0.5, scale: 0.5, opacity: 0, ease: "back.out(1.7)", stagger: 0.1, scrollTrigger: { trigger: "#skills", start: "top 80%" }});
-        gsap.from(".article-card", { duration: 0.5, y: 50, opacity: 0, ease: "power3.out", stagger: 0.2, scrollTrigger: { trigger: "#articles", start: "top 80%" }});
+        // Animation
+        function animateChart() {
+            const data = skillsChart.data.datasets[0].data;
+            gsap.to(data, {
+                duration: 2,
+                ease: "power1.inOut",
+                0: gsap.utils.random(90, 100),
+                1: gsap.utils.random(85, 95),
+                2: gsap.utils.random(80, 90),
+                3: gsap.utils.random(75, 85),
+                4: gsap.utils.random(83, 93),
+                5: gsap.utils.random(87, 97),
+                onUpdate: () => skillsChart.update()
+            });
+        }
+
+        setInterval(animateChart, 3000);
+
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                    if (entry.target.id === 'skills') {
+                        animateChart();
+                    }
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
     </script>
 </body>
 </html>
