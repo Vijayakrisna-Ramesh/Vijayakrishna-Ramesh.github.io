@@ -47,6 +47,16 @@
             padding: 2rem;
             border-radius: 10px;
         }
+
+        .blog-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 255, 255, 0.2);
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
@@ -92,12 +102,38 @@
             </div>
         </section>
 
+        <section id="blogs" class="section px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center glow">Featured Blogs</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <a href="https://medium.com/@veejaykris.29/self-attention-explained-to-a-layman-5b6729c4363b" target="_blank" class="blog-card p-6 rounded-lg hover:bg-white hover:bg-opacity-20 transition duration-300">
+                    <h3 class="text-xl font-bold mb-2">Self-attention explained to a layman</h3>
+                    <p class="text-sm text-gray-300">Demystifying the concept of self-attention in machine learning.</p>
+                </a>
+                <a href="https://medium.com/@veejaykris.29/dummies-guide-to-google-gemini-pro-1-5-95c9bd322e9b" target="_blank" class="blog-card p-6 rounded-lg hover:bg-white hover:bg-opacity-20 transition duration-300">
+                    <h3 class="text-xl font-bold mb-2">Dummies guide to Google Gemini Pro 1.5</h3>
+                    <p class="text-sm text-gray-300">An easy-to-understand guide to Google's latest AI model.</p>
+                </a>
+                <a href="https://medium.com/@veejaykris.29/decoding-activation-functions-unveiling-sigmoid-relu-and-softmax-in-neural-networks-wait-till-a4a969bcce01" target="_blank" class="blog-card p-6 rounded-lg hover:bg-white hover:bg-opacity-20 transition duration-300">
+                    <h3 class="text-xl font-bold mb-2">Decoding Activation Functions</h3>
+                    <p class="text-sm text-gray-300">Exploring Sigmoid, ReLU, and Softmax in Neural Networks.</p>
+                </a>
+                <a href="https://medium.com/@veejaykris.29/3-stage-training-of-a-latent-vdm-55b6bee42902" target="_blank" class="blog-card p-6 rounded-lg hover:bg-white hover:bg-opacity-20 transition duration-300">
+                    <h3 class="text-xl font-bold mb-2">3 stage training of a Latent VDM</h3>
+                    <p class="text-sm text-gray-300">A deep dive into the training process of Latent Variable Diffusion Models.</p>
+                </a>
+                <a href="https://medium.com/@veejaykris.29/intuition-behind-logistic-regression-models-ec1d3913cc8e" target="_blank" class="blog-card p-6 rounded-lg hover:bg-white hover:bg-opacity-20 transition duration-300">
+                    <h3 class="text-xl font-bold mb-2">Intuition behind Logistic Regression Models</h3>
+                    <p class="text-sm text-gray-300">Understanding the core concepts of logistic regression in machine learning.</p>
+                </a>
+            </div>
+        </section>
+
         <section id="contact" class="section px-4 text-center">
             <h2 class="text-3xl font-bold mb-8 glow">Get in Touch</h2>
             <div class="flex justify-center space-x-4">
-                <a href="#" class="bg-white text-black px-4 py-2 rounded hover:bg-opacity-80 transition">LinkedIn</a>
-                <a href="#" class="bg-white text-black px-4 py-2 rounded hover:bg-opacity-80 transition">Twitter</a>
-                <a href="#" class="bg-white text-black px-4 py-2 rounded hover:bg-opacity-80 transition">Email</a>
+                <a href="https://www.linkedin.com/in/vijayakrishnar/" target="_blank" class="bg-white text-black px-4 py-2 rounded hover:bg-opacity-80 transition">LinkedIn</a>
+                <a href="https://x.com/VjK1124637" target="_blank" class="bg-white text-black px-4 py-2 rounded hover:bg-opacity-80 transition">Twitter</a>
+                <a href="mailto:veejaykris.29@gmail.com" class="bg-white text-black px-4 py-2 rounded hover:bg-opacity-80 transition">Email</a>
             </div>
         </section>
     </main>
