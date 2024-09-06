@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vijaya Ramesh - All Articles</title>
+    <title>Vijaya Ramesh - Articles</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
@@ -16,30 +15,8 @@
             color: #fff;
         }
 
-        .section {
-            padding: 5rem 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .glow {
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
-        }
-
-        #fractal-tree {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            background-color: rgba(0, 0, 0, 0.6);
-            padding: 2rem;
-            border-radius: 10px;
+        .gradient-bg {
+            background: linear-gradient(90deg, #FFA500, #FF69B4);
         }
 
         .article-card {
@@ -54,14 +31,30 @@
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
-    <header class="relative h-screen flex items-center justify-center overflow-hidden">
-        <div id="fractal-tree"></div>
-        <div class="hero-content text-center">
-            <h1 class="text-5xl font-bold mb-4 glow">Vijaya Ramesh</h1>
-            <p class="text-2xl mb-6">AI Product Visionary</p>
-            <h2 class="text-3xl font-bold glow">All Articles</h2>
-        </div>
+    <header class="bg-black py-4">
+        <nav class="container mx-auto px-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold">VR</a>
+            <div class="space-x-4">
+                <a href="#" class="text-white hover:text-gray-300">LLM Course</a>
+                <a href="#" class="text-white hover:text-gray-300">Hands-On GNNs</a>
+                <a href="#" class="text-white hover:text-gray-300">Research</a>
+                <a href="#" class="text-white hover:text-gray-300">About</a>
+            </div>
+        </nav>
     </header>
+
+    <section class="gradient-bg py-16">
+        <div class="container mx-auto px-4">
+            <h1 class="text-5xl font-bold mb-4">Articles</h1>
+            <p class="text-xl mb-6">Technical articles about graph neural networks, large language models, and convex optimization.</p>
+            <div class="flex space-x-4">
+                <a href="#" class="text-white hover:text-gray-300"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white hover:text-gray-300"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-white hover:text-gray-300"><i class="fab fa-github"></i></a>
+                <a href="#" class="text-white hover:text-gray-300"><i class="fas fa-globe"></i></a>
+            </div>
+        </div>
+    </section>
 
     <main class="flex-grow container mx-auto px-4 py-8">
         <div class="max-w-4xl mx-auto space-y-8">
@@ -123,69 +116,9 @@
         </div>
     </main>
 
-    <footer class="mt-auto py-6 text-center text-sm opacity-70">
+    <footer class="bg-black py-6 text-center text-sm opacity-70">
         <p>&copy; 2024 Vijaya Ramesh. All rights reserved.</p>
         <a href="../" class="mt-2 inline-block text-cyan-400 hover:underline">Back to Home</a>
     </footer>
-
-    <script>
-        // Fractal Tree Animation
-        new p5(function(p) {
-            let angle;
-            let maxDepth = 10;
-            let lengthFactor = 0.7;
-            let minBranchLength = 5;
-
-            p.setup = function() {
-                let canvas = p.createCanvas(p.windowWidth, p.windowHeight);
-                canvas.parent('fractal-tree');
-                p.colorMode(p.HSB);
-                p.strokeWeight(2);
-                p.frameRate(30);
-            };
-
-            p.draw = function() {
-                p.clear();
-                angle = p.noise(p.frameCount * 0.01) * p.PI / 2;
-                p.translate(p.width / 2, p.height);
-                branch(p.height * 0.3, 0);
-            };
-
-            function branch(len, depth) {
-                if (len < minBranchLength || depth > maxDepth) return;
-
-                p.stroke(depth * 25 % 360, 80, 100, 0.6);
-                p.line(0, 0, 0, -len);
-                p.translate(0, -len);
-
-                p.push();
-                p.rotate(angle);
-                branch(len * lengthFactor, depth + 1);
-                p.pop();
-
-                p.push();
-                p.rotate(-angle);
-                branch(len * lengthFactor, depth + 1);
-                p.pop();
-            }
-
-            p.windowResized = function() {
-                p.resizeCanvas(p.windowWidth, p.windowHeight);
-            };
-        });
-
-        // Intersection Observer for animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-fade-in');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('article').forEach(article => {
-            observer.observe(article);
-        });
-    </script>
 </body>
 </html>
