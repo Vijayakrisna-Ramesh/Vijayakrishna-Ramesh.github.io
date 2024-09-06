@@ -1,1 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vijaya Ramesh - AI Product Visionary</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+
+        .section {
+            padding: 5rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .skills-chart {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .glow {
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+        }
+
+        #fractal-tree {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .blog-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    <header class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div id="fractal-tree"></div>
+        <div class="hero-content text-center">
+            <h1 class="text-5xl font-bold mb-4 glow">Vijaya Ramesh</h1>
+            <p class="text-2xl mb-6">AI Product Visionary</p>
+            <p class="max-w-2xl mx-auto text-lg">
+                Bridging the gap between human intuition and machine intelligence.
+                Let's shape the future of AI-driven products together.
+            </p>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="section text-center px-4">
+            <h2 class="text-3xl font-bold mb-4 glow">About Me</h2>
+            <p class="max-w-2xl mx-auto">
+                As a Product Manager with a deep passion for AI, I leverage my background in management and engineering
+                to create innovative solutions. My goal is to make AI accessible and beneficial for everyone.
+            </p>
+        </section>
+
+        <section id="skills" class="section px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center glow">Skills Overview</h2>
+            <div class="skills-chart">
+                <canvas id="skillsChart"></canvas>
+            </div>
+        </section>
+
+        <section id="projects" class="section px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center glow">Notable Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-2">AI-Driven Product Optimization</h3>
+                    <p>Leveraged machine learning to enhance product features and user experience.</p>
+                </div>
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-2">Neural Network Visualization Tool</h3>
+                    <p>Developed an interactive tool for visualizing complex neural network architectures.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="blogs" class="section px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center glow">Featured Blogs</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <a href="https://medium.com/@veejaykris.29/self-attention-explained-to-a-layman-5b6729c4363b" target="_blank" class="blog-card p-6 rounded-lg hover:bg-white hover:bg-opacity-20 transition duration-300">
+                    <h3 class="text-xl font-bold mb-2">Self-attention explained to a layman</h3>
+                    <p class="text-sm text-gray-300">Demystifying the concept of self-attention in machine learning.</p>
+                </a>
+                <a href="https://medium.com/@veejaykris.29/dummies-guide-to-google-gemini-pro-1-5-95c9bd322e9b" target="_blank" class="blog-card p-6 rounded-lg hover:bg-white hover:bg-opacity-20 transition duration-300">
+                    <h3 class="text-xl font-bold mb-2">Dummies guide to Google Gemini Pro 1.5</h3>
+                    <p class="text-sm text-gray-300">An easy-to-understand guide to Google's latest AI model.</p>
+                </a>
+                <a href="https://medium.com/@veejaykris.29/decoding-activation-functions-unveiling-sigmoid-relu-and-softmax-in-neural-networks-wait-till-a4a969bcce01" target="_blank" class="blog-card p-6 rounded-lg hover:bg-white hover:bg-opacity-20 transition duration-300">
+                    <h3 class="text-xl font-bold mb-2">Decoding Activation Functions</h3>
+                    <p class="text-sm text-gray-300">Exploring Sigmoid, ReLU, and Softmax in Neural Networks.</p>
+                </a>
+                <a href="https://medium.com/@veejaykris.29/3-stage-training-of-a-latent-vdm-55b6bee42902" target="_blank" class="blog-card p-6 rounded-lg hover:bg-white hover:bg-opacity-20 transition duration-300">
+                    <h3 class="text-xl font-bold mb-2">3 stage training of a Latent VDM</h3>
+                    <p class="text-sm text-gray-300">A deep dive into the training process of Latent Variable Diffusion Models.</p>
+                </a>
+                <a href="https://medium.com/@veejaykris.29/intuition-behind-logistic-regression-models-ec1d3913cc8e" target="_blank" class="blog-card p-6 rounded-lg hover:bg-white hover:bg-opacity-20 transition duration-300">
+                    <h3 class="text-xl font-bold mb-2">Intuition behind Logistic Regression Models</h3>
+                    <p class="text-sm text-gray-300">Understanding the core concepts of logistic regression in machine learning.</p>
+                </a>
+            </div>
+            <div class="text-center mt-8">
+                <a href="./blogs/" class="bg-white text-black px-6 py-3 rounded-lg hover:bg-opacity-80 transition text-lg font-semibold">View All Articles</a>
+            </div>
+        </section>
+
+        <section id="contact" class="section px-4 text-center">
+            <h2 class="text-3xl font-bold mb-8 glow">Get in Touch</h2>
+            <div class="flex justify-center space-x-4">
+                <a href="https://www.linkedin.com/in/vijayakrishnar/" target="_blank" class="bg-white text-black px-4 py-2 rounded hover:bg-opacity-80 transition">LinkedIn</a>
+                <a href="https://x.com/VjK1124637" target="_blank" class="bg-white text-black px-4 py-2 rounded hover:bg-opacity-80 transition">Twitter</a>
+                <a href="mailto:veejaykris.29@gmail.com" class="bg-white text-black px-4 py-2 rounded hover:bg-opacity-80 transition">Email</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="mt-auto py-6 text-center text-sm opacity-70">
+        <p>&copy; 2024 Vijaya Ramesh. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Fractal Tree Animation
+        new p5(function(p) {
+            let angle;
+            let maxDepth = 10;
+            let lengthFactor = 0.7;
+            let minBranchLength = 5;
+
+            p.setup = function() {
+                let canvas = p.createCanvas(p.windowWidth, p.windowHeight);
+                canvas.parent('fractal-tree');
+                p.colorMode(p.HSB);
+                p.strokeWeight(2);
+                p.frameRate(30);
+            };
+
+            p.draw = function() {
+                p.clear();
+                angle = p.noise(p.frameCount * 0.01) * p.PI / 2;
+                p.translate(p.width / 2, p.height);
+                branch(p.height * 0.3, 0);
+            };
+
+            function branch(len, depth) {
+                if (len < minBranchLength || depth > maxDepth) return;
+
+                p.stroke(depth * 25 % 360, 80, 100, 0.6);
+                p.line(0, 0, 0, -len);
+                p.translate(0, -len);
+
+                p.push();
+                p.rotate(angle);
+                branch(len * lengthFactor, depth + 1);
+                p.pop();
+
+                p.push();
+                p.rotate(-angle);
+                branch(len * lengthFactor, depth + 1);
+                p.pop();
+            }
+
+            p.windowResized = function() {
+                p.resizeCanvas(p.windowWidth, p.windowHeight);
+            };
+        });
+
+        // Skills Chart
+        const ctx = document.getElementById('skillsChart').getContext('2d');
+        const skillsChart = new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: ['AI/ML', 'Product Management', 'Data Science', 'UX Design', 'Project Management', 'Communication'],
+                datasets: [{
+                    label: 'Skills',
+                    data: [95, 90, 85, 80, 88, 92],
+                    backgroundColor: 'rgba(0, 255, 255, 0.2)',
+                    borderColor: 'rgba(0, 255, 255, 1)',
+                    borderWidth: 3,
+                    pointBackgroundColor: 'rgba(0, 255, 255, 1)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgba(0, 255, 255, 1)'
+                }]
+            },
+            options: {
+                scales: {
+                    r: {
+                        angleLines: {
+                            color: 'rgba(255, 255, 255, 0.3)'
+                        },
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.3)'
+                        },
+                        pointLabels: {
+                            color: 'rgba(255, 255, 255, 0.9)',
+                            font: {
+                                size: 14,
+                                weight: 'bold'
+                            }
+                        },
+                        ticks: {
+                            color: 'rgba(255, 255, 255, 0.7)',
+                            backdropColor: 'transparent'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                elements: {
+                    line: {
+                        tension: 0.4
+                    }
+                }
+            }
+        });
+
+        // Animation
+        function animateChart() {
+            const data = skillsChart.data.datasets[0].data;
+            gsap.to(data, {
+                duration: 2,
+                ease: "power1.inOut",
+                0: gsap.utils.random(90, 100),
+                1: gsap.utils.random(85, 95),
+                2: gsap.utils.random(80, 90),
+                3: gsap.utils.random(75, 85),
+                4: gsap.utils.random(83, 93),
+                5: gsap.utils.random(87, 97),
+                onUpdate: () => skillsChart.update()
+            });
+        }
+
+        setInterval(animateChart, 3000);
+
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                    if (entry.target.id === 'skills') {
+                        animateChart();
+                    }
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
