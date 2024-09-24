@@ -18,32 +18,15 @@
             background: linear-gradient(90deg, #FFA500, #FF69B4);
         }
 
-        .sidebar {
-            height: calc(100vh - 4rem);
-            overflow-y: auto;
-        }
-
-        .sidebar::-webkit-scrollbar {
-            width: 6px;
-        }
-
-        .sidebar::-webkit-scrollbar-thumb {
-            background-color: #cbd5e0;
-            border-radius: 3px;
-        }
-
         .image-container {
             width: 100%;
-            max-height: 500px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
+            max-width: 600px; /* Adjust this value to control the image size */
+            margin: 0 auto;
         }
 
         .full-image {
-            max-width: 100%;
-            max-height: 100%;
+            width: 100%;
+            height: auto;
             object-fit: contain;
         }
     </style>
@@ -61,109 +44,87 @@
         </div>
     </header>
 
-    <div class="flex-grow flex">
-        <aside class="w-64 bg-white p-4 sidebar">
-            <h3 class="font-semibold mb-4">LLM Post-training</h3>
-            <ul class="space-y-2">
-                <li><a href="#" class="hover:underline">Fine-tune Llama 2 in Colab</a></li>
-                <li><a href="#" class="hover:underline">Fine-tune Llama 2 in Axolotl</a></li>
-                <li><a href="#" class="hover:underline">Fine-tune Mistral-7b with DPO</a></li>
-                <li><a href="#" class="hover:underline">Fine-tune Llama 3 with QRPO</a></li>
-                <li><a href="#" class="hover:underline">Fine-tune Llama 3.1 8B</a></li>
-                <li><a href="#" class="hover:underline">Merge LLMs with mergekit</a></li>
-                <li><a href="#" class="hover:underline">Create Mixture of Experts</a></li>
-                <li><a href="#" class="hover:underline">Uncensor any LLM</a></li>
-            </ul>
-            <h3 class="font-semibold mt-6 mb-4">LLM Quantization</h3>
-            <ul class="space-y-2">
-                <li><a href="#" class="hover:underline">Intro to Quantization</a></li>
-                <li><a href="#" class="hover:underline">Quantization with GPTQ</a></li>
-                <li><a href="#" class="hover:underline">Quantization with GGML</a></li>
-            </ul>
-        </aside>
-
-        <main class="flex-grow p-8 overflow-y-auto">
-            <h2 class="text-3xl font-bold mb-2">Deep Dive into FAISS</h2>
-            <p class="text-xl mb-4">Exploring efficient similarity search and clustering of dense vectors</p>
-            <div class="bg-white p-4 rounded-lg shadow-md mb-8">
-                <div class="image-container">
-                    <img src="../images/faiss.jpg" alt="FAISS Concept Illustration" class="full-image">
-                </div>
-                <p class="text-sm text-gray-600 mt-2">Image: Conceptual illustration of FAISS similarity search</p>
+    <main class="flex-grow container mx-auto px-4 py-8">
+        <h2 class="text-3xl font-bold mb-2">Deep Dive into FAISS</h2>
+        <p class="text-xl mb-4">Exploring efficient similarity search and clustering of dense vectors</p>
+        <div class="bg-white p-4 rounded-lg shadow-md mb-8">
+            <div class="image-container">
+                <img src="../images/faiss.jpg" alt="FAISS Concept Illustration" class="full-image">
             </div>
-            
-            <section id="overview" class="mb-8">
-                <h3 class="text-2xl font-bold mb-4">Overview of FAISS</h3>
-                <p>FAISS (Facebook AI Similarity Search) is a library developed by Facebook Research for efficient similarity search and clustering of dense vectors. It is designed to address the challenges of working with high-dimensional data in large-scale applications.</p>
-                <h4 class="text-xl font-semibold mt-4 mb-2">Key Features</h4>
-                <ul class="list-disc list-inside space-y-2">
-                    <li>High-performance indexing and search algorithms</li>
-                    <li>Support for GPU acceleration</li>
-                    <li>Flexible index types for different use cases</li>
-                    <li>Scalability to billion-scale datasets</li>
-                </ul>
-            </section>
-            
-            <section id="data-preparation" class="mb-8">
-                <h3 class="text-2xl font-bold mb-4">Data Preparation and Transformation</h3>
-                <p>Proper data preparation is crucial for effective similarity search using FAISS. This involves preprocessing techniques and dimensionality reduction methods to optimize the performance of the index.</p>
-                <h4 class="text-xl font-semibold mt-4 mb-2">Preprocessing Techniques</h4>
-                <ul class="list-disc list-inside space-y-2">
-                    <li>Normalization of input vectors</li>
-                    <li>Handling missing or inconsistent data</li>
-                    <li>Feature scaling and standardization</li>
-                </ul>
-                <h4 class="text-xl font-semibold mt-4 mb-2">Dimensionality Reduction</h4>
-                <p>Common methods for reducing the dimensionality of data include:</p>
-                <ul class="list-disc list-inside space-y-2">
-                    <li>Principal Component Analysis (PCA)</li>
-                    <li>t-SNE (t-Distributed Stochastic Neighbor Embedding)</li>
-                    <li>UMAP (Uniform Manifold Approximation and Projection)</li>
-                </ul>
-            </section>
+            <p class="text-sm text-gray-600 mt-2 text-center">Image: Conceptual illustration of FAISS similarity search</p>
+        </div>
+        
+        <section id="overview" class="mb-8">
+            <h3 class="text-2xl font-bold mb-4">Overview of FAISS</h3>
+            <p>FAISS (Facebook AI Similarity Search) is a library developed by Facebook Research for efficient similarity search and clustering of dense vectors. It is designed to address the challenges of working with high-dimensional data in large-scale applications.</p>
+            <h4 class="text-xl font-semibold mt-4 mb-2">Key Features</h4>
+            <ul class="list-disc list-inside space-y-2">
+                <li>High-performance indexing and search algorithms</li>
+                <li>Support for GPU acceleration</li>
+                <li>Flexible index types for different use cases</li>
+                <li>Scalability to billion-scale datasets</li>
+            </ul>
+        </section>
+        
+        <section id="data-preparation" class="mb-8">
+            <h3 class="text-2xl font-bold mb-4">Data Preparation and Transformation</h3>
+            <p>Proper data preparation is crucial for effective similarity search using FAISS. This involves preprocessing techniques and dimensionality reduction methods to optimize the performance of the index.</p>
+            <h4 class="text-xl font-semibold mt-4 mb-2">Preprocessing Techniques</h4>
+            <ul class="list-disc list-inside space-y-2">
+                <li>Normalization of input vectors</li>
+                <li>Handling missing or inconsistent data</li>
+                <li>Feature scaling and standardization</li>
+            </ul>
+            <h4 class="text-xl font-semibold mt-4 mb-2">Dimensionality Reduction</h4>
+            <p>Common methods for reducing the dimensionality of data include:</p>
+            <ul class="list-disc list-inside space-y-2">
+                <li>Principal Component Analysis (PCA)</li>
+                <li>t-SNE (t-Distributed Stochastic Neighbor Embedding)</li>
+                <li>UMAP (Uniform Manifold Approximation and Projection)</li>
+            </ul>
+        </section>
 
-            <section id="index-construction" class="mb-8">
-                <h3 class="text-2xl font-bold mb-4">Index Construction and Search</h3>
-                <p>FAISS offers various index types, each with its own strengths and trade-offs. Understanding these can help you choose the right index for your specific use case.</p>
-                <h4 class="text-xl font-semibold mt-4 mb-2">Common Index Types</h4>
-                <ul class="list-disc list-inside space-y-2">
-                    <li>IndexFlatL2: Exact search using L2 distance</li>
-                    <li>IndexIVFFlat: Inverted file index with flat storage</li>
-                    <li>IndexIVFPQ: IVF index with product quantization for compression</li>
-                    <li>IndexHNSW: Hierarchical Navigable Small World graph index</li>
-                </ul>
-            </section>
+        <section id="index-construction" class="mb-8">
+            <h3 class="text-2xl font-bold mb-4">Index Construction and Search</h3>
+            <p>FAISS offers various index types, each with its own strengths and trade-offs. Understanding these can help you choose the right index for your specific use case.</p>
+            <h4 class="text-xl font-semibold mt-4 mb-2">Common Index Types</h4>
+            <ul class="list-disc list-inside space-y-2">
+                <li>IndexFlatL2: Exact search using L2 distance</li>
+                <li>IndexIVFFlat: Inverted file index with flat storage</li>
+                <li>IndexIVFPQ: IVF index with product quantization for compression</li>
+                <li>IndexHNSW: Hierarchical Navigable Small World graph index</li>
+            </ul>
+        </section>
 
-            <section id="parameter-tuning" class="mb-8">
-                <h3 class="text-2xl font-bold mb-4">Parameter Tuning and Evaluation</h3>
-                <p>Optimizing FAISS performance requires careful parameter tuning and evaluation. This involves adjusting various parameters and measuring performance metrics to achieve the best results for your specific use case.</p>
-                <h4 class="text-xl font-semibold mt-4 mb-2">Key Parameters</h4>
-                <ul class="list-disc list-inside space-y-2">
-                    <li>Number of clusters in IVF indexes</li>
-                    <li>Number of probe points during search</li>
-                    <li>Quantizer parameters for compression methods</li>
-                </ul>
-                <h4 class="text-xl font-semibold mt-4 mb-2">Evaluation Metrics</h4>
-                <ul class="list-disc list-inside space-y-2">
-                    <li>Recall and precision</li>
-                    <li>Query latency and throughput</li>
-                    <li>Memory usage and index size</li>
-                </ul>
-            </section>
+        <section id="parameter-tuning" class="mb-8">
+            <h3 class="text-2xl font-bold mb-4">Parameter Tuning and Evaluation</h3>
+            <p>Optimizing FAISS performance requires careful parameter tuning and evaluation. This involves adjusting various parameters and measuring performance metrics to achieve the best results for your specific use case.</p>
+            <h4 class="text-xl font-semibold mt-4 mb-2">Key Parameters</h4>
+            <ul class="list-disc list-inside space-y-2">
+                <li>Number of clusters in IVF indexes</li>
+                <li>Number of probe points during search</li>
+                <li>Quantizer parameters for compression methods</li>
+            </ul>
+            <h4 class="text-xl font-semibold mt-4 mb-2">Evaluation Metrics</h4>
+            <ul class="list-disc list-inside space-y-2">
+                <li>Recall and precision</li>
+                <li>Query latency and throughput</li>
+                <li>Memory usage and index size</li>
+            </ul>
+        </section>
 
-            <section id="advanced-topics" class="mb-8">
-                <h3 class="text-2xl font-bold mb-4">Advanced Topics</h3>
-                <p>Beyond basic usage, FAISS offers advanced features for scaling and integration into complex systems. This includes GPU acceleration, distributed FAISS for extremely large datasets, and best practices for integrating FAISS into real-world applications.</p>
-                <h4 class="text-xl font-semibold mt-4 mb-2">Advanced Features</h4>
-                <ul class="list-disc list-inside space-y-2">
-                    <li>GPU acceleration for faster processing</li>
-                    <li>Distributed FAISS for large-scale deployments</li>
-                    <li>Integration with machine learning pipelines</li>
-                    <li>Custom index types and distance metrics</li>
-                </ul>
-            </section>
-        </main>
-    </div>
+        <section id="advanced-topics" class="mb-8">
+            <h3 class="text-2xl font-bold mb-4">Advanced Topics</h3>
+            <p>Beyond basic usage, FAISS offers advanced features for scaling and integration into complex systems. This includes GPU acceleration, distributed FAISS for extremely large datasets, and best practices for integrating FAISS into real-world applications.</p>
+            <h4 class="text-xl font-semibold mt-4 mb-2">Advanced Features</h4>
+            <ul class="list-disc list-inside space-y-2">
+                <li>GPU acceleration for faster processing</li>
+                <li>Distributed FAISS for large-scale deployments</li>
+                <li>Integration with machine learning pipelines</li>
+                <li>Custom index types and distance metrics</li>
+            </ul>
+        </section>
+    </main>
 
     <footer class="bg-gray-200 py-4 text-center text-sm">
         <p>&copy; 2024 Vijaya Ramesh. All rights reserved.</p>
