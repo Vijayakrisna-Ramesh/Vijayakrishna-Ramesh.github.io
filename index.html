@@ -13,13 +13,13 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #000;
-            color: #fff;
+            background-color: #fff;
+            color: #333;
         }
 
         .section {
             padding: 5rem 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
         }
 
         .skills-chart {
@@ -28,7 +28,7 @@
         }
 
         .glow {
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         }
 
         #fractal-tree {
@@ -43,19 +43,19 @@
         .hero-content {
             position: relative;
             z-index: 1;
-            background-color: rgba(0, 0, 0, 0.6);
+            background-color: rgba(255, 255, 255, 0.8);
             padding: 2rem;
             border-radius: 10px;
         }
 
         .blog-card {
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
         }
 
         .blog-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 255, 255, 0.2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
@@ -63,9 +63,9 @@
     <header class="relative h-screen flex items-center justify-center overflow-hidden">
         <div id="fractal-tree"></div>
         <div class="hero-content text-center">
-            <h1 class="text-5xl font-bold mb-4 glow">Vijaya Ramesh</h1>
-            <p class="text-2xl mb-6">AI Product Visionary</p>
-            <p class="max-w-2xl mx-auto text-lg">
+            <h1 class="text-5xl font-bold mb-4 glow text-indigo-600">Vijaya Ramesh</h1>
+            <p class="text-2xl mb-6 text-indigo-800">AI Product Visionary</p>
+            <p class="max-w-2xl mx-auto text-lg text-gray-700">
                 Bridging the gap between human intuition and machine intelligence.
                 Let's shape the future of AI-driven products together.
             </p>
@@ -74,74 +74,74 @@
 
     <main>
         <section id="about" class="section text-center px-4">
-            <h2 class="text-3xl font-bold mb-4 glow">About Me</h2>
-            <p class="max-w-2xl mx-auto">
+            <h2 class="text-3xl font-bold mb-4 glow text-indigo-600">About Me</h2>
+            <p class="max-w-2xl mx-auto text-gray-700">
                 As a Product Manager with a deep passion for AI, I leverage my background in management and engineering
                 to create innovative solutions. My goal is to make AI accessible and beneficial for everyone.
             </p>
         </section>
 
         <section id="skills" class="section px-4">
-            <h2 class="text-3xl font-bold mb-8 text-center glow">Skills Overview</h2>
+            <h2 class="text-3xl font-bold mb-8 text-center glow text-indigo-600">Skills Overview</h2>
             <div class="skills-chart">
                 <canvas id="skillsChart"></canvas>
             </div>
         </section>
 
         <section id="projects" class="section px-4">
-            <h2 class="text-3xl font-bold mb-8 text-center glow">Notable Projects</h2>
+            <h2 class="text-3xl font-bold mb-8 text-center glow text-indigo-600">Notable Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                <div class="bg-white bg-opacity-10 p-6 rounded-lg">
-                    <h3 class="text-xl font-bold mb-2">AI-Driven Product Optimization</h3>
-                    <p>Leveraged machine learning to enhance product features and user experience.</p>
+                <div class="bg-indigo-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-2 text-indigo-800">AI-Driven Product Optimization</h3>
+                    <p class="text-gray-700">Leveraged machine learning to enhance product features and user experience.</p>
                 </div>
-                <div class="bg-white bg-opacity-10 p-6 rounded-lg">
-                    <h3 class="text-xl font-bold mb-2">Neural Network Visualization Tool</h3>
-                    <p>Developed an interactive tool for visualizing complex neural network architectures.</p>
+                <div class="bg-indigo-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-2 text-indigo-800">Neural Network Visualization Tool</h3>
+                    <p class="text-gray-700">Developed an interactive tool for visualizing complex neural network architectures.</p>
                 </div>
             </div>
         </section>
 
         <section id="blogs" class="section px-4">
-            <h2 class="text-3xl font-bold mb-8 text-center glow">Featured Blogs</h2>
+            <h2 class="text-3xl font-bold mb-8 text-center glow text-indigo-600">Featured Blogs</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-                <a href="https://medium.com/@veejaykris.29/self-attention-explained-to-a-layman-5b6729c4363b" target="_blank" class="blog-card p-6 rounded-lg hover:bg-white hover:bg-opacity-20 transition duration-300">
-                    <h3 class="text-xl font-bold mb-2">Self-attention explained to a layman</h3>
-                    <p class="text-sm text-gray-300">Demystifying the concept of self-attention in machine learning.</p>
+                <a href="https://medium.com/@veejaykris.29/self-attention-explained-to-a-layman-5b6729c4363b" target="_blank" class="blog-card p-6 rounded-lg hover:bg-indigo-100 transition duration-300">
+                    <h3 class="text-xl font-bold mb-2 text-indigo-800">Self-attention explained to a layman</h3>
+                    <p class="text-sm text-gray-600">Demystifying the concept of self-attention in machine learning.</p>
                 </a>
-                <a href="https://medium.com/@veejaykris.29/dummies-guide-to-google-gemini-pro-1-5-95c9bd322e9b" target="_blank" class="blog-card p-6 rounded-lg hover:bg-white hover:bg-opacity-20 transition duration-300">
-                    <h3 class="text-xl font-bold mb-2">Dummies guide to Google Gemini Pro 1.5</h3>
-                    <p class="text-sm text-gray-300">An easy-to-understand guide to Google's latest AI model.</p>
+                <a href="https://medium.com/@veejaykris.29/dummies-guide-to-google-gemini-pro-1-5-95c9bd322e9b" target="_blank" class="blog-card p-6 rounded-lg hover:bg-indigo-100 transition duration-300">
+                    <h3 class="text-xl font-bold mb-2 text-indigo-800">Dummies guide to Google Gemini Pro 1.5</h3>
+                    <p class="text-sm text-gray-600">An easy-to-understand guide to Google's latest AI model.</p>
                 </a>
-                <a href="https://medium.com/@veejaykris.29/decoding-activation-functions-unveiling-sigmoid-relu-and-softmax-in-neural-networks-wait-till-a4a969bcce01" target="_blank" class="blog-card p-6 rounded-lg hover:bg-white hover:bg-opacity-20 transition duration-300">
-                    <h3 class="text-xl font-bold mb-2">Decoding Activation Functions</h3>
-                    <p class="text-sm text-gray-300">Exploring Sigmoid, ReLU, and Softmax in Neural Networks.</p>
+                <a href="https://medium.com/@veejaykris.29/decoding-activation-functions-unveiling-sigmoid-relu-and-softmax-in-neural-networks-wait-till-a4a969bcce01" target="_blank" class="blog-card p-6 rounded-lg hover:bg-indigo-100 transition duration-300">
+                    <h3 class="text-xl font-bold mb-2 text-indigo-800">Decoding Activation Functions</h3>
+                    <p class="text-sm text-gray-600">Exploring Sigmoid, ReLU, and Softmax in Neural Networks.</p>
                 </a>
-                <a href="https://medium.com/@veejaykris.29/3-stage-training-of-a-latent-vdm-55b6bee42902" target="_blank" class="blog-card p-6 rounded-lg hover:bg-white hover:bg-opacity-20 transition duration-300">
-                    <h3 class="text-xl font-bold mb-2">3 stage training of a Latent VDM</h3>
-                    <p class="text-sm text-gray-300">A deep dive into the training process of Latent Variable Diffusion Models.</p>
+                <a href="https://medium.com/@veejaykris.29/3-stage-training-of-a-latent-vdm-55b6bee42902" target="_blank" class="blog-card p-6 rounded-lg hover:bg-indigo-100 transition duration-300">
+                    <h3 class="text-xl font-bold mb-2 text-indigo-800">3 stage training of a Latent VDM</h3>
+                    <p class="text-sm text-gray-600">A deep dive into the training process of Latent Variable Diffusion Models.</p>
                 </a>
-                <a href="https://medium.com/@veejaykris.29/intuition-behind-logistic-regression-models-ec1d3913cc8e" target="_blank" class="blog-card p-6 rounded-lg hover:bg-white hover:bg-opacity-20 transition duration-300">
-                    <h3 class="text-xl font-bold mb-2">Intuition behind Logistic Regression Models</h3>
-                    <p class="text-sm text-gray-300">Understanding the core concepts of logistic regression in machine learning.</p>
+                <a href="https://medium.com/@veejaykris.29/intuition-behind-logistic-regression-models-ec1d3913cc8e" target="_blank" class="blog-card p-6 rounded-lg hover:bg-indigo-100 transition duration-300">
+                    <h3 class="text-xl font-bold mb-2 text-indigo-800">Intuition behind Logistic Regression Models</h3>
+                    <p class="text-sm text-gray-600">Understanding the core concepts of logistic regression in machine learning.</p>
                 </a>
             </div>
             <div class="text-center mt-8">
-                <a href="./blogs/" class="bg-white text-black px-6 py-3 rounded-lg hover:bg-opacity-80 transition text-lg font-semibold">View All Articles</a>
+                <a href="./blogs/" class="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition text-lg font-semibold">View All Articles</a>
             </div>
         </section>
 
         <section id="contact" class="section px-4 text-center">
-            <h2 class="text-3xl font-bold mb-8 glow">Get in Touch</h2>
+            <h2 class="text-3xl font-bold mb-8 glow text-indigo-600">Get in Touch</h2>
             <div class="flex justify-center space-x-4">
-                <a href="https://www.linkedin.com/in/vijayakrishnar/" target="_blank" class="bg-white text-black px-4 py-2 rounded hover:bg-opacity-80 transition">LinkedIn</a>
-                <a href="https://x.com/VjK1124637" target="_blank" class="bg-white text-black px-4 py-2 rounded hover:bg-opacity-80 transition">Twitter</a>
-                <a href="mailto:veejaykris.29@gmail.com" class="bg-white text-black px-4 py-2 rounded hover:bg-opacity-80 transition">Email</a>
+                <a href="https://www.linkedin.com/in/vijayakrishnar/" target="_blank" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition">LinkedIn</a>
+                <a href="https://x.com/VjK1124637" target="_blank" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition">Twitter</a>
+                <a href="mailto:veejaykris.29@gmail.com" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition">Email</a>
             </div>
         </section>
     </main>
 
-    <footer class="mt-auto py-6 text-center text-sm opacity-70">
+    <footer class="mt-auto py-6 text-center text-sm text-gray-600">
         <p>&copy; 2024 Vijaya Ramesh. All rights reserved.</p>
     </footer>
 
@@ -171,7 +171,7 @@
             function branch(len, depth) {
                 if (len < minBranchLength || depth > maxDepth) return;
 
-                p.stroke(depth * 25 % 360, 80, 100, 0.6);
+                p.stroke(240 + depth * 10 % 360, 80, 100, 0.6);
                 p.line(0, 0, 0, -len);
                 p.translate(0, -len);
 
@@ -200,33 +200,33 @@
                 datasets: [{
                     label: 'Skills',
                     data: [95, 90, 85, 80, 88, 92],
-                    backgroundColor: 'rgba(0, 255, 255, 0.2)',
-                    borderColor: 'rgba(0, 255, 255, 1)',
+                    backgroundColor: 'rgba(79, 70, 229, 0.2)',
+                    borderColor: 'rgba(79, 70, 229, 1)',
                     borderWidth: 3,
-                    pointBackgroundColor: 'rgba(0, 255, 255, 1)',
+                    pointBackgroundColor: 'rgba(79, 70, 229, 1)',
                     pointBorderColor: '#fff',
                     pointHoverBackgroundColor: '#fff',
-                    pointHoverBorderColor: 'rgba(0, 255, 255, 1)'
+                    pointHoverBorderColor: 'rgba(79, 70, 229, 1)'
                 }]
             },
             options: {
                 scales: {
                     r: {
                         angleLines: {
-                            color: 'rgba(255, 255, 255, 0.3)'
+                            color: 'rgba(0, 0, 0, 0.1)'
                         },
                         grid: {
-                            color: 'rgba(255, 255, 255, 0.3)'
+                            color: 'rgba(0, 0, 0, 0.1)'
                         },
                         pointLabels: {
-                            color: 'rgba(255, 255, 255, 0.9)',
+                            color: 'rgba(0, 0, 0, 0.7)',
                             font: {
                                 size: 14,
                                 weight: 'bold'
                             }
                         },
                         ticks: {
-                            color: 'rgba(255, 255, 255, 0.7)',
+                            color: 'rgba(0, 0, 0, 0.5)',
                             backdropColor: 'transparent'
                         }
                     }
