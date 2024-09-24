@@ -32,7 +32,8 @@
             background-image: url('../images/faiss.jpg');
             background-size: cover;
             background-position: center;
-            height: 200px; /* Reduced from 400px */
+            height: 300px;
+            width: 100%;
         }
     </style>
 </head>
@@ -45,12 +46,12 @@
 
     <div class="hero-image relative">
         <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-            <h1 class="text-4xl font-bold text-white text-center px-4">Deep Dive into FAISS</h1>
+            <h1 class="text-4xl md:text-5xl font-bold text-white text-center px-4">Deep Dive into FAISS</h1>
         </div>
     </div>
 
     <div class="flex flex-grow">
-        <aside class="sidebar w-64 p-4 overflow-y-auto">
+        <aside class="sidebar w-64 p-4 overflow-y-auto hidden md:block">
             <h3 class="text-lg font-semibold mb-4">Other Blogs</h3>
             <ul class="space-y-2">
                 <li><a href="#" class="text-blue-600 hover:underline">Fine-tune Llama 3.1 Ultra-Efficiently</a></li>
@@ -63,12 +64,106 @@
             <div class="space-y-8">
                 <section id="overview" class="content-section p-6 rounded-lg">
                     <h2 class="text-2xl font-bold mb-4">Overview of FAISS</h2>
-                    <p>FAISS (Facebook AI Similarity Search) is a library developed by Facebook Research for efficient similarity search and clustering of dense vectors. It is designed to address the challenges of working with high-dimensional data in large-scale applications.</p>
-                    <!-- Rest of the content remains the same -->
+                    <p class="mb-4">FAISS (Facebook AI Similarity Search) is a library developed by Facebook Research for efficient similarity search and clustering of dense vectors. It is designed to address the challenges of working with high-dimensional data in large-scale applications.</p>
+                    <h3 class="text-xl font-semibold mt-4 mb-2">Architecture</h3>
+                    <p class="mb-4">FAISS architecture is modular, allowing for flexible combination of indexing and search methods. It separates the concerns of index structure, distance computation, and quantization, enabling users to mix and match components based on their specific needs.</p>
+                    <h3 class="text-xl font-semibold mt-4 mb-2">Core Components</h3>
+                    <ul class="list-disc list-inside mb-4">
+                        <li>Index structures (e.g., flat index, inverted file index)</li>
+                        <li>Distance metrics (e.g., L2, inner product)</li>
+                        <li>Encoding methods (e.g., product quantization)</li>
+                    </ul>
+                    <h3 class="text-xl font-semibold mt-4 mb-2">Advantages</h3>
+                    <ul class="list-disc list-inside">
+                        <li>High performance on large datasets</li>
+                        <li>GPU acceleration for faster processing</li>
+                        <li>Flexible index types to suit various use cases</li>
+                        <li>Scalability for billion-scale datasets</li>
+                    </ul>
                 </section>
 
-                <!-- Other sections remain unchanged -->
+                <section id="data-preparation" class="content-section p-6 rounded-lg">
+                    <h2 class="text-2xl font-bold mb-4">Data Preparation and Transformation</h2>
+                    <p class="mb-4">Proper data preparation is crucial for effective similarity search using FAISS. This section covers key preprocessing techniques and dimensionality reduction methods.</p>
+                    <h3 class="text-xl font-semibold mt-4 mb-2">Preprocessing Techniques</h3>
+                    <ul class="list-disc list-inside mb-4">
+                        <li>Normalization: Ensuring consistent scale across features</li>
+                        <li>Handling missing values: Imputation or removal strategies</li>
+                        <li>Feature selection: Identifying most relevant attributes</li>
+                    </ul>
+                    <h3 class="text-xl font-semibold mt-4 mb-2">Dimensionality Reduction</h3>
+                    <p class="mb-4">Reducing dimensionality can improve search efficiency and reduce storage requirements. Common methods include:</p>
+                    <ul class="list-disc list-inside mb-4">
+                        <li>Principal Component Analysis (PCA)</li>
+                        <li>t-SNE (t-Distributed Stochastic Neighbor Embedding)</li>
+                        <li>UMAP (Uniform Manifold Approximation and Projection)</li>
+                    </ul>
+                    <p>FAISS provides built-in support for PCA, making it easy to integrate dimensionality reduction into your indexing pipeline.</p>
+                </section>
 
+                <section id="index-construction" class="content-section p-6 rounded-lg">
+                    <h2 class="text-2xl font-bold mb-4">Index Construction and Search</h2>
+                    <p class="mb-4">FAISS offers various index types, each with its own strengths and trade-offs. Understanding these can help you choose the right index for your specific use case.</p>
+                    <h3 class="text-xl font-semibold mt-4 mb-2">Key Index Types</h3>
+                    <ul class="list-disc list-inside mb-4">
+                        <li><strong>IndexFlatL2</strong>: Exact search using L2 distance</li>
+                        <li><strong>IndexIVFFlat</strong>: Inverted file index with flat storage</li>
+                        <li><strong>IndexIVFPQ</strong>: IVF index with product quantization for compression</li>
+                        <li><strong>IndexHNSW</strong>: Hierarchical Navigable Small World graph index</li>
+                    </ul>
+                    <h3 class="text-xl font-semibold mt-4 mb-2">Trade-offs</h3>
+                    <p class="mb-4">When choosing an index, consider these trade-offs:</p>
+                    <ul class="list-disc list-inside mb-4">
+                        <li>Search speed vs. accuracy</li>
+                        <li>Memory usage vs. search performance</li>
+                        <li>Build time vs. search time</li>
+                        <li>Scalability to large datasets</li>
+                    </ul>
+                    <p>The choice of index depends on your specific requirements, such as dataset size, query latency needs, and accuracy requirements.</p>
+                </section>
+
+                <section id="parameter-tuning" class="content-section p-6 rounded-lg">
+                    <h2 class="text-2xl font-bold mb-4">Parameter Tuning and Evaluation</h2>
+                    <p class="mb-4">Optimizing FAISS performance requires careful parameter tuning and evaluation. This section covers key aspects of this process.</p>
+                    <h3 class="text-xl font-semibold mt-4 mb-2">Key Parameters</h3>
+                    <ul class="list-disc list-inside mb-4">
+                        <li>Number of clusters (for IVF indexes)</li>
+                        <li>Number of probe points during search</li>
+                        <li>Quantizer type and parameters</li>
+                        <li>HNSW construction parameters (M, efConstruction)</li>
+                    </ul>
+                    <h3 class="text-xl font-semibold mt-4 mb-2">Evaluation Metrics</h3>
+                    <p class="mb-4">Common metrics for evaluating search quality include:</p>
+                    <ul class="list-disc list-inside mb-4">
+                        <li>Recall: Proportion of relevant items retrieved</li>
+                        <li>Precision: Proportion of retrieved items that are relevant</li>
+                        <li>Mean Average Precision (mAP): Overall quality of ranked results</li>
+                    </ul>
+                    <h3 class="text-xl font-semibold mt-4 mb-2">Performance Measurement</h3>
+                    <p>Key performance metrics to consider:</p>
+                    <ul class="list-disc list-inside">
+                        <li>Query latency: Time taken to process a single query</li>
+                        <li>Throughput: Number of queries processed per second</li>
+                        <li>Memory usage: RAM required for index and data storage</li>
+                    </ul>
+                </section>
+
+                <section id="advanced-topics" class="content-section p-6 rounded-lg">
+                    <h2 class="text-2xl font-bold mb-4">Advanced Topics</h2>
+                    <p class="mb-4">Beyond basic usage, FAISS offers advanced features for scaling and integration into complex systems.</p>
+                    <h3 class="text-xl font-semibold mt-4 mb-2">GPU Acceleration</h3>
+                    <p class="mb-4">FAISS can leverage GPU computing for faster indexing and search. This is particularly beneficial for large-scale applications or when working with high-dimensional data.</p>
+                    <h3 class="text-xl font-semibold mt-4 mb-2">Distributed FAISS</h3>
+                    <p class="mb-4">For extremely large datasets, FAISS can be distributed across multiple machines. This involves strategies for data sharding and result merging.</p>
+                    <h3 class="text-xl font-semibold mt-4 mb-2">Integration with Applications</h3>
+                    <p>Best practices for integrating FAISS into real-world applications include:</p>
+                    <ul class="list-disc list-inside">
+                        <li>Efficient data loading and preprocessing pipelines</li>
+                        <li>Caching strategies for frequently accessed data</li>
+                        <li>Monitoring and logging for performance optimization</li>
+                        <li>Versioning of indexes for reproducibility</li>
+                    </ul>
+                </section>
             </div>
         </main>
     </div>
