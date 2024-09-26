@@ -28,10 +28,22 @@
         .feature-card:hover {
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
+        /* New styles for sticky header */
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Adjust main content to prevent it from being hidden under the sticky header */
+        main {
+            padding-top: 1rem; /* Adjust this value based on the height of your header */
+        }
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
-    <header class="gradient-bg text-white py-4">
+    <header class="gradient-bg text-white py-4 sticky-header">
         <div class="container mx-auto px-4 flex justify-between items-center">
             <a href="../index.html" class="text-2xl font-bold hover:text-gray-200">Vijaya Ramesh</a>
             <div class="flex items-center space-x-4">
