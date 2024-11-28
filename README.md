@@ -31,6 +31,13 @@ The GitHub Actions workflow for deploying static content to GitHub Pages is defi
 
 The deployment environment is named `github-pages` and the URL is set to `${{ steps.deployment.outputs.page_url }}`.
 
+## Changes Made
+
+- Updated the `uses` version for `actions/checkout` to `v2`
+- Updated the `uses` version for `actions/configure-pages` to `v1`
+- Updated the `uses` version for `actions/upload-pages-artifact` to `v1`
+- Updated the `uses` version for `actions/deploy-pages` to `v1`
+
 ## License
 
 This repository is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
